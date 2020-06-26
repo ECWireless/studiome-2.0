@@ -25,7 +25,7 @@ export default function WhatWeDo() {
 
             <div className="what-we-do__container what-we-do__container--1">
                 <Icon1 className="what-we-do__icon--1" />
-                <p id="what-we-do__text" className="p-s">Live Internet Broadcast</p>
+                <p id="what-we-do__text" className="p-s">Livestream Broadcast</p>
             </div>
             <div className="what-we-do__container what-we-do__container--2">
                 <Icon2 className="what-we-do__icon--1" />
