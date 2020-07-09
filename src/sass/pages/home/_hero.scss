@@ -66,8 +66,8 @@
         }
 
         @include respond(small-phone) {
-            width: 30rem;
-            height: 30rem;
+            width: 28rem;
+            height: 28rem;
             top: 12rem;
             left: 3rem;
         }
@@ -198,6 +198,10 @@
         @include respond(phone) {
             grid-row: 2 / -2;
             margin-top: 2rem;
+        }
+
+        @include respond(small-phone) {
+            width: 28rem;
         }
 
         &:hover {
