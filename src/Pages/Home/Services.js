@@ -3,8 +3,10 @@ import { NavLink } from 'react-router-dom';
 
 // Components
 import Button from '../../components/Button'
+import Banner from '../../components/Banner'
 
 // Photos
+import BannerImage from '../../assets/home/services/Banner-2.jpg'
 import Studio1 from '../../assets/home/services/studios/Audio-Room-small.jpg';
 import Studio2 from '../../assets/home/services/studios/podcast-small.jpg';
 import Studio3 from '../../assets/home/services/studios/MP-Studio-Main.jpg';
@@ -23,10 +25,7 @@ import Workstation4 from '../../assets/home/services/workstation/workstation-4-s
 export default function Services(props) {
     return (
         <>
-            <div id="services__banner-container" className="flex-column">
-                <h1 id="services__banner-heading" className="h1 white">Our Services</h1>
-                <div id="services__banner-border" className="line-m line-m--orange" />
-            </div>
+            <Banner color="orange" text="Our Services" image={BannerImage}/>
             
             <div id="services" className="container-new">
                 <h3 id="services__heading" className="h3 l uppercase">Studio Space</h3>

@@ -41,7 +41,9 @@ class About extends Component {
         } else if (location[1] === 'contact') {
             this.onContactHandler();
         } else {
-            return;
+            window.scroll({
+                top: 0
+            });
         }
     }
 

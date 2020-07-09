@@ -1,17 +1,27 @@
 .line-s {
     width: 10rem;
+    height: 3px;
     margin: 0 auto;
 
     &--orange {
-        border-bottom: 1px solid $color-orange;
+        background-color: $color-orange;
+    }
+
+    &--green {
+        background-color: $color-green;
     }
 }
 
 .line-m {
-    height: 2px;
+    height: 3px;
     width: 15rem;
+    margin: 0 auto;
 
     &--orange {
         background-color: $color-orange;
+    }
+
+    &--green {
+        background-color: $color-green;
     }
 }
