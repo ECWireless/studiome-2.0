@@ -17,7 +17,7 @@ export default class Learn extends Component {
         return (
             <div className="temp-community">
                 <NavLink className="temp-community__back-button" exact to="/community">
-                    <Button arrow text={"Back"} size={"medium"} />
+                    <Button arrow text={"Back"} size={"m"} />
                 </NavLink>
 
                 <h1 className="temp-community__temp-heading">Gallery coming soon!</h1>

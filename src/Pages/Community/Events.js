@@ -32,7 +32,7 @@ class Events extends Component {
                 </div>
 
                 <NavLink className="events__back-button" exact to="/community">
-                    <Button arrow text={"Back"} size={"medium"} />
+                    <Button arrow text={"Back"} size={"m"} />
                 </NavLink>
 
                 <p className="events__description p-xl">StudioME believes in easy and community-driven media creation.

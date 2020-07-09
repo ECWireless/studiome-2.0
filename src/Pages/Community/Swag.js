@@ -73,7 +73,7 @@ export default class Swag extends Component {
             </div>
 
             <NavLink className="swag__back-button" exact to="/community">
-                <Button arrow text={"Back"} size={"medium"} />
+                <Button arrow text={"Back"} size={"m"} />
             </NavLink>
 
             <p className="swag__description p-xl">With a focus on artists in our community, our swag is designed to celebrate photographers, videographers, podcasters, and media creators in the Pittsburgh area.</p>
