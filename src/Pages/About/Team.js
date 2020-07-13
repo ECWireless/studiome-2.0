@@ -1,7 +1,9 @@
 import React from 'react'
 
-// Banner
+// Components
 import Banner from '../../components/Banner';
+
+// Images
 import BannerImage from '../../assets/about/team/Team-Banner-small.jpg';
 
 export default function Team() {

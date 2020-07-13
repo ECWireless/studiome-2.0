@@ -1,262 +1,85 @@
-.about {
-    // Banner
-    &__work {
-        display: grid;
-        grid-template-columns: 1fr repeat(4, 22.5rem) 1fr;
-        grid-template-rows: 30rem 25rem repeat(3, 30rem 15rem) 15rem;
+#about__3-paragraph-1 {
+    margin: 8rem 0;
 
-        @include respond(tab-land) {
-            grid-template-columns: 1fr repeat(4, 20rem) 1fr;
-        }
-
-        @include respond(tab-port) {
-            grid-template-columns: 1fr repeat(4, 12.5rem) 1fr;
-            grid-template-rows: 25rem 20rem repeat(3, 30rem 10rem 8rem) 10rem 5rem;
-        }
-
-        @include respond(phone) {
-            grid-template-columns: 1fr repeat(4, 10rem) 1fr;
-            grid-template-rows: 15rem 18rem repeat(3, 25rem 8rem 8rem) 7rem 5rem;
-        }
-
-        @include respond(small-phone) {
-            grid-template-columns: 1fr repeat(4, 7.5rem) 1fr;
-            grid-template-rows: 12rem 18rem repeat(3, 18rem 7rem 6rem) 5rem 5rem;
-        }
+    @include respond(tab-port) {
+        margin: 6rem 0;
     }
 
-    &__work-banner {
-        grid-column: 1 / -1;
-        grid-row: 1 / 2;
+    @include respond(phone) {
+        margin: 4rem 0;
+    }
+}
 
-        background-image: url(../../../assets/about/work/OurWork-small.jpg);
-        background-size: cover;
-        background-position: center;
+#about__3-work-video {
+    align-self: center;
+    width: 448px;
+    height: 252px;
+
+    @include respond(phone) {
+        width: 358px;
+        height: 204px;
     }
 
-    &__work-banner-container {
-        grid-column: 3 / 5;
-        grid-row: 1 / 2;
-        justify-self: center;
-        align-self: center;
-        text-align: center;
+    @include respond(small-phone) {
+        width: 286px;
+        height: 163px;
+    }
+}
+
+#about__3-work-description {
+    width: 30rem;
+
+    @include respond(tab-land) {
+        margin: 4rem 0;
     }
 
-    &__work-heading {
-        color: $color-grey-hover;
-        text-transform: uppercase;
+    @include respond(tab-port) {
+        width: 40rem;
     }
 
-    &__work-border {
-        margin: 2rem auto;
-        height: 2px;
-        width: 15rem;
-        background-color: $color-green;
-
-        @include respond(phone) {
-            margin: 1rem auto;
-        }
-    }
-
-    // Exampes
-    &__work-heading-1 {
-        grid-column: 2 / 6;
-        grid-row: 2 / 3;
-        align-self: center;
-
-        padding: 3rem;
-        text-align: center;
-
-        @include respond(tab-port) {
-            width: 50rem;
-            margin: 0 auto;
-            padding: 3rem;
-        }
-
-        @include respond(phone) {
-            width: 36rem;
-            padding: 1.5rem;
-        }
-
-        @include respond(small-phone) {
-            width: 31rem;
-            padding: 1rem;
-        }
-    }
-
-    &__work-video {
-        align-self: center;
-        width: 448px;
-        height: 252px;
-
-        @include respond(phone) {
-            width: 358px;
-            height: 204px;
-        }
-
-        @include respond(small-phone) {
-            width: 286px;
-            height: 163px;
-        }
-
-        &--1 {
-            grid-column: 2 / 5;
-            grid-row: 3 / 4;
-            justify-self: flex-start;
-
-            @include respond(tab-port) {
-                grid-column: 2 / 6;
-                grid-row: 3 / 4;
-                justify-self: center;
-            }
-        }
-
-        &--2 {
-            grid-column: 3 / 6;
-            grid-row: 5 / 6;
-            justify-self: flex-end;
-
-            @include respond(tab-port) {
-                grid-column: 2 / 6;
-                grid-row: 6 / 7;
-                justify-self: center;
-            }
-        }
-
-        &--3 {
-            grid-column: 2 / 5;
-            grid-row: 7 / 8;
-            justify-self: flex-start;
-
-            @include respond(tab-port) {
-                grid-column: 2 / 6;
-                grid-row: 9 / 10;
-                justify-self: center;
-            }
-        }
-    }
-
-    &__work-description {
-        align-self: center;
-        text-align: center;
+    @include respond(small-phone) {
         width: 30rem;
+    }
+}
 
-        @include respond(small-phone) {
-            align-self: flex-end;
-        }
+.about__3-work-border {
+    width: 20rem;
+    margin: 6rem auto;
 
-        &--1 {
-            grid-column: 4 / 6;
-            grid-row: 3 / 4;
-            justify-self: flex-end;
-
-            @include respond(tab-port) {
-                grid-column: 2 / 6;
-                grid-row: 4 / 5;
-                justify-self: center;
-            }
-        }
-
-        &--2 {
-            grid-column: 2 / 4;
-            grid-row: 5 / 6;
-            justify-self: flex-start;
-
-            @include respond(tab-port) {
-                grid-column: 2 / 6;
-                grid-row: 7 / 8;
-                justify-self: center;
-            }
-        }
-
-        &--3 {
-            grid-column: 4 / 6;
-            grid-row: 7 / 8;
-            justify-self: flex-end;
-
-            @include respond(tab-port) {
-                grid-column: 2 / 6;
-                grid-row: 10 / 11;
-                justify-self: center;
-            }
-        }
+    @include respond(tab-land) {
+        margin: 0 auto 8rem;
     }
 
-    &__work-border {
-        align-self: center;
-        width: 100%;
-
-        &--1 {
-            grid-column: 3 / 5;
-            grid-row: 4 / 5;
-            border-bottom: 3px solid $color-teal;
-
-            @include respond(tab-port) {
-                grid-column: 3 / 5;
-                grid-row: 5 / 6;
-            }
-        }
-
-        &--2 {
-            grid-column: 3 / 5;
-            grid-row: 6 / 7;
-            border-bottom: 3px solid $color-orange;
-
-            @include respond(tab-port) {
-                grid-column: 3 / 5;
-                grid-row: 8 / 9;
-            }
-        }
-
-        &--3 {
-            grid-column: 3 / 5;
-            grid-row: 8 / 9;
-            border-bottom: 3px solid $color-green;
-
-            @include respond(tab-port) {
-                grid-column: 3 / 5;
-                grid-row: 11 / 12;
-            }
-        }
+    @include respond(tab-port) {
+        margin: 0 auto 6rem;
     }
 
-    &__work-button-link {
-        grid-column: 1 / -1;
-        grid-row: 9 / 10;
-        justify-self: center;
-        align-self: flex-start;
+    @include respond(phone) {
         width: 15rem;
-        height: 5rem;
-
-        @include respond(tab-port) {
-            grid-column: 3 / 5;
-            grid-row: 12 / 13;
-        }
+        margin: 0 auto 4rem;
     }
 
-    &__work-button {
-        width: 100%;
-        height: 100%;
+    &--1 {
+        border-bottom: 3px solid $color-teal;
+    }
 
-        background-color: $color-green;
-        border: none;
-        border-radius: 5px;
-        box-shadow: $shadow-button;
-        color: $color-white;
-        text-transform: uppercase;
-        outline: none;
-        font-weight: 600;
+    &--2 {
+        border-bottom: 3px solid $color-orange;
+    }
 
-        transition: .3s all ease;
+    &--3 {
+        border-bottom: 3px solid $color-green;
+    }
+}
 
-        &:hover {
-            cursor: pointer;
-            background-color: $color-grey-light;
-            color: $color-green;
-        }
+#about__3-work-button-link {
+    margin: 0 auto 10rem;
 
-        &:active {
-            box-shadow: none;
-        }
+    @include respond(tab-port) {
+        margin: 0 auto 8rem;
+    }
+
+    @include respond(small-phone) {
+        margin: 0 auto 6rem;
     }
 }

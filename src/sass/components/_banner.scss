@@ -14,3 +14,40 @@
         height: 14rem;
     }
 }
+
+.banner-background {
+    position: absolute;
+    width: 80rem;
+    height: 20rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 4rem;
+    border-radius: 15px;
+
+    @include respond(tab-port) {
+        background-color: rgba(0, 0, 0, 0.5);
+        width: 100%;
+        border-radius: 0;
+        height: 30rem;
+    }
+
+    @include respond(phone) {
+        height: 20rem;
+    }
+
+    @include respond(small-phone) {
+        height: 14rem;
+    }
+}
+
+.banner-alt-text {
+    color: $color-grey-hover;
+
+    @include respond(tab-port) {
+        color: #fff;
+    }
+
+    @include respond(phone) {
+        text-align: center;
+        padding: 0 4rem 0;
+    }
+}

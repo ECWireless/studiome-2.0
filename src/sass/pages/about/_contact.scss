@@ -1,283 +1,150 @@
-.about {
-    // Banner
-    &__contact {
-        display: grid;
-        grid-template-columns: 1fr repeat(4, 26rem) 1fr;
-        grid-template-rows: 30rem 15rem 40rem 15rem 5rem 5rem 38rem;
+#about__4-icon-container {
+    width: 45rem;
+    margin: 8rem auto 0;
 
-        @include respond(tab-land) {
-            grid-template-columns: 1fr repeat(4, 22rem) 1fr;
-            grid-template-rows: 30rem 15rem 100rem repeat(4, 10rem) 10rem;
-        }
-
-        @include respond(tab-port) {
-            grid-template-columns: 1fr repeat(3, 16.6rem) 1fr;
-            grid-template-rows: 30rem 15rem 100rem 40rem 15rem 5rem 5rem 10rem;
-        }
-
-        @include respond(phone) {
-            grid-template-columns: 1fr repeat(3, 12rem) 1fr;
-            grid-template-rows: 15rem 15rem 100rem 35rem 10rem 4rem 4rem 7rem;
-        }
-
-        @include respond(small-phone) {
-            grid-template-columns: 1fr repeat(3, 10rem) 1fr;
-            grid-template-rows: 12rem 10rem 105rem 30rem 8rem 4rem 4rem 7rem;
-        }
+    @include respond(tab-land) {
+        margin: 6rem auto 0;
     }
 
-    &__contact-banner {
-        grid-column: 1 / -1;
-        grid-row: 1 / 2;
-
-        background-image: url(../../../assets/about/contact/Contact-Blur.jpg);
-        background-size: cover;
-        background-position: center;
+    @include respond(phone) {
+        width: 35rem;
     }
 
-    &__contact-banner-container {
-        grid-column: 3 / 5;
-        grid-row: 1 / 2;
-        justify-self: center;
-        align-self: center;
-        text-align: center;
+    @include respond(small-phone) {
+        width: 28rem;
+    }
+}
 
-        background-color: rgba(255, 255, 255, 0.9);
-        padding: 4rem;
-        width: 80rem;
+#about__4-icon-link {
+    width: 3rem;
+    height: 3rem;
+}
 
-        border-radius: 15px;
+.about__4-icon {
+    width: 3rem;
+    height: 3rem;
+    fill: $color-teal;
 
-        @include respond(tab-port) {
-            width: 50rem;
-            grid-column: 2 / 5;
-        }
-
-        @include respond(phone) {
-            width: 100%;
-            padding: 1.5rem;
-        }
+    &--1 {
+        animation: iconColor 7s ease infinite;
     }
 
-    &__contact-heading {
-        color: $color-grey-hover;
-        text-transform: uppercase;
+    &--2 {
+        animation: iconColor 7s .5s ease infinite;
     }
 
-    &__contact-border {
-        margin: 2rem auto;
-        height: 2px;
-        width: 15rem;
-        background-color: $color-green;
-
-        @include respond(phone) {
-            margin: 1rem auto;
-        }
+    &--3 {
+        animation: iconColor 7s 1s ease infinite;
     }
 
-    // Icons
-    &__contact-icon-container {
-        grid-column: 3 / 5;
-        grid-row: 2 / 3;
-
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-
-        @include respond(tab-port) {
-            grid-column: 2 / 5;
-        }
+    &--4 {
+        animation: iconColor 7s 1.5s ease infinite;
     }
 
-    &__contact-icon-link {
-        width: 3rem;
-        height: 3rem;
-        justify-self: center;
-        align-self: center;
+    &--5 {
+        animation: iconColor 7s 2s ease infinite;
     }
 
-    &__contact-icon {
-        width: 3rem;
-        height: 3rem;
-        fill: $color-teal;
-
-        &--1 {
-            animation: iconColor 7s ease infinite;
-        }
-
-        &--2 {
-            animation: iconColor 7s .5s ease infinite;
-        }
-
-        &--3 {
-            animation: iconColor 7s 1s ease infinite;
-        }
-
-        &--4 {
-            animation: iconColor 7s 1.5s ease infinite;
-        }
-
-        &--5 {
-            animation: iconColor 7s 2s ease infinite;
-        }
-
-        @include respond(small-phone) {
-            width: 2.5rem;
-            height: 2.5rem;
-        }
+    @include respond(small-phone) {
+        width: 2.5rem;
+        height: 2.5rem;
     }
+}
 
-    // Content
-    &__contact-form {
-        grid-column: 4 / 6;
-        grid-row: 3 / 8;
-        justify-self: flex-end;
-        align-self: flex-start;
+#about__4-contact-form {
+    width: 512px;
+    height: 1000px;
 
-        width: 512px;
+    @include respond(phone) {
+        width: 358px;
         height: 1000px;
-
-        @include respond(tab-land) {
-            grid-column: 2 / 6;
-            grid-row: 3 / 4;
-            justify-self: center;
-        }
-
-        @include respond(tab-port) {
-            grid-column: 2 / 5;
-        }
-
-        @include respond(phone) {
-            width: 358px;
-            height: 1000px;
-        }
-
-        @include respond(small-phone) {
-            width: 300px;
-            height: 1000px;
-        }
     }
 
-    &__contact-map {
-        grid-column: 2 / 4;
-        grid-row: 3 / 5;
-        justify-self: flex-start;
-        align-self: flex-start;
+    @include respond(small-phone) {
+        width: 300px;
+        height: 1000px;
+    }
+}
 
-        border: .4rem solid $color-orange;
-        transition: all .5s;
+#about__4-container {
+    margin: 8rem auto 10rem;
 
+    @include respond(tab-land) {
+        margin: 6rem auto 10rem;
+        flex-direction: column-reverse;
+    }
+}
+
+#about__4-map-container {
+    align-self: flex-start;
+
+    @include respond(tab-land) {
+        align-self: center;
+        margin-top: 6rem;
+    }
+}
+
+#about__4-contact-map {
+    border: .4rem solid $color-orange;
+    transition: all .5s;
+    align-self: flex-end;
+
+    width: 480px;
+    height: 360px;
+
+    &:hover {
+        border: .4rem solid $color-green;
+    }
+
+    @include respond(tab-land) {
+        width: 384px;
+        height: 288px;
+    }
+
+    @include respond(tab-port) {
         width: 480px;
         height: 360px;
-
-        &:hover {
-            border: .4rem solid $color-green;
-        }
-
-        @include respond(tab-land) {
-            grid-column: 2 / 4;
-            grid-row: 5 / 6;
-            justify-self: flex-start;
-            margin-top: 0;
-
-            width: 384px;
-            height: 288px;
-        }
-
-        @include respond(tab-port) {
-            grid-column: 2 / 5;
-            grid-row: 4 / 5;
-            align-self: center;
-            justify-self: center;
-            width: 480px;
-            height: 360px;
-        }
-
-        @include respond(phone) {
-            width: 374px;
-            height: 278px;
-        }
-
-        @include respond(small-phone) {
-            width: 299px;
-            height: 222px;
-        }
     }
 
-    &__contact-heading-1 {
-        grid-column: 2 / 4;
-        grid-row: 4 / 5;
-        justify-self: flex-start;
-        align-self: center;
-
-        text-transform: uppercase;
-
-        @include respond(tab-land) {
-            grid-column: 4 / 6;
-            grid-row: 5 / 6;
-            align-self: flex-start;
-        }
-
-        @include respond(tab-port) {
-            grid-column: 2 / 6;
-            grid-row: 5 / 6;
-            align-self: center;
-        }
+    @include respond(phone) {
+        width: 374px;
+        height: 278px;
     }
 
-    &__contact-paragraph-1 {
-        grid-column: 2 / 4;
-        grid-row: 5 / 6;
-        justify-self: flex-start;
-        align-self: flex-start;
-
-        @include respond(tab-land) {
-            grid-column: 4 / 6;
-            grid-row: 6 / 7;
-            align-self: flex-start;
-        }
-
-        @include respond(tab-port) {
-            grid-column: 2 / 6;
-            grid-row: 6 / 7;
-        }
+    @include respond(small-phone) {
+        width: 299px;
+        height: 222px;
     }
+}
 
-    &__contact-link-1 {
-        text-decoration: none;
-        transition: all .2s ease;
+#about__4-heading-1 {
+    margin-top: 6rem;
+}
 
-        &:hover {
-            border-bottom: 2px solid $color-green;
-            color: $color-green;
-        }
+#about__4-heading-2 {
+    margin-top: 4rem;
+
+    @include respond(small-phone) {
+        margin-top: 2rem;
     }
+}
 
-    &__contact-paragraph-2 {
-        grid-column: 2 / 4;
-        grid-row: 6 / 7;
-        justify-self: flex-start;
-        align-self: flex-start;
+#about__4-heading-3 {
+    margin-top: 2rem;
 
-        @include respond(tab-land) {
-            grid-column: 4 / 6;
-            grid-row: 6 / 7;
-            align-self: flex-end;
-        }
-
-        @include respond(tab-port) {
-            grid-column: 2 / 6;
-            grid-row: 7 / 8;
-        }
+    @include respond(small-phone) {
+        margin-top: 1rem;
     }
+}
 
-    &__contact-link-2 {
-        text-decoration: none;
-        color: $color-orange;
+#about__4-link {
+    text-decoration: none;
+    transition: all .2s ease;
+    border-bottom: 2px solid transparent;
 
-        &:hover {
-            border-bottom: 2px solid $color-green;
-            color: $color-green;
-        }
+    &:hover {
+        border-bottom: 2px solid $color-green;
+        color: $color-green;
     }
 }
 
