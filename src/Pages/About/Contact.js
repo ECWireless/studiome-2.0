@@ -3,6 +3,8 @@ import React, { Component } from 'react'
 // Components
 import { BannerAlt } from '../../components/Banner'
 import Button from '../../components/Button'
+import Snackbar from '../../components/Snackbar'
+import SubmitRing from '../../components/SubmitRing'
 
 // Images
 import BannerImage from '../../assets/about/contact/Contact-Blur.jpg'
@@ -20,6 +22,10 @@ export default class Contact extends Component {
         name: '',
         number: '',
         message: '',
+
+        loading: false,
+        submitted: false,
+        success: false,
     }
 
     setEmail = (e) => {
@@ -62,6 +68,10 @@ export default class Contact extends Component {
             }
         })
         .catch(() => this.setState({ submitted: true, success: false }))
+    }
+
+    onCloseSnackbar = () => {
+        this.setState({ submitted: false })
     }
 
     resetForm(){
@@ -172,8 +182,11 @@ export default class Contact extends Component {
                                 />
 
                                 <div id="about__4-form-button-container">
-                                    <Button size="l" text="Submit" type="submit" />
+                                    <Button size="l" type="submit">
+                                        {this.state.loading ? <SubmitRing /> : 'submit'}
+                                    </Button>
                                 </div>
+                                { this.state.submitted && <Snackbar success={this.state.success} onCloseSnackbar={this.onCloseSnackbar} /> }
                             </form>
                         </div>
                     </div>
