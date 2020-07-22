@@ -1,0 +1,69 @@
+.form {
+    &__label {
+        width: 100%;
+        margin: 4rem auto 1.5rem;
+        letter-spacing: 1px;
+    }
+
+    &__input {
+        width: 100%;
+        margin: 0 auto;
+
+        height: 5rem;
+        padding: .5rem 2rem;
+        border-radius: 5px;
+        border: 1px solid $color-orange;
+        outline: none;
+
+        font-family: $font-main;
+        color: $color-teal-dark !important;
+        letter-spacing: 1px;
+
+        transition: all .3s ease;
+
+        &::placeholder {
+            color: $color-grey-mild;
+        }
+
+        &:hover {
+            border: 1px solid $color-green;
+        }
+
+        &:active,
+        &:focus {
+            border: 1px solid $color-green;
+            border-left: 5px solid $color-green;
+        }
+    }
+
+    &__textarea {
+        margin: 0 auto;
+
+        height: 20rem;
+        width: 100%;
+        padding: 2rem;
+        border-radius: 5px;
+        border: 1px solid $color-orange;
+        outline: none;
+
+        font-family: $font-main;
+        color: $color-teal-dark !important;
+        letter-spacing: 1px;
+
+        transition: all .3s ease;
+
+        &::placeholder {
+            color: $color-grey-mild;
+        }
+
+        &:hover {
+            border: 1px solid $color-green;
+        }
+
+        &:active,
+        &:focus {
+            border: 1px solid $color-green;
+            border-left: 5px solid $color-green;
+        }
+    }
+}
