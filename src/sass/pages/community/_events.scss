@@ -1,21 +1,21 @@
 .events {
     display: grid;
     grid-template-columns: 1fr repeat(2, 45rem) 1fr;
-    grid-template-rows: 30rem 8rem 12rem 10rem 25rem 30rem;
+    grid-template-rows: 30rem 8rem 14rem 10rem 25rem 10rem 10rem 25rem 30rem;
 
     @include respond(tab-port) {
         grid-template-columns: 1fr repeat(2, 25rem) 1fr;
-        grid-template-rows: 25rem 8rem 16rem 10rem 25rem 30rem;
+        grid-template-rows: 25rem 8rem 16rem 10rem 25rem 10rem 10rem 25rem 30rem;
     }
 
     @include respond(phone) {
         grid-template-columns: 1fr repeat(2, 20rem) 1fr;
-        grid-template-rows: 15rem 5rem 15rem 8rem 25rem 30rem;
+        grid-template-rows: 15rem 5rem 15rem 8rem 25rem 10rem 8rem 25rem 10rem;
     }
 
     @include respond(small-phone) {
         grid-template-columns: 1fr repeat(2, 15rem) 1fr;
-        grid-template-rows: 12rem 5rem 14rem 7rem 30rem 30rem;
+        grid-template-rows: 12rem 5rem 14rem 7rem 30rem 8rem 7rem 30rem 10rem;
     }
 
     &__banner {
@@ -91,26 +91,40 @@
     }
 
     &__subheading {
-        grid-column: 2 / -2;
-        grid-row: 4 / 5;
 
         text-align: left;
+
+        &--1 {
+            grid-column: 2 / -2;
+            grid-row: 4 / 5;
+        }
+
+        &--2 {
+            grid-column: 2 / -2;
+            grid-row: 7 / 8;
+        }
     }
 
     &__subheading-line {
-        grid-column: 2 / -2;
-        grid-row: 4 / 5;
         justify-self: flex-start;
         
         height: 2px;
         width: 10rem;
         background-color: $color-green;
         margin-top: 4rem;
+
+        &--1 {
+            grid-column: 2 / -2;
+            grid-row: 4 / 5;
+        }
+
+        &--2 {
+            grid-column: 2 / -2;
+            grid-row: 7 / 8;
+        }
     }
 
     &__card {
-        grid-column: 2 / 3;
-        grid-row: 5 / 6;
         align-self: center;
         justify-self: flex-start;
 
@@ -127,6 +141,16 @@
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 18rem 7rem;
+
+        &--1 {
+            grid-column: 2 / 3;
+            grid-row: 5 / 6;
+        }
+
+        &--2 {
+            grid-column: 2 / 3;
+            grid-row: 8 / 9;
+        }
 
         @include respond(tab-port) {
             grid-column: 2 / 4;
@@ -150,9 +174,16 @@
         grid-row: 1 / 2;
         grid-column: 1 / -1;
 
-        background-image: url('../../../assets/community/events/event-1.jpg');
         background-size: cover;
         background-position: center;
+
+        &--1 {
+            background-image: url('../../../assets/community/events/event-1.jpg');
+        }
+
+        &--2 {
+            background-image: url('../../../assets/community/events/event-2.jpg');
+        }
     }
 
     &__date {

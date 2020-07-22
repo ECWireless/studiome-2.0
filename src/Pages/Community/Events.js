@@ -39,17 +39,30 @@ class Events extends Component {
                     As part of our mission, we host film classes, professional speakers, and local events.
                 </p>
 
-                <h3 className="events__subheading h3 b">Past Events</h3>
-                <div className="events__subheading-line" />
+                <h3 className="events__subheading events__subheading--1 h3 b">Upcoming Events</h3>
+                <div className="events__subheading-line events__subheading-line--1" />
 
+                <a
+                    href="https://www.facebook.com/events/2704390353218173/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="events__card events__card--1"
+                >
+                    <div className="events__photo events__photo--2" />
+                    <p className="events__date p-s orange">Thurs, July 23rd, 3pm</p>
+                    <h3 className="events__title p-m">Getting Back to Work in the COVID Environment - pt. 2</h3>
+                </a>
+
+                <h3 className="events__subheading events__subheading--2 h3 b">Past Events</h3>
+                <div className="events__subheading-line events__subheading-line--2" />
 
                 <a
                     href="https://www.eventbrite.com/e/teaching-me-with-dorin-williams-and-studiome-tickets-93586924009"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="events__card"
+                    className="events__card events__card--2"
                 >
-                    <div className="events__photo" />
+                    <div className="events__photo events__photo--1" />
                     <p className="events__date p-s orange">Sat, March 14th, 1pm</p>
                     <h3 className="events__title p-m">Teaching Me with Dorin Williams & StudioME</h3>
                 </a>
