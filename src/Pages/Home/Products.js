@@ -7,6 +7,7 @@ import ProductsModal from '../../components/ProductModal';
 import ProductRentals from './Products/ProductRentals';
 import ProductServices from './Products/ProductServices';
 import ProductMemberships from './Products/ProductMemberships';
+import Button from '../../components/Button'
 
 class Products extends Component {
 
@@ -203,6 +204,11 @@ class Products extends Component {
                 {this.props.rentalToggle && <ProductRentals onModalToggle={this.onModalToggle} />}
                 {this.props.servicesToggle && <ProductServices />}
                 {this.props.membershipsToggle && <ProductMemberships />}
+
+                <div id="products__conferencing-container">
+                    <h2 id="products__conferencing-heading" className="h2 bold uppercase center">Video Conferencing Solutions</h2>
+                    <Button d="products__conferencing-button" size={'l'}>Learn More</Button>
+                </div>
             </div>
         )
     }

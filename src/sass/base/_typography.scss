@@ -30,7 +30,6 @@
 
     @include respond(phone) {
         font-size: 4rem;
-        margin-top: 4rem;
     }
 
     @include respond(small-phone) {
