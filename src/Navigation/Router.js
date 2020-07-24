@@ -15,6 +15,7 @@ const Events = React.lazy(() => import ('../Pages/Community/Events'));
 const Learn = React.lazy(() => import ('../Pages/Community/Learn'));
 const Gallery = React.lazy(() => import ('../Pages/Community/Gallery'));
 const Swag = React.lazy(() => import ('../Pages/Community/Swag'));
+const Virtual = React.lazy(() => import ('../Pages/Virtual'));
 
 export default function Router(props) {
     return (
@@ -75,6 +76,12 @@ export default function Router(props) {
                     render={() => 
                         <React.Suspense fallback={<Spinner />}>
                             <Equipment />
+                        </React.Suspense>} 
+                />
+                <Route path="/virtual" exact
+                    render={() => 
+                        <React.Suspense fallback={<Spinner />}>
+                            <Virtual />
                         </React.Suspense>} 
                 />
                 <Redirect to="/" exact />

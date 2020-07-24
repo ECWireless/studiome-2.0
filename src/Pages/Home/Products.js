@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 import * as actions from '../../redux/actions';
 
 // Components
@@ -207,7 +208,11 @@ class Products extends Component {
 
                 <div id="products__conferencing-container">
                     <h2 id="products__conferencing-heading" className="h2 bold uppercase center">Video Conferencing Solutions</h2>
-                    <Button d="products__conferencing-button" size={'l'}>Learn More</Button>
+                    <NavLink
+                        to="/virtual" exact
+                    >
+                        <Button d="products__conferencing-button" size={'l'}>Learn More</Button>
+                    </NavLink>
                 </div>
             </div>
         )
