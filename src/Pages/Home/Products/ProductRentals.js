@@ -27,6 +27,7 @@ class ProductRentals extends Component {
         return (
             <React.Fragment>
                 <ProductRentalItem
+                    style={{ animation: 'none'}}
                     index={1}
                     name={"Self-Guided Studio"}
                     onModalToggle={this.props.onModalToggle.bind(this, 1)}

@@ -3,7 +3,7 @@ import respondTo from './Breakpoints'
 
 export const Line = styled.div`
 ${props => css`
-    width: ${props.width * .6}px;
+    width: ${props.width * .5}px;
     height: ${props.height * .6}px;
     margin: 0 auto;
 

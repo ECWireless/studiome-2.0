@@ -9,9 +9,11 @@ import { Line } from '../components/Lines'
 const Banner = (props) => {
     return (
         <BannerContainer style={{backgroundImage: `url(${props.image})`}} className="flex-column banner-container">
-            <h1 className={`h1 ${props.textColor === "grey" ? "grey" : "white"} uppercase`}>{props.text}</h1>
-            <Box1 marginTop={20}>
-                <Line width={100} height={3} color={props.color} />
+            <Box1 marginTop={10}>
+                <h1 className={`h1 ${props.textColor === "grey" ? "grey" : "white"} center uppercase`}>{!props.text ? props.children : props.text}</h1>
+                <Box1 marginTop={20}>
+                    <Line width={100} height={3} color={props.color} />
+                </Box1>
             </Box1>
         </BannerContainer>
     )

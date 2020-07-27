@@ -28,6 +28,10 @@ export const Col2 = styled.div`
         display: flex;
         flex-direction: column;
 
+        ${props => props.flip && css`
+            flex-direction: column-reverse;
+        `}
+
         ${respondTo.xs`
         `}
         

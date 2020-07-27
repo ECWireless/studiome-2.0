@@ -9,7 +9,9 @@ import BannerImage from '../../assets/about/team/Team-Banner-small.jpg';
 export default function Team() {
     return (
         <>
-            <Banner color="green" text="Team" textColor="grey" image={BannerImage}/>
+            <Banner color="green" textColor="grey" image={BannerImage}>
+                Team
+            </Banner>
             <div className="container-new" style={{margin: '0 auto'}}>
 
                 {/* Row 1 */}
