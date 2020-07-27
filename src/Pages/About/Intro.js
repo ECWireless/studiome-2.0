@@ -5,6 +5,8 @@ import StudioRendering from '../../assets/about/intro/studiome_rendering.png'
 // Components
 import Banner from '../../components/Banner'
 import Button from '../../components/Button'
+import { Box2 } from '../../components/Boxes'
+import { Col2, Col2Right, Col2Left } from '../../components/Containers'
 
 // Images
 import BannerImage from '../../assets/about/intro/Banner-3.jpg'
@@ -46,18 +48,22 @@ export default function Intro(props) {
                         webkitallowfullscreen="true" mozallowfullscreen="true" allowFullScreen>
                     </iframe>
                 </div>
-                <div className="col-2" style={{textAlign: 'center', marginTop: '4rem'}}>
-                    <div className="col-2-1">
-                        <h3 className="h3" style={{marginBottom: '2rem'}}>Located in East Liberty:</h3>
-                        <p className="p-l" style={{marginBottom: '.5rem'}}>5819 Penn Avenue</p>
-                        <p className="p-l">Pittsburgh, PA 15206</p>
-                    </div>
-                    <div className="col-2-2" id="about__1-hours-heading">
-                        <h3 className="h3" style={{marginBottom: '2rem'}}>Operating Hours:</h3>
-                        <p className="p-l" style={{marginBottom: '.5rem'}}>Monday - Saturday</p>
-                        <p className="p-l">8am - 6pm</p>
-                    </div>
-                </div>
+                <Col2 style={{width: '60%', margin: '0 auto'}}>
+                    <Box2 marginTop={75}>
+                        <Col2Left align={'center'} justify={'cetner'}>
+                            <h3 className="h3" style={{marginBottom: '2rem'}}>Located in East Liberty:</h3>
+                            <p className="p-l" style={{marginBottom: '.5rem'}}>5819 Penn Avenue</p>
+                            <p className="p-l">Pittsburgh, PA 15206</p>
+                        </Col2Left>
+                    </Box2>
+                    <Box2 marginTop={75}>
+                        <Col2Right align={'center'} justify={'cetner'}>
+                            <h3 className="h3" style={{marginBottom: '2rem'}}>Operating Hours:</h3>
+                            <p className="p-l" style={{marginBottom: '.5rem'}}>Monday - Saturday</p>
+                            <p className="p-l">8am - 6pm</p>
+                        </Col2Right>
+                    </Box2>
+                </Col2>
                 <div className="flex">
                     <img src={StudioRendering} alt="Studio Rendering" id="about__1-rendering" />
                 </div>
