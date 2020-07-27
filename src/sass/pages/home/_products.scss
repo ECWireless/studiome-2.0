@@ -6,11 +6,11 @@
     }
 
     @include respond(tab-port) { 
-        grid-template-rows: 15rem repeat(3, 28rem) 18rem 7rem;
+        grid-template-rows: 15rem repeat(3, 28rem) 18rem 10rem;
     }
 
     @include respond(small-phone) {
-        grid-template-rows: 12rem repeat(3, 25rem) 17rem 5rem;
+        grid-template-rows: 12rem repeat(3, 25rem) 17rem 8rem;
     }
 
     // Buttons
@@ -61,8 +61,9 @@
     &__conferencing-container {
         grid-column: 2 / 14;
         grid-row: 4 / 5;
-        width: 100%;
+        width: 85rem;
         height: 100%;
+        margin: 0 auto;
         background: #fff;
         border: 2px solid $color-orange;
         border-radius: 15px;
@@ -74,6 +75,18 @@
         @include respond(tab-port) {
             grid-column: 2 / 8;
             grid-row: 5 / 6;
+            width: 52rem;
+            margin-top: 3rem;
+        }
+
+        @include respond(phone) {
+            width: 38rem;
+            margin-top: 3rem;
+        }
+
+        @include respond(small-phone) {
+            width: 32rem;
+            margin-top: 2rem;
         }
     }
 
