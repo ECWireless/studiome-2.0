@@ -135,7 +135,8 @@ export default class Contact extends Component {
                                     allowFullScreen
                                     title="map"
                                 ></iframe>
-
+                                <p className="p-xl" id="about__4-email" style={{padding: 0}}>Email: StudioMELLC@gmail.com</p>
+                                <p className="p-xl" id="about__4-phone" style={{padding: 0}}>Phone: (412) 404-2868</p>
                                 <h2 className="h2" id="about__4-heading-1">Interested in an internship?</h2>
                                 <h3 className="h3 l" id="about__4-heading-2">
                                     <a
