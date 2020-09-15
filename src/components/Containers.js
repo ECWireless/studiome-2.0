@@ -92,4 +92,13 @@ export const Flex = styled.div`
         flex-direction: ${props.direction};
         height: ${props.height};
     `}
+
+    ${props => props.wrap && css`
+        flex-wrap: wrap;
+        justify-content: center;
+
+        ${respondTo.sm`
+            justify-content: space-between;
+        `}
+    `}
 `

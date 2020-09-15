@@ -90,17 +90,20 @@ export const Box3 = styled.div`
         css`
             width: ${props.width * .6}px;
             margin-top: ${props.marginTop * .7}px;
+            margin-bottom: ${props.marginBottom * .7}px;
             margin-left: ${props.marginLeft * .7}px;
 
             ${respondTo.xs`
                 width: ${props.width * .7}px;
                 margin-top: ${props.marginTop * .8}px;
+                margin-bottom: ${props.marginBottom * .8}px;
                 margin-left: ${props.marginLeft * .8}px;
             `}
             
             ${respondTo.sm`
                 width: ${props.width}px;
                 margin-top: ${props.marginTop * .9}px;
+                margin-bottom: ${props.marginBottom * .9}px;
                 margin-left: ${props.marginLeft * .9}px;
             `}
 
