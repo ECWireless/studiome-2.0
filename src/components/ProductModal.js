@@ -38,7 +38,9 @@ class ProductModal extends Component {
                     </div>
                     <h2 className="product-modal__heading h2 h2--teal b">{this.props.heading}</h2>
                     <div className="product-modal__border" />
-                    <p className="product-modal__paragraph p-l">{this.props.subheading}</p>
+                    <p className="product-modal__description p-l">{this.props.description}</p>
+                    <div className="product-modal__photo" style={{ backgroundImage: `url(${this.props.photo})` }} />
+                    <p className="product-modal__duration p-l">{this.props.subheading}</p>
                     <a
                         className="product-modal__alt-placement-1"
                         href={this.props.url1}
@@ -63,7 +65,9 @@ class ProductModal extends Component {
                     </div>
                     <h2 className="product-modal__heading h2 h2--teal b">{this.props.heading}</h2>
                     <div className="product-modal__border" />
-                    <p className="product-modal__paragraph p-l">{this.props.subheading}</p>
+                    <p className="product-modal__description p-l">{this.props.description}</p>
+                    <div className="product-modal__photo" style={{ backgroundImage: `url(${this.props.photo})` }} />
+                    <p className="product-modal__duration p-l">{this.props.subheading}</p>
                     <a
                         className="product-modal__placement-1"
                         href={this.props.url1}
@@ -95,7 +99,9 @@ class ProductModal extends Component {
                     </div>
                     <h2 className="product-modal__heading h2 h2--teal p-l">{this.props.heading}</h2>
                     <div className="product-modal__border" />
-                    <p className="product-modal__paragraph p-l">{this.props.subheading}</p>
+                    <p className="product-modal__description p-l">{this.props.description}</p>
+                    <div className="product-modal__photo" style={{ backgroundImage: `url(${this.props.photo})` }} />
+                    <p className="product-modal__duration p-l">{this.props.subheading}</p>
                     <NavLink
                         onClick={this.onCameraSelect}
                         className="product-modal__placement-1"

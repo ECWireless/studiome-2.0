@@ -1,12 +1,12 @@
 .product-modal {
     position: fixed;
-    top: 40%;
+    top: 50%;
     left: 50%;
     z-index: 15;
     transform: translate(-50%, -50%) scale(0);
 
-    height: 22rem;
-    width: 60rem;
+    height: 75rem;
+    width: 100rem;
 
     background: $color-white;
     box-shadow: $shadow-large;
@@ -14,18 +14,30 @@
 
     display: grid;
     grid-template-columns: 1fr repeat(3, 15rem) 1fr;
-    grid-template-rows: 7rem 6rem 7rem;
+    grid-template-rows: 10rem 12rem 35rem 6rem 7rem;
+
+    @include respond(tab-land) {
+        width: 90rem;
+    }
+
+    @include respond(tab-port) {
+        width: 60rem;
+    }
 
     @include respond(phone) {
-        height: 40rem;
+        height: 65rem;
         width: 40rem;
 
         grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: 1fr repeat(5, 6.5rem) 1fr;
+        grid-template-rows: 1fr 6.5rem 12rem 20rem repeat(4, 6rem) 1fr;
     }
 
     @include respond(small-phone) {
+        height: 56rem;
         width: 30rem;
+
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr 6.5rem 11rem 16rem repeat(4, 5rem) 1fr;
     }
 
     &__popup {
@@ -88,11 +100,10 @@
         @include respond(phone) {
             grid-row: 2 / 3;
             position: relative;
-            top: -4rem;
+            top: -1rem;
         }
 
         @include respond(small-phone) {
-            top: -5rem;
             right: -1rem;
         }
     }
@@ -123,49 +134,101 @@
         grid-column: 3 / 4;
         grid-row: 1 / 2;
         border-bottom: 2px solid $color-orange;
+        align-self: flex-end;
+        margin-bottom: 1rem;
 
         @include respond(phone) {
             grid-column: 2 / 3;
             grid-row: 2 / 3;
-            align-self: flex-end;
             margin-bottom: .5rem;
         }
     }
 
-    &__paragraph {
+    &__description {
         grid-column: 1 / -1;
         grid-row: 2 / 3;
+        width: 70rem;
+        margin: 0 auto;
+        text-align: center;
+        align-self: center;
+
+        @include respond(tab-port) {
+            width: 50rem;
+        }
+
+        @include respond(phone) {
+            grid-row: 3 / 4;
+            width: 35rem;
+        }
+
+        @include respond(small-phone) {
+            width: 25rem;
+        }
+    }
+
+    &__photo {
+        height: 30rem;
+        width: 70rem;
+        background-size: cover;
+        background-position: center;
+        grid-column: 1 / -1;
+        grid-row: 3 / 4;
+        align-self: flex-start;
+        justify-self: center;
+        border-radius: 10px;
+        border: 1px solid $color-orange;
+
+        @include respond(tab-port) {
+            height: 28rem;
+            width: 50rem;
+        }
+
+        @include respond(phone) {
+            grid-row: 4 / 5;
+            width: 35rem;
+            height: 18rem;
+        }
+
+        @include respond(small-phone) {
+            width: 25rem;
+            height: 15rem;
+        }
+    }
+
+    &__duration {
+        grid-column: 1 / -1;
+        grid-row: 4 / 5;
 
         text-align: center;
         align-self: center;
 
         @include respond(phone) {
-            grid-row: 3 / 4;
+            grid-row: 5 / 6;
         }
     }
 
     &__placement-1 {
         grid-column: 2 / 3;
-        grid-row: 3 / 4;
+        grid-row: 5 / 6;
         justify-self: center;
         align-self: center;
 
         @include respond(phone) {
             grid-column: 1 / -1;
-            grid-row: 4 / 5;
+            grid-row: 6 / 7;
         }
     }
 
     &__alt-placement-1 {
         grid-column: 2 / 3;
-        grid-row: 3 / 4;
+        grid-row: 5 / 6;
         justify-self: flex-end;
         align-self: center;
         margin-right: -5rem;
 
         @include respond(phone) {
             grid-column: 1 / -1;
-            grid-row: 4 / 5;
+            grid-row: 6 / 7;
             justify-self: center;
             align-self: flex-end;
             margin-right: 0;
@@ -174,26 +237,26 @@
 
     &__placement-2 {
         grid-column: 3 / 4;
-        grid-row: 3 / 4;
+        grid-row: 5 / 6;
         justify-self: center;
         align-self: center;
 
         @include respond(phone) {
             grid-column: 1 / -1;
-            grid-row: 5 / 6;
+            grid-row: 7 / 8;
         }
     }
 
     &__alt-placement-2 {
         grid-column: 4 / 5;
-        grid-row: 3 / 4;
+        grid-row: 5 / 6;
         justify-self: flex-start;
         align-self: center;
         margin-left: -5rem;
 
         @include respond(phone) {
             grid-column: 1 / -1;
-            grid-row: 5 / 6;
+            grid-row: 7 / 8;
             justify-self: center;
             align-self: flex-end;
             margin-left: 0;
@@ -202,13 +265,13 @@
 
     &__placement-3 {
         grid-column: 4 / 5;
-        grid-row: 3 / 4;
+        grid-row: 5 / 6;
         justify-self: center;
         align-self: center;
 
         @include respond(phone) {
             grid-column: 1 / -1;
-            grid-row: 6 / 7;
+            grid-row: 8 / 9;
         }
     }
 
@@ -224,8 +287,13 @@
         text-transform: uppercase;
         outline: none;
         font-weight: 600;
-
         transition: .3s all ease;
+
+        @include respond(small-phone) {
+            width: 10rem;
+            height: 3.5rem;
+    
+        }
 
         &:hover {
             cursor: pointer;

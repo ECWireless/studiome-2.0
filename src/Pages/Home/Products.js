@@ -10,6 +10,14 @@ import ProductServices from './Products/ProductServices';
 import ProductMemberships from './Products/ProductMemberships';
 import Button from '../../components/Button'
 
+// Photos
+import PhotoSelfGuided from '../../assets/home/products/Studio-E-large.jpg';
+import PhotoMPStudio from '../../assets/home/products/MP-Studio-large.jpg';
+import PhotoPodcastLounge from '../../assets/home/products/Podcast-large.jpg';
+import PhotoAudioRoom from '../../assets/home/products/Audio-Room-large.jpg';
+import PhotoEquipment from '../../assets/home/products/Camera-large.jpg';
+import PhotoWorkstation from '../../assets/home/products/Workstation-large.jpg';
+
 class Products extends Component {
 
     state = {
@@ -20,6 +28,8 @@ class Products extends Component {
 
         // Modal Details
         heading: '',
+        description: '',
+        photo: null,
         subheading: '',
         option1: '',
         url1: '',
@@ -64,6 +74,8 @@ class Products extends Component {
             case 1:
                 this.setState({
                     heading: "Self-Guided Studio",
+                    description: 'The Self-Guided Studio is an easy-to-operate, all-inclusive space that’s perfect for interviews, training videos, social media videos and teleprompted scripts.',
+                    photo: PhotoSelfGuided,
                     subheading: "Pick a duration to view:",
                     option1: "2 Hours",
                     url1: "https://studiome.me/product/self-guided-studio-e-2-hour-package/",
@@ -77,6 +89,8 @@ class Products extends Component {
             case 2:
                 this.setState({
                     heading: "Multi-Purpose Studio",
+                    description: 'At 410 square feet, the multi-purpose studio comes with up to 6 LED panel lighting on moveable stands and the option to choose from four 12′ seamless paper backdrops.',
+                    photo: PhotoMPStudio,
                     subheading: "Pick a duration to view:",
                     option1: "2 Hours",
                     url1: "https://studiome.me/product/multi-purpose-studio-2-hour-package/",
@@ -89,6 +103,8 @@ class Products extends Component {
             case 3:
                 this.setState({
                     heading: "Podcast Lounge",
+                    description: 'The Podcast Lounge is your dedicated hub for professional-quality audio and video podcasting.',
+                    photo: PhotoPodcastLounge,
                     subheading: "Pick a duration to view:",
                     option1: "Hourly",
                     url1: "https://studiome.me/product/podcast-lounge-hourly/",
@@ -101,6 +117,8 @@ class Products extends Component {
             case 4:
                 this.setState({
                     heading: "Audio Studio",
+                    description: 'The soundproof audio studio is perfect for your podcasts, audiobook recordings, voice recordings, audio editing and screen captures and is available for hourly ($39/hour) and daily rental ($299/day).',
+                    photo: PhotoAudioRoom,
                     subheading: "Pick a duration to view:",
                     option1: "Hourly",
                     url1: "https://studiome.me/product/soundproof-audio-studio-hourly/",
@@ -113,6 +131,8 @@ class Products extends Component {
             case 5:
                 this.setState({
                     heading: "Equipment",
+                    description: 'StudioME offers a variety of competitively priced rental equipment, ranging from DSLRs, Condensor Mics, Shotgun Mics, Monitors, and LED Lights.',
+                    photo: PhotoEquipment,
                     subheading: "Pick a category to view:",
                     option1: "Camera",
                     url1: "",
@@ -125,6 +145,8 @@ class Products extends Component {
             case 6:
                 this.setState({
                     heading: "Edit Workstation",
+                    description: 'Our Editing Stations come with the Adobe Creative Cloud, Final Cut Pro X, iMovie and free access to our professional music and sound effects libraries.',
+                    photo: PhotoWorkstation,
                     subheading: "Pick a duration to view:",
                     option1: "Hourly",
                     url1: "https://studiome.me/product/editing-workstation-1-hour/",
@@ -188,6 +210,8 @@ class Products extends Component {
                     class={this.state.modalClass}
 
                     heading={this.state.heading}
+                    description={this.state.description}
+                    photo={this.state.photo}
                     subheading={this.state.subheading}
 
                     option1={this.state.option1}
