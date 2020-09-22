@@ -23,7 +23,7 @@
 }
 
 .banner-alt-text {
-    color: $color-grey-hover;
+    color: #fff;
 
     @include respond(tab-port) {
         color: #fff;

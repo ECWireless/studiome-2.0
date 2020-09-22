@@ -4,6 +4,7 @@ import respondTo from './Breakpoints'
 
 // Components
 import { Box1 } from '../components/Boxes'
+import { Flex } from '../components/Containers'
 import { Line } from '../components/Lines'
 
 const Banner = (props) => {
@@ -21,9 +22,14 @@ const Banner = (props) => {
 
 export const BannerAlt = (props) => {
     return (
-        <BannerContainer style={{backgroundImage: `url(${props.image})`}} className="flex-column banner-container">
-            <div className="banner-background" style={{zIndex: 1}} />
-            <h1 className="h1 uppercase banner-alt-text" style={{zIndex: 2}}>{props.text}</h1>
+        <BannerContainer style={{backgroundImage: `url(${props.image})`}}>
+            <Flex direction={'column'} style={{ height: '100%' }} align={'center'} justify={'center'}>
+                <BannerBackground />
+                <h1 className="h1 uppercase banner-alt-text" style={{zIndex: 2}}>{!props.text ? props.children : props.text}</h1>
+                <Box1 marginTop={20} style={{zIndex: 3}}>
+                    <Line width={100} height={3} color={props.color} />
+                </Box1>
+            </Flex>
         </BannerContainer>
     )
 }
@@ -35,9 +41,37 @@ const BannerContainer = styled.div`
     background-position: center;
     align-items: center;
     justify-content: center;
+    position: relative;
 
     ${respondTo.sm`
         height: 30rem;
+    `}
+`
+
+const BannerBackground = styled.div`
+    position: absolute;
+    background: rgba(255, 255, 255, 0.9);
+    height: 14rem;
+    padding: 4rem;
+    border-radius: 15px;
+    z-index: 2;
+
+    ${respondTo.xs`
+        height: 20rem;
+    `}
+
+    ${respondTo.sm`
+        background-color: rgba(0, 0, 0, 0.5);
+        height: 30rem;
+        width: 100%;
+        border-radius: 0;
+    `}
+
+    ${respondTo.md`
+        background-color: rgba(0, 0, 0, 0.5);
+        height: 30rem;
+        width: 100%;
+        border-radius: 0;
     `}
 `
 
