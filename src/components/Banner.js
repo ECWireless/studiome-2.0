@@ -43,6 +43,10 @@ const BannerContainer = styled.div`
     justify-content: center;
     position: relative;
 
+    ${respondTo.xs`
+        height: 20rem;
+    `}
+
     ${respondTo.sm`
         height: 30rem;
     `}
@@ -50,10 +54,10 @@ const BannerContainer = styled.div`
 
 const BannerBackground = styled.div`
     position: absolute;
-    background: rgba(255, 255, 255, 0.9);
+    background-color: rgba(0, 0, 0, 0.5);
     height: 14rem;
+    width: 100%;
     padding: 4rem;
-    border-radius: 15px;
     z-index: 2;
 
     ${respondTo.xs`
@@ -61,10 +65,7 @@ const BannerBackground = styled.div`
     `}
 
     ${respondTo.sm`
-        background-color: rgba(0, 0, 0, 0.5);
         height: 30rem;
-        width: 100%;
-        border-radius: 0;
     `}
 
     ${respondTo.md`

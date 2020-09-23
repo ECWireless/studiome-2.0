@@ -101,4 +101,9 @@ export const Flex = styled.div`
             justify-content: space-between;
         `}
     `}
+
+    ${props => props.wrap === 'flex-start' && css`
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    `}
 `
