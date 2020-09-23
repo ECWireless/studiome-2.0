@@ -28,6 +28,10 @@ export const Line = styled.div`
         background: ${props.color};
     `};
 
+    ${props => props.left && css`
+        margin: 0;
+    `};
+
     ${props => props.color === 'blue' && css`
         background: #8DCBC0;
     `};

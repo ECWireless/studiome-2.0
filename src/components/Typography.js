@@ -182,6 +182,43 @@ export const P3 = styled.div`
         font-size: 1.8rem;
     `}
 
+    ${props => props.color && css`
+        color: ${props.color};
+    `}
+
+    ${props => props.center && css`
+        text-align: center;
+    `}
+
+    ${props => props.light && css`
+        font-weight: 100;
+    `}
+
+    ${props => props.uppercase && css`
+        text-transform: uppercase;
+    `}
+`
+
+export const P4 = styled.div`
+    font-size: 1rem;
+    color: #757575;
+
+    ${respondTo.xs`
+        font-size: 1.1rem;
+    `}
+    
+    ${respondTo.sm`
+        font-size: 1.2rem;
+    `}
+
+    ${respondTo.md`
+        font-size: 1.4rem;
+    `}
+
+    ${props => props.color && css`
+        color: ${props.color};
+    `}
+
     ${props => props.center && css`
         text-align: center;
     `}
