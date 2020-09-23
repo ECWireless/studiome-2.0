@@ -209,7 +209,7 @@ class App extends React.Component {
 							closeMembershipNotify={this.closeMembershipNotify}
 						/>
 					} */}
-					<TempClosingModal onQuickButtonFix={this.onQuickButtonFix} />
+					{/* <TempClosingModal onQuickButtonFix={this.onQuickButtonFix} /> */}
 					<Header
 						toggleLargeSidebar={this.toggleLargeSidebar}
 						onScrollHome={onScrollHome}

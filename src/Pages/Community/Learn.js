@@ -75,8 +75,6 @@ const Learn = () => {
           }
     }, [category])
 
-    
-
     return (
         <>
             <BannerAlt image={BannerImage} color={colors.green}>
