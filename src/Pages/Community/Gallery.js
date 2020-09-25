@@ -381,10 +381,8 @@ const Photo = styled.div`
     `}
 
     ${respondTo.xl`
-        height: 50rem;
-        width: 50rem;
-        margin-right: 3rem;
-        margin-bottom: 3rem;
+        height: 31rem;
+        width: 31rem;
     `}
 
     &:hover {
