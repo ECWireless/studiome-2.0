@@ -74,7 +74,7 @@ class Products extends Component {
             case 1:
                 this.setState({
                     heading: "Self-Guided Studio",
-                    description: 'The Self-Guided Studio is an easy-to-operate, all-inclusive space that’s perfect for interviews, training videos, social media videos and teleprompted scripts.',
+                    description: `The Self-Guided Studio is a turn-key, all-inclusive space that’s perfect for interviews, training videos, social media videos and teleprompted scripts. It's easy to operate yourself using our custom app or you can hire an assistant. Virtual conferencing and live-streaming options available.`,
                     photo: PhotoSelfGuided,
                     subheading: "Pick a duration to view:",
                     option1: "2 Hours",
@@ -89,7 +89,7 @@ class Products extends Component {
             case 2:
                 this.setState({
                     heading: "Multi-Purpose Studio",
-                    description: 'At 410 square feet, the multi-purpose studio comes with up to 6 LED panel lighting on moveable stands and the option to choose from four 12′ seamless paper backdrops.',
+                    description: 'At 410 square feet, the multi-purpose studio comes with up to 6 LED panel lighting on moveable stands, a built-in dressing room and the option to choose from four 12′ seamless paper backdrops. This studio can be outfitted for virtual capabilities.',
                     photo: PhotoMPStudio,
                     subheading: "Pick a duration to view:",
                     option1: "2 Hours",
@@ -103,7 +103,7 @@ class Products extends Component {
             case 3:
                 this.setState({
                     heading: "Podcast Lounge",
-                    description: 'The Podcast Lounge is your dedicated hub for professional-quality audio and video podcasting.',
+                    description: 'The Podcast Lounge is user-friendly and perfect for professional-quality audio and multi-camera video podcasting. This studio is capable of virtual conferencing and live-streaming.',
                     photo: PhotoPodcastLounge,
                     subheading: "Pick a duration to view:",
                     option1: "Hourly",
