@@ -1,8 +1,10 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { graphql } from 'react-apollo'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 import Fade from 'react-reveal/Fade'
+import imageUrlBuilder from '@sanity/image-url'
+import { client } from '../../client'
 import respondTo from '../../components/Breakpoints'
 
 // Queries
@@ -19,14 +21,13 @@ import { CustomLink } from '../../components/Links'
 import { H3, P1, P3, P4 } from '../../components/Typography'
 
 // Images
-import BannerImage from '../../assets/community/events/events-banner.jpg'
 import EventImage1 from '../../assets/community/events/event-1.jpg'
 import EventImage2 from '../../assets/community/events/event-2.jpg'
 
 export const Events = ({
     addImpression
 }) => {
-    console.log(addImpression)
+    const [content, setContent] = useState({})
 
     useEffect(() => {
         window.scroll({
@@ -38,13 +39,21 @@ export const Events = ({
 				date: new Date().toISOString().slice(0, 10),
 				productId: "5e5fc31d5393db0004e43a68"
 			}
-		})
+        })
+        
+        client.fetch('*[_type == "community" && slug.current == "v1"][0]').then(pageProps => {
+            setContent(pageProps)
+        })
     }, [addImpression])
+
+    function urlFor(source) {
+        return imageUrlBuilder(client).image(source)
+    }
 
     return (
         <>
-            <BannerAlt image={BannerImage} color={colors.green}>
-                Hosted Events
+            <BannerAlt image={urlFor(content.eventsBannerImage)} color={colors.green}>
+                {content.eventsBannerTitle}
             </BannerAlt>
             <Container>
                 <Box1 marginTop={50} marginBottom={50}>
@@ -58,7 +67,7 @@ export const Events = ({
                 </Box1>
                 <Fade>
                     <P1 center>
-                        StudioME believes in easy and community-driven media creation. As part of our mission, we host film classes, professional speakers, and local events.
+                        {content.eventsDescription}
                     </P1>
                 </Fade>
                 <Box3 marginTop={75}>

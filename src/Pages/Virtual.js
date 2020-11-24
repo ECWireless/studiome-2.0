@@ -1,5 +1,7 @@
 import React, { useState} from 'react'
 import styled from 'styled-components'
+import imageUrlBuilder from '@sanity/image-url'
+import { client } from '../client'
 import respondTo from '../components/Breakpoints'
 
 // Components
@@ -11,10 +13,9 @@ import { H2, H3, P1, P3 } from '../components/Typography'
 import ProductRentalItem from '../Pages/Home/Products/ProductRentalItem'
 import ProductsModal from '../components/ProductModal'
 
-// Images
-import BannerImage from '../assets/home/products/Equipment-Banner-Dark.jpg'
-
 const Virtual = () => {
+    const [content, setContent] = useState({})
+
     // Modal Functionality
     const [modal, setModal] = useState(false)
     const [modalClass, setModalClass] = useState('product-modal')
@@ -23,6 +24,8 @@ const Virtual = () => {
     // Modal Details
     const [heading, setHeading] = useState('')
     const [subheading, setSubheading] = useState('')
+    const [description, setDescription] = useState('')
+    const [photo, setPhoto] = useState('')
     const [option1, setOption1] = useState('')
     const [url1, setUrl1] = useState('')
     const [option2, setOption2] = useState('')
@@ -32,6 +35,17 @@ const Virtual = () => {
 
     // Loading
     const [loading, setLoading] = useState(false)
+
+    React.useEffect(() => {
+        window.scroll({
+            top: 0,
+        })
+
+        client.fetch('*[_type == "virtual" && slug.current == "v1"][0]').then(pageProps => {
+            setContent(pageProps)
+            console.log(pageProps)
+        })
+    }, [])
 
     function onModalToggle(product) {
         if (!modal) {
@@ -51,7 +65,9 @@ const Virtual = () => {
     function onProductToggle(product) {
         switch(product) {
             case 1:
-                setHeading('Self-Guided Studio')
+                setHeading(content.product1Name)
+                setDescription(content.product1DescriptionShort)
+                setPhoto(urlFor(content.product1Image))
                 setSubheading('Pick a duration to view:')
                 setOption1('2 Hours')
                 setUrl1('https://studiome.me/product/self-guided-studio-e-2-hour-package/')
@@ -63,6 +79,8 @@ const Virtual = () => {
 
             case 2:
                 setHeading('Podcast Lounge')
+                setDescription(content.product2DescriptionShort)
+                setPhoto(urlFor(content.product2Image))
                 setSubheading('Pick a duration to view:')
                 setOption1('Hourly')
                 setUrl1('https://studiome.me/product/podcast-lounge-hourly/')
@@ -74,6 +92,8 @@ const Virtual = () => {
 
             case 3:
                 setHeading('Live Stream Kit')
+                setDescription(content.product3DescriptionShort)
+                setPhoto(urlFor(content.product3Image))
                 setSubheading('Pick a duration to view:')
                 setOption1('1 Day')
                 setUrl1('https://studiome.me/product/live-stream-kit-off-site-1-day/')
@@ -94,6 +114,10 @@ const Virtual = () => {
         }, 3000);
     }
 
+    function urlFor(source) {
+        return imageUrlBuilder(client).image(source)
+    }
+
     return (
         <>
             <ProductsModal
@@ -102,6 +126,8 @@ const Virtual = () => {
 
                 heading={heading}
                 subheading={subheading}
+                description={description}
+                photo={photo}
 
                 option1={option1}
                 url1={url1}
@@ -116,23 +142,27 @@ const Virtual = () => {
             <div className={backdropClass} onClick={onModalToggle} />
 
             {/* Main Content */}
-            <Banner image={BannerImage} color={'green'}>
-                Video Conferencing Solutions
+            <Banner image={urlFor(content.bannerImage)} color={'green'}>
+                {content.bannerTitle}
             </Banner>
             <Container>
                 <Box1 marginTop={100}>
-                    <P1 center>StudioME has several solutions to help you look professional for your web conference. And, as always, we're focused on making the process easier on you and your budget.</P1>
+                    <P1 center>
+                        {content.description}
+                    </P1>
                 </Box1>
                 <Box1 marginTop={75} style={{display: 'flex', alignItems: 'center'}}>
                     <Video 
                         title="1"
-                        src='https://player.vimeo.com/video/441447737'
+                        src={content.videoURL}
                         frameBorder="0" 
                         webkitallowfullscreen="true" mozallowfullscreen="true" allowFullScreen>
                     </Video>
                 </Box1>
                 <Box1 marginTop={100}>
-                    <H2 uppercase center>Video Conferencing Solutions</H2>
+                    <H2 uppercase center>
+                        {content.subheading}
+                    </H2>
                 </Box1>
                 <Col2 flip>
                     <Col2Left align={'center'} justify={'center'}>
@@ -140,19 +170,18 @@ const Virtual = () => {
                             <ProductRentalItem
                                 animation={false}
                                 index={1}
-                                name={"Self-Guided Studio"}
+                                name={content.product1Name}
+                                image={urlFor(content.product1Image)}
                                 onModalToggle={onModalToggle.bind(this, 1)}
                             />
                         </Box1>
                     </Col2Left>
                     <Col2Right align={'center'} justify={'center'}>
                         <Box1 marginTop={75}>
-                            <H3 center>Self-Guided Studio</H3>
+                            <H3 center>{content.product1Name}</H3>
                             <Box1 marginTop={25}>
-                                <P3 light center>The Self-Guided Studio is fully equipped with a professional camera, automated lighting and audio,
-                                    a teleprompter, and attached dressing room. Choose between green screen, white, black, or grey backdrops.
-                                    Record, livestream, or web conference from our computer, or bring one of your own. Our professional staff
-                                    will be happy to assist setting up your conference. This studio is available in 2, 6, or 10-hour blocks of time.
+                                <P3 light center>
+                                    {content.product1DescriptionLong}
                                 </P3>
                             </Box1>
                         </Box1>
@@ -165,12 +194,12 @@ const Virtual = () => {
                 <Col2>
                     <Col2Left align={'center'} justify={'center'}>
                         <Box1 marginTop={75}>
-                            <H3 center>Podcast Lounge</H3>
+                            <H3 center>
+                                {content.product2Name}
+                            </H3>
                             <Box1 marginTop={25}>
-                                <P3 light center>The Podcast Lounge is fully equipped with a three camera setup, lighting, couch, table,
-                                    attached dressing room, and microphones for up to 6 guests. Livestream or web conference from our computer
-                                    or bring one of your own. Our professional staff will be happy to assist setting up your conference.
-                                    This studio is available to rent for one-hour blocks of time.
+                                <P3 light center>
+                                    {content.product2DescriptionLong}
                                 </P3>
                             </Box1>
                         </Box1>
@@ -180,7 +209,8 @@ const Virtual = () => {
                             <ProductRentalItem
                                 animation={false}
                                 index={3}
-                                name={"Podcast Lounge"}
+                                name={content.product2Name}
+                                image={urlFor(content.product2Image)}
                                 onModalToggle={onModalToggle.bind(this, 2)}
                             />
                         </Box1>
@@ -196,18 +226,20 @@ const Virtual = () => {
                             <ProductRentalItem
                                 animation={false}
                                 index={7}
-                                name={"Live Stream Kit"}
+                                name={content.product3Name}
+                                image={urlFor(content.product3Image)}
                                 onModalToggle={onModalToggle.bind(this, 3)}
                             />
                         </Box1>
                     </Col2Left>
                     <Col2Right align={'center'} justify={'center'}>
                         <Box1 marginTop={75}>
-                            <H3 center>Live Stream Kit</H3>
+                            <H3 center>
+                                {content.product3Name}
+                            </H3>
                             <Box1 marginTop={25}>
-                                <P3 light center>With our portable Live Stream Kit, video conferencing from home has never been easier.
-                                    This kit comes with a freestanding all-in-one camera, light, and microphone device that plugs
-                                    right into your computer. This kit also includes a green or white backdrop. Rental options for 1, 3, or 7 days.
+                                <P3 light center>
+                                    {content.product3DescriptionLong}
                                 </P3>
                             </Box1>
                         </Box1>

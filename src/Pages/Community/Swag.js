@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
+import imageUrlBuilder from '@sanity/image-url'
+import { client } from '../../client'
 
 // Components
 import Button from '../../components/Button';
 import Spinner from '../../components/Spinner';
+
+function urlFor(source) {
+    return imageUrlBuilder(client).image(source)
+}
 
 export default class Swag extends Component {
 
@@ -17,9 +23,16 @@ export default class Swag extends Component {
             top: 0,
         });
         this.onFetchEquipment();
+
+        client.fetch('*[_type == "community" && slug.current == "v1"][0]').then(pageProps => {
+            this.setState({
+                ...this.state,
+                ...pageProps
+            })
+        })
     }
 
-    onFetchEquipment = (selected) => {
+    onFetchEquipment = () => {
         this.setState({
             ...this.state,
             isLoading: true,
@@ -66,9 +79,9 @@ export default class Swag extends Component {
         
         return (
             <div className="swag">
-            <div className="swag__banner" />
+            <div className="swag__banner" style={{ backgroundImage: `url(${urlFor(this.state.swagBannerImage)})` }} />
             <div className="swag__banner-container">
-                <h1 className="swag__heading h1">Swag</h1>
+                <h1 className="swag__heading h1">{this.state.swagBannerTitle}</h1>
                 <div className="swag__border" />
             </div>
 
@@ -76,7 +89,9 @@ export default class Swag extends Component {
                 <Button arrow text={"Back"} size={"m"} />
             </NavLink>
 
-            <p className="swag__description p-xl">With a focus on artists in our community, our swag is designed to celebrate photographers, videographers, podcasters, and media creators in the Pittsburgh area.</p>
+            <p className="swag__description p-xl">
+                {this.state.swagDescription}
+            </p>
 
             {content}
         </div>

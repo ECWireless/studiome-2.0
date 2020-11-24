@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 import styled, { css } from 'styled-components'
 import Fade from 'react-reveal/Fade'
+import imageUrlBuilder from '@sanity/image-url'
+import { client } from '../../client'
 import respondTo from '../../components/Breakpoints'
 
 
@@ -15,7 +17,6 @@ import PhotoGallery from '../../components/PhotoGallery'
 import { H3, P1 } from '../../components/Typography'
 
 // Images
-import BannerImage from '../../assets/community/gallery/gallery-banner.jpg'
 import StudiosImage1 from '../../assets/community/gallery/studios/studios-1.jpg'
 import StudiosImage2 from '../../assets/community/gallery/studios/studios-2.jpg'
 import StudiosImage3 from '../../assets/community/gallery/studios/studios-3.jpg'
@@ -147,6 +148,7 @@ const photos = [
 
 const Gallery = () => {
     const [category, setCategory] = useState('all')
+    const [content, setContent] = useState({})
     const [gallery, setGallery] = useState(false)
     const [galleryNumber, setGalleryNumber] = useState(0)
     const [data, setData] = useState(photos)
@@ -155,7 +157,15 @@ const Gallery = () => {
         window.scroll({
             top: 0,
         })
+
+        client.fetch('*[_type == "community" && slug.current == "v1"][0]').then(pageProps => {
+            setContent(pageProps)
+        })
     }, [])
+
+    function urlFor(source) {
+        return imageUrlBuilder(client).image(source)
+    }
 
     const selectPhoto = (photoNumber) => {
         setGallery(true)
@@ -214,8 +224,8 @@ const Gallery = () => {
 
     return (
         <>
-            <BannerAlt image={BannerImage} color={colors.green}>
-                Our Gallery
+            <BannerAlt image={urlFor(content.galleryBannerImage)} color={colors.green}>
+                {content.galleryBannerTitle}
             </BannerAlt>
             <Container>
                 <Box1 marginTop={50} marginBottom={50}>
@@ -229,7 +239,7 @@ const Gallery = () => {
                 </Box1>
                 <Fade>
                     <P1 center>
-                        This is the one-stop gallery for all aspects of StudioME. Peruse below to view each studio, our hosted events, the creation of the studio, and how other creatives are using the space.
+                        {content.galleryDescription}
                     </P1>
                 </Fade>
                 <Box1 marginTop={75} marginBottom={25}>

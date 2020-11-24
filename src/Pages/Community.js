@@ -1,25 +1,41 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
+import imageUrlBuilder from '@sanity/image-url'
+import { client } from '../client'
+
+function urlFor (source) {
+    return imageUrlBuilder(client).image(source)
+}
 
 export default class Community extends Component {
+    state = {}
 
     componentDidMount() {
         window.scroll({
             top: 0,
         });
+
+        client.fetch('*[_type == "community" && slug.current == "v1"][0]').then(pageProps => {
+            this.setState({
+                ...this.state,
+                ...pageProps
+            })
+        })
     }
     
     render() {
         return (
             // Main Page
             <div className="community">
-                <div className="community__banner" />
+                <div className="community__banner" style={{ backgroundImage: `url(${urlFor(this.state.mainBannerImage)})`}} />
                 <div className="community__banner-container">
-                    <h1 className="community__heading h1">The Community</h1>
+                    <h1 className="community__heading h1">{this.state.mainBannerTitle}</h1>
                     <div className="community__border" />
                 </div>
 
-                <p className="community__description p-l">StudioME believes in easy and community-driven media creation. As part of our mission, we host local events, provide resources for new content creators, and celebrate the artists who create in our studio, as well as Pittsburgh at large.</p>
+                <p className="community__description p-l">
+                    {this.state.mainDescription}
+                </p>
 
                 <NavLink
                     to="/community/events" exact style={{textDecoration: 'none'}}

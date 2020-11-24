@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 import styled, { css } from 'styled-components'
 import Fade from 'react-reveal/Fade'
+import imageUrlBuilder from '@sanity/image-url'
+import { client } from '../../client'
 import respondTo from '../../components/Breakpoints'
 
 
@@ -13,23 +15,27 @@ import { ButtonPrimary } from '../../components/Button'
 import { Container, Flex, Col2, Col2Left, Col2Right } from '../../components/Containers'
 import { H3, P1 } from '../../components/Typography'
 
-// Images
-import BannerImage from '../../assets/community/events/events-banner.jpg'
-
 // Data
 import { LearnData } from './LearnData'
 
 const Learn = () => {
     const [category, setCategory] = useState('all')
+    const [content, setContent] = useState({})
     const [data, setData] = useState(LearnData)
 
     useEffect(() => {
         window.scroll({
             top: 0,
         })
+
+        client.fetch('*[_type == "community" && slug.current == "v1"][0]').then(pageProps => {
+            setContent(pageProps)
+        })
+
     }, [])
 
     useEffect(() => {
+
         switch (category) {
             case 'all':
                 setData(LearnData)
@@ -75,10 +81,14 @@ const Learn = () => {
           }
     }, [category])
 
+    function urlFor(source) {
+        return imageUrlBuilder(client).image(source)
+    }
+
     return (
         <>
-            <BannerAlt image={BannerImage} color={colors.green}>
-                Learn
+            <BannerAlt image={urlFor(content.learnBannerImage)} color={colors.green}>
+                {content.learnBannerTitle}
             </BannerAlt>
             <Container>
                 <Box1 marginTop={50} marginBottom={50}>
@@ -92,7 +102,7 @@ const Learn = () => {
                 </Box1>
                 <Fade>
                     <P1 center>
-                        As part of our mission to foster a community of creators, StudioME offers free resources for those looking to up their skills in photography, editing, lighting, VFX, and more. Feel free to contact us requesting a new resource!
+                        {content.learnDescription}
                     </P1>
                 </Fade>
                 <Box1 marginTop={75} marginBottom={25}>

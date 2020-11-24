@@ -10,6 +10,8 @@ import blockContent from './blockContent'
 // Pages
 import home from './home'
 import about from './about'
+import community from './community'
+import virtual from './virtual'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -22,6 +24,8 @@ export default createSchema({
     // in the studio.
     home,
     about,
+    community,
+    virtual,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
     blockContent
