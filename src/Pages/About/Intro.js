@@ -8,21 +8,57 @@ import Button from '../../components/Button'
 import { Box2 } from '../../components/Boxes'
 import { Col2, Col2Right, Col2Left } from '../../components/Containers'
 
-// Images
-import BannerImage from '../../assets/about/intro/Banner-3.jpg'
+export default function Intro({
+    onQuickButtonFix,
 
-export default function Intro(props) {
+    introBannerTitle,
+    introBannerImage,
+    introSubheading,
+    introParagrah1,
+    introParagrah2,
+    introVideoURL,
+    introLocationHeading,
+    introLocationAddress1,
+    introLocationAddress2,
+    introHoursHeading,
+    introHoursDays,
+    introHoursTime,
+    introDifferentHeading,
+    introDifference1,
+    introDifference2,
+    introDifference3,
+    introDifference4,
+    introDifference5,
+    introDifference6,
+    introDifference7,
+    introPerfectHeading,
+    introPerfectFor1,
+    introPerfectFor2,
+    introPerfectFor3,
+    introPerfectFor4,
+    introPerfectFor5,
+    introPerfectFor6,
+    introPerfectFor7,
+    introPerfectFor8,
+    introPerfectFor9,
+}) {
     return (
         <>
-            <Banner color="green" text="About Us" image={BannerImage}/>
+            <Banner color="green" text={introBannerTitle} image={introBannerImage}/>
 
             <div className="container-new">
-                <h2 id="about__1-heading-1" className="h2">How it all began:</h2>
-                <p id="about__1-paragraph-1" className="p-xl">StudioME opened its doors in 2016 by co-founders, Keith Parish and Joe Leachko.  Noticing a changing media landscape, they took on the challenge of redesigning the traditional studio to better serve the modern media creator. This new type of media creator demands quality, fast and affordable media production, whether a professional producer, marketing guru, entrepreneur, educational leader or just someone who wants to share their story on social media. The StudioME Model offers more efficient solutions in a user-friendly space to help take content to the next level in quality.</p>
-                <p id="about__1-paragraph-1" className="p-xl">Keith Parish has been involved in video production since the age of 13 and has produced videos in over 40 states and 5 countries. Joe Leachko comes from an experiential marketing and architectural design background.</p>
+                <h2 id="about__1-heading-1" className="h2">
+                    {introSubheading}
+                </h2>
+                <p id="about__1-paragraph-1" className="p-xl">
+                    {introParagrah1}
+                </p>
+                <p id="about__1-paragraph-1" className="p-xl">
+                    {introParagrah2}
+                </p>
                 <div className="flex" id="about__1-button-container">
                     <NavLink
-                        onClick={props.onQuickButtonFix.bind(this, 'rentals')}
+                        onClick={onQuickButtonFix.bind(this, 'rentals')}
                         to="/" exact
                     >
                         
@@ -43,7 +79,7 @@ export default function Intro(props) {
                     <iframe 
                         title="1"
                         id="about__1-video"
-                        src='https://player.vimeo.com/video/197530141'
+                        src={introVideoURL}
                         frameBorder="0" 
                         webkitallowfullscreen="true" mozallowfullscreen="true" allowFullScreen>
                     </iframe>
@@ -51,16 +87,28 @@ export default function Intro(props) {
                 <Col2 style={{width: '60%', margin: '0 auto'}}>
                     <Box2 marginTop={75}>
                         <Col2Left align={'center'} justify={'cetner'}>
-                            <h3 className="h3" style={{marginBottom: '2rem'}}>Located in East Liberty:</h3>
-                            <p className="p-l" style={{marginBottom: '.5rem'}}>5819 Penn Avenue</p>
-                            <p className="p-l">Pittsburgh, PA 15206</p>
+                            <h3 className="h3" style={{marginBottom: '2rem'}}>
+                                {introLocationHeading}
+                            </h3>
+                            <p className="p-l" style={{marginBottom: '.5rem'}}>
+                                {introLocationAddress1}
+                            </p>
+                            <p className="p-l">
+                                {introLocationAddress2}
+                            </p>
                         </Col2Left>
                     </Box2>
                     <Box2 marginTop={75}>
                         <Col2Right align={'center'} justify={'cetner'}>
-                            <h3 className="h3" style={{marginBottom: '2rem'}}>Operating Hours:</h3>
-                            <p className="p-l" style={{marginBottom: '.5rem'}}>Monday - Saturday</p>
-                            <p className="p-l">8am - 6pm</p>
+                            <h3 className="h3" style={{marginBottom: '2rem'}}>
+                                {introHoursHeading}
+                            </h3>
+                            <p className="p-l" style={{marginBottom: '.5rem'}}>
+                                {introHoursDays}
+                            </p>
+                            <p className="p-l">
+                                {introHoursTime}
+                            </p>
                         </Col2Right>
                     </Box2>
                 </Col2>
@@ -80,27 +128,31 @@ export default function Intro(props) {
             </div>
 
             <div id="about__1-perks-container" className="container-new">
-                <h2 id="about__1-perks-heading" className="uppercase center h2 teal">How We're Different</h2>
+                <h2 id="about__1-perks-heading" className="uppercase center h2 teal">
+                    {introDifferentHeading}
+                </h2>
                 <ul id="about__1-list" className="list p-l">
-                    <li><span style={{color: '#8DCDC1'}}>✓</span> Innovative, user-friendly space</li>
-                    <li><span style={{color: '#8DCDC1'}}>✓</span> From custom to assisted DIY production solutions</li>
-                    <li><span style={{color: '#8DCDC1'}}>✓</span> Customer-focused environment</li>
-                    <li><span style={{color: '#8DCDC1'}}>✓</span> Professional support staff</li>
-                    <li><span style={{color: '#8DCDC1'}}>✓</span> Ultra-efficient Self-guided Studio easily operated from an app</li>
-                    <li><span style={{color: '#8DCDC1'}}>✓</span> Specialized studios, reducing waste and saving budget</li>
-                    <li><span style={{color: '#8DCDC1'}}>✓</span> Access to media-related resources with free MEmbership</li>
+                    <li><span style={{color: '#8DCDC1'}}>✓</span> {introDifference1}</li>
+                    <li><span style={{color: '#8DCDC1'}}>✓</span> {introDifference2}</li>
+                    <li><span style={{color: '#8DCDC1'}}>✓</span> {introDifference3}</li>
+                    <li><span style={{color: '#8DCDC1'}}>✓</span> {introDifference4}</li>
+                    <li><span style={{color: '#8DCDC1'}}>✓</span> {introDifference5}</li>
+                    <li><span style={{color: '#8DCDC1'}}>✓</span> {introDifference6}</li>
+                    <li><span style={{color: '#8DCDC1'}}>✓</span> {introDifference7}</li>
                 </ul>
-                <h2 id="about__1-perks-heading" className="uppercase center h2 orange">Perfect For</h2>
+                <h2 id="about__1-perks-heading" className="uppercase center h2 orange">
+                    {introPerfectHeading}
+                </h2>
                 <ul id="about__1-list" className="list p-l">
-                    <li><span style={{color: '#B6CE61'}}>•</span>  Content Creators</li>
-                    <li><span style={{color: '#B6CE61'}}>•</span>  Podcasters</li>
-                    <li><span style={{color: '#B6CE61'}}>•</span>  Educators / Training</li>
-                    <li><span style={{color: '#B6CE61'}}>•</span>  Entrepreneurs / Solopreneurs</li>
-                    <li><span style={{color: '#B6CE61'}}>•</span>  Kickstarters</li>
-                    <li><span style={{color: '#B6CE61'}}>•</span>  Social Media</li>
-                    <li><span style={{color: '#B6CE61'}}>•</span>  Vloggers / Youtubers</li>
-                    <li><span style={{color: '#B6CE61'}}>•</span>  Artist / Musicians</li>
-                    <li><span style={{color: '#B6CE61'}}>•</span>  Actors / Voice Talent</li>
+                    <li><span style={{color: '#B6CE61'}}>•</span>  {introPerfectFor1}</li>
+                    <li><span style={{color: '#B6CE61'}}>•</span>  {introPerfectFor2}</li>
+                    <li><span style={{color: '#B6CE61'}}>•</span>  {introPerfectFor3}</li>
+                    <li><span style={{color: '#B6CE61'}}>•</span>  {introPerfectFor4}</li>
+                    <li><span style={{color: '#B6CE61'}}>•</span>  {introPerfectFor5}</li>
+                    <li><span style={{color: '#B6CE61'}}>•</span>  {introPerfectFor6}</li>
+                    <li><span style={{color: '#B6CE61'}}>•</span>  {introPerfectFor7}</li>
+                    <li><span style={{color: '#B6CE61'}}>•</span>  {introPerfectFor8}</li>
+                    <li><span style={{color: '#B6CE61'}}>•</span>  {introPerfectFor9}</li>
                 </ul> 
             </div>
         </>

@@ -6,9 +6,6 @@ import Button from '../../components/Button'
 import Snackbar from '../../components/Snackbar'
 import SubmitRing from '../../components/SubmitRing'
 
-// Images
-import BannerImage from '../../assets/about/contact/Contact-Blur.jpg'
-
 // SVGs
 import { ReactComponent as Facebook } from '../../assets/about/contact/facebook.svg';
 import { ReactComponent as Instagram } from '../../assets/about/contact/instagram.svg';
@@ -81,7 +78,7 @@ export default class Contact extends Component {
     render() {
         return (
             <>
-                <BannerAlt color="green" text="Speak to Our Creative Team" textColor="grey" image={BannerImage}/>
+                <BannerAlt color="green" text={this.props.contactBannerTitle} textColor="grey" image={this.props.contactBannerImage}/>
                 <div className="container-new">
                     <div className="flex" id="about__4-icon-container">
                         <a

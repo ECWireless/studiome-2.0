@@ -4,28 +4,37 @@ import React from 'react';
 import Banner from '../../components/Banner'
 import Button from '../../components/Button'
 
-// Images
-import BannerImage from '../../assets/about/work/OurWork.jpg'
-
-export default function Work() {
+export default function Work({
+    workBannerTitle,
+    workBannerImage,
+    workDescription,
+    workVideo1URL,
+    workVideo1Description,
+    workVideo2URL,
+    workVideo2Description,
+    workVideo3URL,
+    workVideo3Description,
+}) {
     return (
         <>
-            <Banner color="green" text="Our Work" textColor="grey" image={BannerImage}/>
+            <Banner color="green" text={workBannerTitle} textColor="grey" image={workBannerImage}/>
             <div className="container-new">
-                <p id="about__3-paragraph-1" className="center p-xl">In the 3 years since opening the studio, our team has produced and edited over 1,000 videos. Our work spans from animations, to promos, to e-learning videos, to commercials. And our expertise lies in our ability to produce these varying projects quickly and easily.</p>
+                <p id="about__3-paragraph-1" className="center p-xl">
+                    {workDescription}
+                </p>
                 <WorkExample
-                    link='https://player.vimeo.com/video/250807267'
-                    text='Get a tour of AlphaLab, and learn what makes it a nationally ranked software accelerator.'
+                    link={workVideo1URL}
+                    text={workVideo1Description}
                 />
                 <div className="about__3-work-border about__3-work-border--1" />
                 <WorkExample
-                    link='https://player.vimeo.com/video/225163302'
-                    text='Go behind the scenes on a shoot for Carnegie Science Center at StudioME.'
+                    link={workVideo2URL}
+                    text={workVideo2Description}
                 />
                 <div className="about__3-work-border about__3-work-border--2" />
                 <WorkExample
-                    link='https://player.vimeo.com/video/228383734'
-                    text='David Alan creates custom clothing to fit your creative expression. Here, he uses StudioME to film interview-style promos for his business.'
+                    link={workVideo3URL}
+                    text={workVideo3Description}
                 />
                 <div className="about__3-work-border about__3-work-border--3" />
                 <div className="flex">
