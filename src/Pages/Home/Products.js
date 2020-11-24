@@ -10,14 +10,6 @@ import ProductServices from './Products/ProductServices';
 import ProductMemberships from './Products/ProductMemberships';
 import Button from '../../components/Button'
 
-// Photos
-import PhotoSelfGuided from '../../assets/home/products/Studio-E-large.jpg';
-import PhotoMPStudio from '../../assets/home/products/MP-Studio-large.jpg';
-import PhotoPodcastLounge from '../../assets/home/products/Podcast-large.jpg';
-import PhotoAudioRoom from '../../assets/home/products/Audio-Room-large.jpg';
-import PhotoEquipment from '../../assets/home/products/Camera-large.jpg';
-import PhotoWorkstation from '../../assets/home/products/Workstation-large.jpg';
-
 class Products extends Component {
 
     state = {
@@ -73,9 +65,9 @@ class Products extends Component {
         switch(product) {
             case 1:
                 this.setState({
-                    heading: "Self-Guided Studio",
-                    description: `The Self-Guided Studio is a turn-key, all-inclusive space that’s perfect for interviews, training videos, social media videos and teleprompted scripts. It's easy to operate yourself using our custom app or you can hire an assistant. Virtual conferencing and live-streaming options available.`,
-                    photo: PhotoSelfGuided,
+                    heading: this.props.productsStudioETitle,
+                    description: this.props.productsStudioEDescription,
+                    photo: this.props.productsStudioEImage,
                     subheading: "Pick a duration to view:",
                     option1: "2 Hours",
                     url1: "https://studiome.me/product/self-guided-studio-e-2-hour-package/",
@@ -88,9 +80,9 @@ class Products extends Component {
 
             case 2:
                 this.setState({
-                    heading: "Multi-Purpose Studio",
-                    description: 'At 410 square feet, the multi-purpose studio comes with up to 6 LED panel lighting on moveable stands, a built-in dressing room and the option to choose from four 12′ seamless paper backdrops. This studio can be outfitted for virtual capabilities.',
-                    photo: PhotoMPStudio,
+                    heading: this.props.productsMPStudioTitle,
+                    description: this.props.productsMPStudioDescription,
+                    photo: this.props.productsMPStudioImage,
                     subheading: "Pick a duration to view:",
                     option1: "2 Hours",
                     url1: "https://studiome.me/product/multi-purpose-studio-2-hour-package/",
@@ -102,9 +94,9 @@ class Products extends Component {
                 break;
             case 3:
                 this.setState({
-                    heading: "Podcast Lounge",
-                    description: 'The Podcast Lounge is user-friendly and perfect for professional-quality audio and multi-camera video podcasting. This studio is capable of virtual conferencing and live-streaming.',
-                    photo: PhotoPodcastLounge,
+                    heading: this.props.productsPodcastLoungeTitle,
+                    description: this.props.productsPodcastLoungeDescription,
+                    photo: this.props.productsPodcastLoungeImage,
                     subheading: "Pick a duration to view:",
                     option1: "Hourly",
                     url1: "https://studiome.me/product/podcast-lounge-hourly/",
@@ -116,9 +108,9 @@ class Products extends Component {
                 break;
             case 4:
                 this.setState({
-                    heading: "Audio Studio",
-                    description: 'The soundproof audio studio is perfect for your podcasts, audiobook recordings, voice recordings, audio editing and screen captures and is available for hourly ($39/hour) and daily rental ($299/day).',
-                    photo: PhotoAudioRoom,
+                    heading: this.props.productsAudioStudioTitle,
+                    description: this.props.productsAudioStudioDescription,
+                    photo: this.props.productsAudioStudioImage,
                     subheading: "Pick a duration to view:",
                     option1: "Hourly",
                     url1: "https://studiome.me/product/soundproof-audio-studio-hourly/",
@@ -130,9 +122,9 @@ class Products extends Component {
                 break;
             case 5:
                 this.setState({
-                    heading: "Equipment",
-                    description: 'StudioME offers a variety of competitively priced rental equipment, ranging from DSLRs, Condensor Mics, Shotgun Mics, Monitors, and LED Lights.',
-                    photo: PhotoEquipment,
+                    heading: this.props.productsEquipmentTitle,
+                    description: this.props.productsEquipmentDescription,
+                    photo: this.props.productsEquipmentImage,
                     subheading: "Pick a category to view:",
                     option1: "Camera",
                     url1: "",
@@ -144,10 +136,10 @@ class Products extends Component {
                 break;
             case 6:
                 this.setState({
-                    heading: "Edit Workstation",
-                    description: 'Our Editing Stations come with the Adobe Creative Cloud, Final Cut Pro X, iMovie and free access to our professional music and sound effects libraries.',
-                    photo: PhotoWorkstation,
-                    subheading: "Pick a duration to view:",
+                    heading: this.props.productsWorkstationTitle,
+                    description: this.props.productsWorkstationDescription,
+                    photo: this.props.productsWorkstationImage,
+                    subheading: "Pick a category to view:",
                     option1: "Hourly",
                     url1: "https://studiome.me/product/editing-workstation-1-hour/",
                     option2: "Daily",
@@ -226,12 +218,26 @@ class Products extends Component {
                 {/* Backdrop */}
                 <div className={this.state.backdropClass} onClick={this.onModalToggle} />
 
-                {this.props.rentalToggle && <ProductRentals onModalToggle={this.onModalToggle} />}
+                {this.props.rentalToggle && <ProductRentals
+                    onModalToggle={this.onModalToggle}
+                    productsStudioETitle={this.props.productsStudioETitle}
+                    productsStudioEImage={this.props.productsStudioEImage}
+                    productsMPStudioTitle={this.props.productsMPStudioTitle}
+                    productsMPStudioImage={this.props.productsMPStudioImage}
+                    productsPodcastLoungeTitle={this.props.productsPodcastLoungeTitle}
+                    productsPodcastLoungeImage={this.props.productsPodcastLoungeImage}
+                    productsAudioStudioTitle={this.props.productsAudioStudioTitle}
+                    productsAudioStudioImage={this.props.productsAudioStudioImage}
+                    productsEquipmentTitle={this.props.productsEquipmentTitle}
+                    productsEquipmentImage={this.props.productsEquipmentImage}
+                    productsWorkstationTitle={this.props.productsWorkstationTitle}
+                    productsWorkstationImage={this.props.productsWorkstationImage}
+                />}
                 {this.props.servicesToggle && <ProductServices />}
                 {this.props.membershipsToggle && <ProductMemberships />}
 
                 <div id="products__conferencing-container">
-                    <h2 id="products__conferencing-heading" className="h2 bold uppercase center">Video Conferencing Solutions</h2>
+                    <h2 id="products__conferencing-heading" className="h2 bold uppercase center">{this.props.productsVirtualSolutionsText}</h2>
                     <NavLink
                         to="/virtual" exact
                     >

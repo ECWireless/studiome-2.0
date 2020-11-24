@@ -28,43 +28,49 @@ class ProductRentals extends Component {
             <React.Fragment>
                 <ProductRentalItem
                     style={{ animation: 'none'}}
+                    name={this.props.productsStudioETitle}
+                    image={this.props.productsStudioEImage}
                     index={1}
-                    name={"Self-Guided Studio"}
                     onModalToggle={this.props.onModalToggle.bind(this, 1)}
                     impression={this.addImpression.bind(this, '5e28a7e6a8e24c0004493f02')}
                 />
     
                 <ProductRentalItem
                     index={2}
-                    name={"Multi-Purpose Studio"}
+                    name={this.props.productsMPStudioTitle}
+                    image={this.props.productsMPStudioImage}
                     onModalToggle={this.props.onModalToggle.bind(this, 2)}
                     impression={this.addImpression.bind(this, '5e28a7f9a8e24c0004493f03')}
                 />
     
                 <ProductRentalItem
                     index={3}
-                    name={"Podcast Lounge"}
+                    name={this.props.productsPodcastLoungeTitle}
+                    image={this.props.productsPodcastLoungeImage}
                     onModalToggle={this.props.onModalToggle.bind(this, 3)}
                     impression={this.addImpression.bind(this, '5e28a808a8e24c0004493f04')}
                 />
     
                 <ProductRentalItem
                     index={4}
-                    name={"Audio Studio"}
+                    name={this.props.productsAudioStudioTitle}
+                    image={this.props.productsAudioStudioImage}
                     onModalToggle={this.props.onModalToggle.bind(this, 4)}
                     impression={this.addImpression.bind(this, '5e28bdfea8e24c0004493f3b')}
                 />
     
                 <ProductRentalItem
                     index={5}
-                    name={"Equipment"}
+                    name={this.props.productsEquipmentTitle}
+                    image={this.props.productsEquipmentImage}
                     onModalToggle={this.props.onModalToggle.bind(this, 5)}
                     impression={this.addImpression.bind(this, '5e28a85da8e24c0004493f05')}
                 />
     
                 <ProductRentalItem
                     index={6}
-                    name={"Edit Workstation"}
+                    name={this.props.productsWorkstationTitle}
+                    image={this.props.productsWorkstationImage}
                     onModalToggle={this.props.onModalToggle.bind(this, 6)}
                     impression={this.addImpression.bind(this, '5e28a866a8e24c0004493f06')}
                 />
