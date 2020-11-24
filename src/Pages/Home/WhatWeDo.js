@@ -9,16 +9,23 @@ import { ReactComponent as Icon6 } from '../../assets/home/what-we-do/man-woman.
 import { ReactComponent as Icon7 } from '../../assets/home/what-we-do/printer.svg';
 import { ReactComponent as Icon8 } from '../../assets/home/what-we-do/video.svg';
 
-export default function WhatWeDo() {
+
+export default function WhatWeDo({
+    whatWeDoBannerTitle,
+    whatWeDoBannerImage,
+    whatWeDoDescription,
+}) {
     return (
         <div id="what-we-do" className="container">
-            <div id="what-we-do__banner" />
+            <div id="what-we-do__banner" style={{ backgroundImage: `url(${whatWeDoBannerImage})`}} />
             <div id="what-we-do__banner-container">
-                <h1 id="what-we-do__banner-heading" className="h1 white">What we do</h1>
+                <h1 id="what-we-do__banner-heading" className="h1 white">{whatWeDoBannerTitle}</h1>
                 <div id="what-we-do__banner-border" className="line-m line-m--orange" />
             </div>
 
-            <p id="what-we-do__explanation" className="p-xl l">From first-timers to professionals, StudioME provides media creators access to user-friendly studio spaces, equipment rentals, editing workstations, and custom production services. The StudioME model was created with the challenge to deliver high quality content using brand new approaches to an outdated, over-priced model. Keeping our promise of "Media Made Easy," we make it as simple as possible to go from concept to creation.</p>
+            <p id="what-we-do__explanation" className="p-xl l">
+                {whatWeDoDescription}
+            </p>
 
             <div id="what-we-do__border" />
             <h3 id="what-we-do__offer" className="h3 l">What we offer.</h3>

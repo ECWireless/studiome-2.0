@@ -150,6 +150,163 @@ export default {
             title: 'Products Virtual Solutions Text',
             type: 'string'
         },
+        {
+            name: 'whatWeDoBannerTitle',
+            title: 'What We Do Banner Title',
+            type: 'string'
+        },
+        {
+            name: 'whatWeDoBannerImage',
+            title: 'What We Do Banner Image',
+            type: 'image',
+            options: {
+              hotspot: true
+            }
+        },
+        {
+            name: 'whatWeDoDescription',
+            title: 'What We Do Description',
+            type: 'string'
+        },
+        {
+            name: 'servicesBannerTitle',
+            title: 'Services Banner Title',
+            type: 'string'
+        },
+        {
+            name: 'servicesBannerImage',
+            title: 'Services Banner Image',
+            type: 'image',
+            options: {
+              hotspot: true
+            }
+        },
+        {
+            name: 'services1Title',
+            title: 'Services 1 Title',
+            type: 'string'
+        },
+        {
+            name: 'services1Description',
+            title: 'Services 1 Description',
+            type: 'string'
+        },
+        {
+            name: 'services1Image1',
+            title: 'Services 1 Image 1',
+            type: 'image',
+            options: {
+              hotspot: true
+            }
+        },
+        {
+            name: 'services1Image2',
+            title: 'Services 1 Image 2',
+            type: 'image',
+            options: {
+              hotspot: true
+            }
+        },
+        {
+            name: 'services1Image3',
+            title: 'Services 1 Image 3',
+            type: 'image',
+            options: {
+              hotspot: true
+            }
+        },
+        {
+            name: 'services1Image4',
+            title: 'Services 1 Image 4',
+            type: 'image',
+            options: {
+              hotspot: true
+            }
+        },
+        {
+            name: 'services2Title',
+            title: 'Services 2 Title',
+            type: 'string'
+        },
+        {
+            name: 'services2Description',
+            title: 'Services 2 Description',
+            type: 'string'
+        },
+        {
+            name: 'services2Image1',
+            title: 'Services 2 Image 1',
+            type: 'image',
+            options: {
+              hotspot: true
+            }
+        },
+        {
+            name: 'services2Image2',
+            title: 'Services 2 Image 2',
+            type: 'image',
+            options: {
+              hotspot: true
+            }
+        },
+        {
+            name: 'services2Image3',
+            title: 'Services 2 Image 3',
+            type: 'image',
+            options: {
+              hotspot: true
+            }
+        },
+        {
+            name: 'services2Image4',
+            title: 'Services 2 Image 4',
+            type: 'image',
+            options: {
+              hotspot: true
+            }
+        },
+        {
+            name: 'services3Title',
+            title: 'Services 3 Title',
+            type: 'string'
+        },
+        {
+            name: 'services3Description',
+            title: 'Services 3 Description',
+            type: 'string'
+        },
+        {
+            name: 'services3Image1',
+            title: 'Services 3 Image 1',
+            type: 'image',
+            options: {
+              hotspot: true
+            }
+        },
+        {
+            name: 'services3Image2',
+            title: 'Services 3 Image 2',
+            type: 'image',
+            options: {
+              hotspot: true
+            }
+        },
+        {
+            name: 'services3Image3',
+            title: 'Services 3 Image 3',
+            type: 'image',
+            options: {
+              hotspot: true
+            }
+        },
+        {
+            name: 'services3Image4',
+            title: 'Services 3 Image 4',
+            type: 'image',
+            options: {
+              hotspot: true
+            }
+        },
     ],
   
     preview: {

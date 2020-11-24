@@ -73,8 +73,37 @@ export default class Home extends Component {
                     productsWorkstationImage={urlFor(this.state.productsWorkstationImage)}
                     productsVirtualSolutionsText={this.state.productsVirtualSolutionsText}
                 />
-                <WhatWeDo />
-                <Services onQuickButtonFix={this.props.onQuickButtonFix} />
+                <WhatWeDo
+                    whatWeDoBannerTitle={this.state.whatWeDoBannerTitle}
+                    whatWeDoBannerImage={urlFor(this.state.whatWeDoBannerImage)}
+                    whatWeDoDescription={this.state.whatWeDoDescription}
+                />
+                <Services
+                    onQuickButtonFix={this.props.onQuickButtonFix}
+
+                    servicesBannerTitle={this.state.servicesBannerTitle}
+                    servicesBannerImage={urlFor(this.state.servicesBannerImage)}
+                    services1Title={this.state.services1Title}
+                    services1Description={this.state.services1Description}
+                    services1Image1={urlFor(this.state.services1Image1)}
+                    services1Image2={urlFor(this.state.services1Image2)}
+                    services1Image3={urlFor(this.state.services1Image3)}
+                    services1Image4={urlFor(this.state.services1Image4)}
+
+                    services2Title={this.state.services2Title}
+                    services2Description={this.state.services2Description}
+                    services2Image1={urlFor(this.state.services2Image1)}
+                    services2Image2={urlFor(this.state.services2Image2)}
+                    services2Image3={urlFor(this.state.services2Image3)}
+                    services2Image4={urlFor(this.state.services2Image4)}
+
+                    services3Title={this.state.services3Title}
+                    services3Description={this.state.services3Description}
+                    services3Image1={urlFor(this.state.services3Image1)}
+                    services3Image2={urlFor(this.state.services3Image2)}
+                    services3Image3={urlFor(this.state.services3Image3)}
+                    services3Image4={urlFor(this.state.services3Image4)}
+                />
             </div>
         )
     }
