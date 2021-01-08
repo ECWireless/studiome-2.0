@@ -38,6 +38,12 @@ export default class Home extends Component {
         })
     }
 
+    componentDidUpdate() {
+        if (this.props.sidebarSelection === 'products') {
+            this.onProductsHandler();
+        }
+    }
+
     render() {
 
         return (
