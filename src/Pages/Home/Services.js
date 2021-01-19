@@ -9,6 +9,7 @@ import Banner from '../../components/Banner'
 import { Box3 } from '../../components/Boxes'
 import Button from '../../components/Button'
 import { Container, Flex } from '../../components/Containers'
+import { CustomLink } from '../../components/Links'
 import { H3, P2 } from '../../components/Typography'
 
 export default function Services({
@@ -45,19 +46,49 @@ export default function Services({
                 <Box3 marginTop={50}>
                     <Flex wrap='true' justify={'space-between'} align={'center'}>
                         <Box3 marginBottom={25}>
-                            <ServicesPhoto style={{backgroundImage: `url(${services1Image1})`, borderBottom: `4px solid ${colors.teal}`}} />
+                            <CustomLink
+                                href={'https://studiome.me/product/soundproof-audio-studio-hourly/'}
+                                target={'_blank'} rel={'noopener noreferrer'}
+                            >
+                                <ServicesPhoto style={{backgroundImage: `url(${services1Image1})`, borderBottom: `4px solid ${colors.teal}`}} />
+                            </CustomLink>
                         </Box3>
                         <Box3 marginBottom={25}>
-                            <ServicesPhoto style={{backgroundImage: `url(${services1Image2})`, borderBottom: `4px solid ${colors.orange}`}} />
+                            <CustomLink
+                                href={'https://studiome.me/product/podcast-lounge-hourly/'}
+                                target={'_blank'} rel={'noopener noreferrer'}
+                            >
+                                <ServicesPhoto style={{backgroundImage: `url(${services1Image2})`, borderBottom: `4px solid ${colors.orange}`}} />
+                            </CustomLink>
                         </Box3>
                         <Box3 marginBottom={25}>
-                            <ServicesPhoto style={{backgroundImage: `url(${services1Image3})`, borderBottom: `4px solid ${colors.green}`}} />
+                            <CustomLink
+                                href={'https://studiome.me/product/multi-purpose-studio-2-hour-package/'}
+                                target={'_blank'} rel={'noopener noreferrer'}
+                            >
+                                <ServicesPhoto style={{backgroundImage: `url(${services1Image3})`, borderBottom: `4px solid ${colors.green}`}} />
+                            </CustomLink>
                         </Box3>
                         <Box3 marginBottom={25}>
-                            <ServicesPhoto style={{backgroundImage: `url(${services1Image4})`, borderBottom: `4px solid ${colors.teal}`}} />
+                            <CustomLink
+                                href={'https://studiome.me/product/self-guided-studio-e-2-hour-package/'}
+                                target={'_blank'} rel={'noopener noreferrer'}
+                            >
+                                <ServicesPhoto style={{backgroundImage: `url(${services1Image4})`, borderBottom: `4px solid ${colors.teal}`}} />
+                            </CustomLink>
                         </Box3>
                     </Flex>
                 </Box3>
+
+                <Box3 marginTop={25}>
+                    <StyledExampleVideoContainer>
+                        <StyledExampleVideo
+                            src={'https://player.vimeo.com/video/244728404'}
+                            frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
+                        />
+                    </StyledExampleVideoContainer>
+                </Box3>
+
                 <Box3 marginTop={75} marginBottom={25}>
                     <H3 uppercase center>{services2Title}</H3>
                 </Box3>
@@ -65,19 +96,49 @@ export default function Services({
                 <Box3 marginTop={50}>
                     <Flex wrap='true' justify={'space-between'} align={'center'}>
                         <Box3 marginBottom={25}>
-                            <ServicesPhoto style={{backgroundImage: `url(${services2Image1})`, borderBottom: `4px solid ${colors.orange}`}} />
+                            <CustomLink
+                                href={'https://app.studiome.me/equipment'}
+                                target={'_blank'} rel={'noopener noreferrer'}
+                            >
+                                <ServicesPhoto style={{backgroundImage: `url(${services2Image1})`, borderBottom: `4px solid ${colors.orange}`}} />
+                            </CustomLink>
                         </Box3>
                         <Box3 marginBottom={25}>
-                            <ServicesPhoto style={{backgroundImage: `url(${services2Image2})`, borderBottom: `4px solid ${colors.green}`}} />
+                            <CustomLink
+                                href={'https://app.studiome.me/equipment'}
+                                target={'_blank'} rel={'noopener noreferrer'}
+                            >
+                                <ServicesPhoto style={{backgroundImage: `url(${services2Image2})`, borderBottom: `4px solid ${colors.green}`}} />
+                            </CustomLink>
                         </Box3>
                         <Box3 marginBottom={25}>
-                            <ServicesPhoto style={{backgroundImage: `url(${services2Image3})`, borderBottom: `4px solid ${colors.teal}`}} />
+                            <CustomLink
+                                href={'https://app.studiome.me/equipment'}
+                                target={'_blank'} rel={'noopener noreferrer'}
+                            >
+                                <ServicesPhoto style={{backgroundImage: `url(${services2Image3})`, borderBottom: `4px solid ${colors.teal}`}} />
+                            </CustomLink>
                         </Box3>
                         <Box3 marginBottom={25}>
-                            <ServicesPhoto style={{backgroundImage: `url(${services2Image4})`, borderBottom: `4px solid ${colors.orange}`}} />
+                            <CustomLink
+                                href={'https://app.studiome.me/equipment'}
+                                target={'_blank'} rel={'noopener noreferrer'}
+                            >
+                                <ServicesPhoto style={{backgroundImage: `url(${services2Image4})`, borderBottom: `4px solid ${colors.orange}`}} />
+                            </CustomLink>
                         </Box3>
                     </Flex>
                 </Box3>
+
+                <Box3 marginTop={25}>
+                    <StyledExampleVideoContainer>
+                        <StyledExampleVideo
+                            src={'https://player.vimeo.com/video/225163302'}
+                            frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
+                        />
+                    </StyledExampleVideoContainer>
+                </Box3>
+
                 <Box3 marginTop={75} marginBottom={25}>
                     <H3 uppercase center>{services3Title}</H3>
                 </Box3>
@@ -85,19 +146,49 @@ export default function Services({
                 <Box3 marginTop={50}>
                     <Flex wrap='true' justify={'space-between'} align={'center'}>
                         <Box3 marginBottom={25}>
-                            <ServicesPhoto style={{backgroundImage: `url(${services3Image1})`, borderBottom: `4px solid ${colors.green}`}} />
+                            <CustomLink
+                                href={'https://studiome.me/product/editing-workstation-1-hour/'}
+                                target={'_blank'} rel={'noopener noreferrer'}
+                            >
+                                <ServicesPhoto style={{backgroundImage: `url(${services3Image1})`, borderBottom: `4px solid ${colors.green}`}} />
+                            </CustomLink>
                         </Box3>
                         <Box3 marginBottom={25}>
-                            <ServicesPhoto style={{backgroundImage: `url(${services3Image2})`, borderBottom: `4px solid ${colors.teal}`}} />
+                            <CustomLink
+                                href={'https://studiome.me/product/editing-workstation-1-hour/'}
+                                target={'_blank'} rel={'noopener noreferrer'}
+                            >
+                                <ServicesPhoto style={{backgroundImage: `url(${services3Image2})`, borderBottom: `4px solid ${colors.teal}`}} />
+                            </CustomLink>
                         </Box3>
                         <Box3 marginBottom={25}>
-                            <ServicesPhoto style={{backgroundImage: `url(${services3Image3})`, borderBottom: `4px solid ${colors.orange}`}} />
+                            <CustomLink
+                                href={'https://studiome.me/product/editing-workstation-1-hour/'}
+                                target={'_blank'} rel={'noopener noreferrer'}
+                            >
+                                <ServicesPhoto style={{backgroundImage: `url(${services3Image3})`, borderBottom: `4px solid ${colors.orange}`}} />
+                            </CustomLink>
                         </Box3>
                         <Box3 marginBottom={25}>
-                            <ServicesPhoto style={{backgroundImage: `url(${services3Image4})`, borderBottom: `4px solid ${colors.green}`}} />
+                            <CustomLink
+                                href={'https://studiome.me/product/editing-workstation-1-hour/'}
+                                target={'_blank'} rel={'noopener noreferrer'}
+                            >
+                                <ServicesPhoto style={{backgroundImage: `url(${services3Image4})`, borderBottom: `4px solid ${colors.green}`}} />
+                            </CustomLink>
                         </Box3>
                     </Flex>
                 </Box3>
+
+                <Box3 marginTop={25}>
+                    <StyledExampleVideoContainer>
+                        <StyledExampleVideo
+                            src={'https://player.vimeo.com/video/307580438'}
+                            frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
+                        />
+                    </StyledExampleVideoContainer>
+                </Box3>
+
                 <Box3 marginTop={50} marginBottom={75}>
                     <Flex align={'center'} justify={'center'}>
                         <NavLink
@@ -122,6 +213,13 @@ const ServicesPhoto = styled.div`
     background-size: cover;
     background-position: center;
     box-shadow: ${shadows.medium};
+    transition: all .3s ease;
+
+    &:hover {
+        cursor: pointer;
+        opacity: 0.7;
+        filter: grayscale(100%);
+    }
 
     ${respondTo.md`
         width: 28rem;
@@ -132,4 +230,33 @@ const ServicesPhoto = styled.div`
         width: 23rem;
         height: 23rem;
     `}
+`
+
+const StyledExampleVideoContainer = styled.div`
+    width: 28rem;
+    height: 16rem;
+    margin: 0 auto;
+    ${respondTo.xs`
+        width: 30rem;
+        height: 17rem;
+    `}
+    ${respondTo.sm`
+        width: 60rem;
+        height: 34rem;
+    `}
+    ${respondTo.md`
+        width: 80rem;
+        height: 46rem;
+    `}
+    ${respondTo.lg`
+        width: 100rem;
+        height: 56rem;
+    `}
+`
+
+const StyledExampleVideo = styled.iframe`
+    height: 100%;
+    width: 100%;
+    border: none;
+    box-shadow: ${shadows.card};
 `

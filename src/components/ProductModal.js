@@ -97,7 +97,7 @@ class ProductModal extends Component {
                     <div className="product-modal__close-container">
                         <Close onClick={this.props.toggle} className="product-modal__close" />
                     </div>
-                    <h2 className="product-modal__heading h2 h2--teal p-l">{this.props.heading}</h2>
+                    <h2 className="product-modal__heading h2 h2--teal b">{this.props.heading}</h2>
                     <div className="product-modal__border" />
                     <p className="product-modal__description p-l">{this.props.description}</p>
                     <div className="product-modal__photo" style={{ backgroundImage: `url(${this.props.photo})` }} />

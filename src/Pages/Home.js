@@ -5,6 +5,7 @@ import { client } from '../client'
 // Sections
 import Hero from './Home/Hero';
 import Products from './Home/Products';
+import Examples from './Home/Examples';
 import WhatWeDo from './Home/WhatWeDo';
 import Services from './Home/Services';
 
@@ -78,6 +79,7 @@ export default class Home extends Component {
                     productsWorkstationImage={urlFor(this.state.productsWorkstationImage)}
                     productsVirtualSolutionsText={this.state.productsVirtualSolutionsText}
                 />
+                <Examples />
                 <WhatWeDo
                     whatWeDoBannerTitle={this.state.whatWeDoBannerTitle}
                     whatWeDoBannerImage={urlFor(this.state.whatWeDoBannerImage)}
