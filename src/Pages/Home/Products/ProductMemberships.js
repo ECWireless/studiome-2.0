@@ -1,12 +1,21 @@
 import React from 'react';
 import { graphql } from 'react-apollo';
+import styled from 'styled-components'
 
 // Queries
 import { addImpression } from '../../../analytics/queries';
 
 // Photos
-import Package25 from '../../../assets/home/products/memberships/25membership-final.png'
 import Package50 from '../../../assets/home/products/memberships/50membership-final.png'
+
+// Components
+import { Box3 } from '../../../components/Boxes'
+import respondTo from '../../../components/Breakpoints'
+import { Card } from '../../../components/Cards'
+import { Flex } from '../../../components/Containers'
+import { colors, shadows } from '../../../components/theme'
+import { H2, H3, P2, P3 } from '../../../components/Typography'
+import { Line } from '../../../components/Lines'
 
 class ProductMemberships extends React.Component {
 
@@ -39,62 +48,115 @@ class ProductMemberships extends React.Component {
 
     render() {
         return (
-            <div id="products-memberships" className="card">
-                <h2 id="products-memberships__heading" className="h2 l">Memberships</h2>
-                <div id="products-memberships__line" className="line-s line-s--orange" />
-    
-                <a
-                    onClick={this.impressProMembership}
-                    target="_blank" rel="noopener noreferrer"
-                    id="products-memberships__container-1"
-                    href="https://studiome.me/product/25mo-25off-membership/"
-                >
-                    <img
-                        src={Package25}
-                        alt="25% for $25 Membership"
-                        id="products-memberships__package"
-                    />
-                </a>
-                <h3 id="products-memberships__name-1" className="h3 teal-dark">Pro Membership</h3>
-                <p id="products-memberships__description-1" className="p-m b">25% off for $25 a month (3 months due on sign up)</p>
-    
-                <a
-                    onClick={this.impressPremiiumMembership}
-                    target="_blank" rel="noopener noreferrer"
-                    id="products-memberships__container-2"
-                    href="https://studiome.me/product/50mo-50off-membership/"
-                >
-                        
-                    <img
-                        src={Package50} alt="50% for $50 Membership"
-                        id="products-memberships__package"
-                    />
-                </a>
-    
-                <h3 id="products-memberships__name-2" className="h3 teal-dark">Premium Membership</h3>
-                <p id="products-memberships__description-2" className="p-m b">50% off for $50 a month (3 months due on sign up)</p>
-    
-    
-                <p id="products-memberships__get-started" className="p-l">Click <a
-                    id="products-memberships__get-started-link"
-                    className="p-l b teal"
-                    href="https://studiome.me/get-started/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >here
-                </a> to sign up for our free membership.</p>
-    
-                <p id="products-memberships__feedback" className="p-l">Want to give us feedback on our membership plans? <a
-                    href="https://forms.gle/9Xor9rmRvPSFWhRA8"
-                    rel="noopener noreferrer" target="_blank"
-                    id="products-memberships__feedback-link" className="p-l b teal"
-                    >
-                        Click Here
-                    </a>
-                </p>
-            </div>
+            <Box3 marginTop={50}>
+                <StyledMembershipCard>
+                    <Box3 marginTop={25}>
+                        <H2 light center>Memberships</H2>
+                    </Box3>
+                    <Box3 marginTop={10}>
+                        <Line width={150} height={3} color={'orange'} />
+                    </Box3>
+                    <Flex justify={'center'}>
+                        <Box3 marginTop={50}>
+                            <StyledPackageContainer
+                                onClick={this.impressPremiiumMembership}
+                                target="_blank" rel="noopener noreferrer"
+                                href="https://studiome.me/product/50mo-50off-membership/"
+                            > 
+                                <img
+                                    src={Package50} alt="50% for $50 Membership"
+                                    id="membership-package"
+                                />
+                                <Box3 marginTop={25}>
+                                    <H3 color={colors.teal} uppercase light center>Pro Membership</H3>
+                                </Box3>
+                                <Box3 marginTop={10} marginLeft={25} marginRight={25}>
+                                    <P2 center>50% off for $50 a month (3 months due on sign up)</P2>
+                                </Box3>
+                            </StyledPackageContainer>
+                        </Box3>
+                    </Flex>
+                    <Box3 marginTop={25}>
+                        <Line width={50} height={3} color={'orange'} />
+                    </Box3>
+                    <Box3 marginTop={25} marginLeft={25} marginRight={25}>
+                        <P3 center>Click <StyledTextLink
+                            href="https://studiome.me/get-started/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            >here
+                        </StyledTextLink> to sign up for our free membership.</P3>
+                    </Box3>
+                    <Box3 marginTop={10} marginLeft={25} marginRight={25} marginBottom={50}>
+                        <P3 center>Want to give us feedback on our membership plans? <StyledTextLink
+                            href="https://forms.gle/9Xor9rmRvPSFWhRA8"
+                            rel="noopener noreferrer" target="_blank"
+                            >
+                                Click Here
+                            </StyledTextLink>
+                        </P3>
+                    </Box3>
+                </StyledMembershipCard>
+            </Box3>
         )
     }
 }
+
+const StyledMembershipCard = styled(Card)`
+    justify-self: center;
+    z-index: 0;
+    width: 100%;
+    animation: onMembershipsFadeIn .7s ease-out;
+`
+
+const StyledPackageContainer = styled.a`
+    text-decoration: none;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    #membership-package {
+        margin: 0 auto;
+        border: 3px solid ${colors.orange};
+        box-shadow: ${shadows.button};
+        border-radius: 10px;
+        height: 22rem;
+        width: 22rem;
+        transition: all .3s ease;
+
+        ${respondTo.xs`
+            height: 25rem;
+            width: 25rem;
+        `}
+
+        ${respondTo.sm`
+            height: 30rem;
+            width: 30rem;
+        `}
+    }
+
+    &:hover > #membership-package {
+        cursor: pointer;
+        border: 3px solid ${colors.green};
+        box-shadow: ${shadows.card};
+    }
+
+    &:active > #membership-package  {
+        box-shadow: $shadow-button;
+    }
+`
+
+const StyledTextLink = styled.a`
+    text-decoration: none;
+    transition: all .3s ease;
+    border-bottom: 2px solid #fff;
+    color: ${colors.teal};
+    font-weight: bold;
+
+    &:hover {
+        border-bottom: 2px solid ${colors.teal};
+    }
+`
 
 export default graphql(addImpression, { name: "addImpression" })(ProductMemberships);

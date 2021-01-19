@@ -1,253 +1,260 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
+import styled from 'styled-components'
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import * as actions from '../../redux/actions';
 
 // Components
+import { Box3 } from '../../components/Boxes'
+import respondTo from '../../components/Breakpoints'
+import Button, { ButtonSecondary } from '../../components/Button'
+import { Container, Flex } from '../../components/Containers'
 import ProductsModal from '../../components/ProductModal';
 import ProductRentals from './Products/ProductRentals';
 import ProductServices from './Products/ProductServices';
+import { colors, shadows } from '../../components/theme';
+import { H3 } from '../../components/Typography';
 import ProductMemberships from './Products/ProductMemberships';
-import Button from '../../components/Button'
 
-class Products extends Component {
+export const Products = (props) => {
+    // Modal Functionality
+    const [modalToggle, setModalToggle] = useState(false);
+    const [modalClass, setModalClass] = useState('product-modal');
+    const [backdropClass, setBackdropClass] = useState('main-backdrop');
 
-    state = {
-        // Modal Functionality
-        modalToggle: false,
-        modalClass: 'product-modal',
-        backdropClass: 'main-backdrop',
+    // Modal Details
+    const [heading, setHeading] = useState('');
+    const [description, setDescription] = useState('');
+    const [photo, setPhoto] = useState(null);
+    const [subheading, setSubheading] = useState('');
+    const [option1, setOption1] = useState('');
+    const [url1, setUrl1] = useState('');
+    const [option2, setOption2] = useState('');
+    const [url2, setUrl2] = useState('');
+    const [option3, setOption3] = useState('');
+    const [url3, setUrl3] = useState('');
 
-        // Modal Details
-        heading: '',
-        description: '',
-        photo: null,
-        subheading: '',
-        option1: '',
-        url1: '',
-        option2: '',
-        url2: '',
-        option3: '',
-        url3: '',
+    // Loading
+    const [loading, setLoading] = useState(false);
+    
+    useEffect(() => {
+        setLoading(false)
+    }, [])
 
-        // Loading
-        loading: false,
-    }
-
-    componentDidMount() {
-        this.setState({
-            ...this.state,
-            loading: false,
-        })
-    }
-
-    onModalToggle = (product) => {
-        if (!this.state.modalToggle) {
-            this.setState({
-                ...this.state,
-                modalClass: "product-modal product-modal__popup",
-                modalToggle: true,
-                backdropClass: 'main-backdrop main-backdrop__fadeIn',
-            })
-        } else if (this.state.modalToggle) {
-            this.setState({
-                ...this.state,
-                modalClass: "product-modal product-modal__popdown",
-                modalToggle: false,
-                backdropClass: 'main-backdrop main-backdrop__fadeOut',
-            })
+    const onModalToggle = (product) => {
+        if (!modalToggle) {
+            setModalClass('product-modal product-modal__popup')
+            setModalToggle(true)
+            setBackdropClass('main-backdrop main-backdrop__fadeIn')
+        } else if (modalToggle) {
+            setModalClass('product-modal product-modal__popdown')
+            setModalToggle(false)
+            setBackdropClass('main-backdrop main-backdrop__fadeOut')
         }
 
-        this.onProductToggle(product);
+        onProductToggle(product);
     }
 
-    onProductToggle = (product) => {
+    const onProductToggle = (product) => {
         switch(product) {
             case 1:
-                this.setState({
-                    heading: this.props.productsStudioETitle,
-                    description: this.props.productsStudioEDescription,
-                    photo: this.props.productsStudioEImage,
-                    subheading: "Pick a duration to view:",
-                    option1: "2 Hours",
-                    url1: "https://studiome.me/product/self-guided-studio-e-2-hour-package/",
-                    option2: "6 Hours",
-                    url2: "https://studiome.me/product/self-guided-studio-e-6-hour-package/",
-                    option3: "10 Hours",
-                    url3: "https://studiome.me/product/self-guided-studio-e-10-hour-package/",
-                })
+                setHeading(props.productsStudioETitle)
+                setDescription(props.productsStudioEDescription)
+                setPhoto(props.productsStudioEImage)
+                setSubheading('Pick a duration to view:')
+                setOption1('2 Hours')
+                setUrl1('https://studiome.me/product/self-guided-studio-e-2-hour-package/')
+                setOption2('6 Hours')
+                setUrl2('https://studiome.me/product/self-guided-studio-e-6-hour-package/')
+                setOption3('10 Hours')
+                setUrl3('https://studiome.me/product/self-guided-studio-e-10-hour-package/')
                 break;
 
             case 2:
-                this.setState({
-                    heading: this.props.productsMPStudioTitle,
-                    description: this.props.productsMPStudioDescription,
-                    photo: this.props.productsMPStudioImage,
-                    subheading: "Pick a duration to view:",
-                    option1: "2 Hours",
-                    url1: "https://studiome.me/product/multi-purpose-studio-2-hour-package/",
-                    option2: "6 Hours",
-                    url2: "https://studiome.me/product/multi-purpose-studio-6-hour-package/",
-                    option3: "10 Hours",
-                    url3: "https://studiome.me/product/multi-purpose-studio-10-hour-package/",
-                })
+                setHeading(props.productsMPStudioTitle)
+                setDescription(props.productsMPStudioDescription)
+                setPhoto(props.productsMPStudioImage)
+                setSubheading('Pick a duration to view:')
+                setOption1('2 Hours')
+                setUrl1('https://studiome.me/product/multi-purpose-studio-2-hour-package/')
+                setOption2('6 Hours')
+                setUrl2('https://studiome.me/product/multi-purpose-studio-6-hour-package/')
+                setOption3('10 Hours')
+                setUrl3('https://studiome.me/product/multi-purpose-studio-10-hour-package/')
                 break;
             case 3:
-                this.setState({
-                    heading: this.props.productsPodcastLoungeTitle,
-                    description: this.props.productsPodcastLoungeDescription,
-                    photo: this.props.productsPodcastLoungeImage,
-                    subheading: "Pick a duration to view:",
-                    option1: "Hourly",
-                    url1: "https://studiome.me/product/podcast-lounge-hourly/",
-                    option2: "Daily",
-                    url2: "https://studiome.me/product/podcast-lounge-full-day/",
-                    option3: '',
-                    url3: '',
-                })
+                setHeading(props.productsPodcastLoungeTitle)
+                setDescription(props.productsPodcastLoungeDescription)
+                setPhoto(props.productsPodcastLoungeImage)
+                setSubheading('Pick a duration to view:')
+                setOption1('Hourly')
+                setUrl1('https://studiome.me/product/podcast-lounge-hourly/')
+                setOption2('Daily')
+                setUrl2('https://studiome.me/product/podcast-lounge-full-day/')
+                setOption3('')
+                setUrl3('')
                 break;
             case 4:
-                this.setState({
-                    heading: this.props.productsAudioStudioTitle,
-                    description: this.props.productsAudioStudioDescription,
-                    photo: this.props.productsAudioStudioImage,
-                    subheading: "Pick a duration to view:",
-                    option1: "Hourly",
-                    url1: "https://studiome.me/product/soundproof-audio-studio-hourly/",
-                    option2: "Daily",
-                    url2: "https://studiome.me/product/soundproof-audio-studio-full-day/",
-                    option3: '',
-                    url3: '',
-                })
+                setHeading(props.productsAudioStudioTitle)
+                setDescription(props.productsAudioStudioDescription)
+                setPhoto(props.productsAudioStudioImage)
+                setSubheading('Pick a duration to view:')
+                setOption1('Hourly')
+                setUrl1('https://studiome.me/product/soundproof-audio-studio-hourly/')
+                setOption2('Daily')
+                setUrl2('https://studiome.me/product/soundproof-audio-studio-full-day/')
+                setOption3('')
+                setUrl3('')
                 break;
             case 5:
-                this.setState({
-                    heading: this.props.productsEquipmentTitle,
-                    description: this.props.productsEquipmentDescription,
-                    photo: this.props.productsEquipmentImage,
-                    subheading: "Pick a category to view:",
-                    option1: "Camera",
-                    url1: "",
-                    option2: "Lighting",
-                    url2: "",
-                    option3: 'Audio',
-                    url3: "",
-                })
+                setHeading(props.productsEquipmentTitle)
+                setDescription(props.productsEquipmentDescription)
+                setPhoto(props.productsEquipmentImage)
+                setSubheading('Pick a category to view:')
+                setOption1('Camera')
+                setUrl1('')
+                setOption2('Lighting')
+                setUrl2('')
+                setOption3('Audio')
+                setUrl3('')
                 break;
             case 6:
-                this.setState({
-                    heading: this.props.productsWorkstationTitle,
-                    description: this.props.productsWorkstationDescription,
-                    photo: this.props.productsWorkstationImage,
-                    subheading: "Pick a category to view:",
-                    option1: "Hourly",
-                    url1: "https://studiome.me/product/editing-workstation-1-hour/",
-                    option2: "Daily",
-                    url2: "https://studiome.me/product/editing-workstation-full-day/",
-                    option3: '',
-                    url3: '',
-                })
+                setHeading(props.productsWorkstationTitle)
+                setDescription(props.productsWorkstationDescription)
+                setPhoto(props.productsWorkstationImage)
+                setSubheading('Pick a category to view:')
+                setOption1('Hourly')
+                setUrl1('https://studiome.me/product/editing-workstation-1-hour/')
+                setOption2('Daily')
+                setUrl2('https://studiome.me/product/editing-workstation-full-day/')
+                setOption3('')
+                setUrl3('')
                 break;
             default: return;
         }
     }
 
-    onLoadingToggle = () => {
-        this.setState({
-            ...this.state,
-            loading: true,
-        })
+    const onLoadingToggle = () => {
+        setLoading(true)
 
         setTimeout(() => {
-            this.setState({
-                ...this.state,
-                loading: false,
-            })
+            setLoading(false)
         }, 3000);
     }
 
-    render() {
-        return (
-            <div id="products" className="container">
-                <div id="products__button-container--1">
-                    <button
-                        className={this.props.rentalsButtonClass}
-                        onClick={this.props.rentalButton}
+    return (
+        <Container>
+            <StyledProductsContainer>
+                <Flex justify={'space-between'}>
+                    <ButtonSecondary
+                        className={props.rentalsButtonClass}
+                        onClick={props.rentalButton}
                     >
                         Rentals
-                    </button>
-                </div>
-
-                <div id="products__button-container--2">
-                    <button
-                        className={this.props.servicesButtonClass}
-                        onClick={this.props.serviceButton}
+                    </ButtonSecondary>
+                    <ButtonSecondary
+                        className={props.servicesButtonClass}
+                        onClick={props.serviceButton}
                     >
                         Services
-                    </button>
-                </div>
-
-                <div id="products__button-container--3">
-                    <button
-                        className={this.props.membershipsButtonClass}
-                        onClick={this.props.membershipsButton}
+                    </ButtonSecondary>
+                    <ButtonSecondary
+                        className={props.membershipsButtonClass}
+                        onClick={props.membershipsButton}
                     >
                         Memberships
-                    </button>
-                </div>
-
+                    </ButtonSecondary>
+                </Flex>
 
                 <ProductsModal
-                    toggle={this.onModalToggle}
-                    class={this.state.modalClass}
+                    toggle={onModalToggle}
+                    class={modalClass}
 
-                    heading={this.state.heading}
-                    description={this.state.description}
-                    photo={this.state.photo}
-                    subheading={this.state.subheading}
+                    heading={heading}
+                    description={description}
+                    photo={photo}
+                    subheading={subheading}
 
-                    option1={this.state.option1}
-                    url1={this.state.url1}
-                    option2={this.state.option2}
-                    url2={this.state.url2}
-                    option3={this.state.option3}
-                    url3={this.state.url3}
-                    loadingToggle={this.onLoadingToggle}
-                    loading={this.state.loading}
+                    option1={option1}
+                    url1={url1}
+                    option2={option2}
+                    url2={url2}
+                    option3={option3}
+                    url3={url3}
+                    loadingToggle={onLoadingToggle}
+                    loading={loading}
                 />
                 {/* Backdrop */}
-                <div className={this.state.backdropClass} onClick={this.onModalToggle} />
+                <div className={backdropClass} onClick={onModalToggle} />
 
-                {this.props.rentalToggle && <ProductRentals
-                    onModalToggle={this.onModalToggle}
-                    productsStudioETitle={this.props.productsStudioETitle}
-                    productsStudioEImage={this.props.productsStudioEImage}
-                    productsMPStudioTitle={this.props.productsMPStudioTitle}
-                    productsMPStudioImage={this.props.productsMPStudioImage}
-                    productsPodcastLoungeTitle={this.props.productsPodcastLoungeTitle}
-                    productsPodcastLoungeImage={this.props.productsPodcastLoungeImage}
-                    productsAudioStudioTitle={this.props.productsAudioStudioTitle}
-                    productsAudioStudioImage={this.props.productsAudioStudioImage}
-                    productsEquipmentTitle={this.props.productsEquipmentTitle}
-                    productsEquipmentImage={this.props.productsEquipmentImage}
-                    productsWorkstationTitle={this.props.productsWorkstationTitle}
-                    productsWorkstationImage={this.props.productsWorkstationImage}
+                {props.rentalToggle && <ProductRentals
+                    onModalToggle={onModalToggle}
+                    productsStudioETitle={props.productsStudioETitle}
+                    productsStudioEImage={props.productsStudioEImage}
+                    productsMPStudioTitle={props.productsMPStudioTitle}
+                    productsMPStudioImage={props.productsMPStudioImage}
+                    productsPodcastLoungeTitle={props.productsPodcastLoungeTitle}
+                    productsPodcastLoungeImage={props.productsPodcastLoungeImage}
+                    productsAudioStudioTitle={props.productsAudioStudioTitle}
+                    productsAudioStudioImage={props.productsAudioStudioImage}
+                    productsEquipmentTitle={props.productsEquipmentTitle}
+                    productsEquipmentImage={props.productsEquipmentImage}
+                    productsWorkstationTitle={props.productsWorkstationTitle}
+                    productsWorkstationImage={props.productsWorkstationImage}
                 />}
-                {this.props.servicesToggle && <ProductServices />}
-                {this.props.membershipsToggle && <ProductMemberships />}
+                {props.servicesToggle && <ProductServices />}
+                {props.membershipsToggle && <ProductMemberships />}
 
-                <div id="products__conferencing-container">
-                    <h2 id="products__conferencing-heading" className="h2 bold uppercase center">{this.props.productsVirtualSolutionsText}</h2>
-                    <NavLink
-                        to="/virtual" exact
-                    >
-                        <Button d="products__conferencing-button" size={'l'}>Learn More</Button>
-                    </NavLink>
-                </div>
-            </div>
-        )
-    }
+                <Box3 marginTop={50} marginBottom={50}>
+                    <StyledVirtualContainer>
+                        <Flex direction={'column'} align={'center'}>
+                            <Box3 marginTop={25}>
+                                <H3 uppercase center>{props.productsVirtualSolutionsText}</H3>
+                            </Box3>
+                            <Box3 marginTop={50} marginBottom={25}>
+                                <NavLink
+                                    to="/virtual" exact
+                                >
+                                    <Button d="products__conferencing-button" size={'l'}>Learn More</Button>
+                                </NavLink>
+                            </Box3>
+                        </Flex>
+                    </StyledVirtualContainer>
+                </Box3>
+            </StyledProductsContainer>
+        </Container>
+    )
 }
+
+const StyledProductsContainer = styled.div`
+    width: 28rem;
+    margin: 0 auto;
+
+    ${respondTo.xs`
+        width: 30rem;
+    `}
+    
+    ${respondTo.sm`
+        width: 55rem;
+    `}
+
+    ${respondTo.md`
+        width: 80rem;
+    `}
+
+    ${respondTo.lg`
+        width: 90rem;
+    `}
+`
+
+const StyledVirtualContainer = styled.div`
+    width: 100%;
+    margin: 0 auto;
+    background: #fff;
+    border: 2px solid ${colors.orange};
+    border-radius: 15px;
+    box-shadow: ${shadows.button};
+`
 
 const mapStateToProps = state => {
 	return {

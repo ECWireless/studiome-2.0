@@ -85,6 +85,47 @@ export const H3 = styled.h3`
         font-size: 3.2rem;
     `}
 
+    ${props => props.color && css`
+        color: ${props.color};
+    `}
+
+    ${props => props.center && css`
+        text-align: center;
+    `}
+
+    ${props => props.light && css`
+        font-weight: 100;
+    `}
+
+    ${props => props.uppercase && css`
+        text-transform: uppercase;
+    `}
+`
+
+export const H4 = styled.h4`
+    font-size: 1.4rem;
+    color: #757575;
+
+    ${respondTo.xs`
+        font-size: 1.6rem;
+    `}
+    
+    ${respondTo.sm`
+        font-size: 2.2rem;
+    `}
+
+    ${respondTo.md`
+        font-size: 2.6rem;
+    `}
+
+    ${respondTo.lg`
+        font-size: 2.8rem;
+    `}
+
+    ${props => props.color && css`
+        color: ${props.color};
+    `}
+
     ${props => props.center && css`
         text-align: center;
     `}

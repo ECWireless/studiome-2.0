@@ -85,3 +85,7 @@ export const ButtonPrimary = styled.button`
         `}
     `}
 `
+
+export const ButtonSecondary = styled.button`
+    
+`

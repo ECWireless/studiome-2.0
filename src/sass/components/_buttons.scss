@@ -88,10 +88,15 @@
     transition: .3s all ease;
 
     @include respond(tab-port) {
-        width: 12rem;
+        width: 10rem;
         height: 5rem;
-        font-size: 1.4rem;
+        font-size: 1.2rem;
         justify-self: flex-start;
+    }
+
+    @include respond(phone) {
+        width: 9rem;
+        font-size: 1.1rem;
     }
 
     @include respond(small-phone) {
@@ -123,10 +128,15 @@
     transition: .3s all ease;
 
     @include respond(tab-port) {
-        width: 12rem;
+        width: 10rem;
         height: 5rem;
-        font-size: 1.4rem;
+        font-size: 1.2rem;
         justify-self: flex-start;
+    }
+
+    @include respond(phone) {
+        width: 9rem;
+        font-size: 1.1rem;
     }
 
     @include respond(small-phone) {
