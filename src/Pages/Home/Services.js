@@ -79,16 +79,6 @@ export default function Services({
                         </Box3>
                     </Flex>
                 </Box3>
-
-                <Box3 marginTop={25}>
-                    <StyledExampleVideoContainer>
-                        <StyledExampleVideo
-                            src={'https://player.vimeo.com/video/244728404'}
-                            frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
-                        />
-                    </StyledExampleVideoContainer>
-                </Box3>
-
                 <Box3 marginTop={75} marginBottom={25}>
                     <H3 uppercase center>{services2Title}</H3>
                 </Box3>
@@ -129,16 +119,6 @@ export default function Services({
                         </Box3>
                     </Flex>
                 </Box3>
-
-                <Box3 marginTop={25}>
-                    <StyledExampleVideoContainer>
-                        <StyledExampleVideo
-                            src={'https://player.vimeo.com/video/225163302'}
-                            frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
-                        />
-                    </StyledExampleVideoContainer>
-                </Box3>
-
                 <Box3 marginTop={75} marginBottom={25}>
                     <H3 uppercase center>{services3Title}</H3>
                 </Box3>
@@ -179,16 +159,6 @@ export default function Services({
                         </Box3>
                     </Flex>
                 </Box3>
-
-                <Box3 marginTop={25}>
-                    <StyledExampleVideoContainer>
-                        <StyledExampleVideo
-                            src={'https://player.vimeo.com/video/307580438'}
-                            frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
-                        />
-                    </StyledExampleVideoContainer>
-                </Box3>
-
                 <Box3 marginTop={50} marginBottom={75}>
                     <Flex align={'center'} justify={'center'}>
                         <NavLink
@@ -230,33 +200,4 @@ const ServicesPhoto = styled.div`
         width: 23rem;
         height: 23rem;
     `}
-`
-
-const StyledExampleVideoContainer = styled.div`
-    width: 28rem;
-    height: 16rem;
-    margin: 0 auto;
-    ${respondTo.xs`
-        width: 30rem;
-        height: 17rem;
-    `}
-    ${respondTo.sm`
-        width: 60rem;
-        height: 34rem;
-    `}
-    ${respondTo.md`
-        width: 80rem;
-        height: 46rem;
-    `}
-    ${respondTo.lg`
-        width: 100rem;
-        height: 56rem;
-    `}
-`
-
-const StyledExampleVideo = styled.iframe`
-    height: 100%;
-    width: 100%;
-    border: none;
-    box-shadow: ${shadows.card};
 `

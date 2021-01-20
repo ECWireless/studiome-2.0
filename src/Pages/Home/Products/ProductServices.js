@@ -12,6 +12,7 @@ import respondTo from '../../../components/Breakpoints'
 import { ButtonPrimary } from '../../../components/Button'
 import { Card } from '../../../components/Cards'
 import { Flex } from '../../../components/Containers'
+import { colors } from '../../../components/theme'
 import { H4, P2, P4 } from '../../../components/Typography'
 import { Line } from '../../../components/Lines'
 
@@ -60,6 +61,12 @@ export default function ProductServices(props) {
                                 </Box3>
                             </Flex>
                         </StyledListContainer>
+                        <StyleExampleLink
+                            href={'https://vimeo.com/244728404'}
+                            target={'_blank'} rel={'noopener noreferrer'}
+                        >
+                            View Example
+                        </StyleExampleLink>
                         <a
                             target="_blank"
                             href="https://forms.gle/ziysrwi8PtFhJbi57"
@@ -115,6 +122,12 @@ export default function ProductServices(props) {
                                 </Box3>
                             </Flex>
                         </StyledListContainer>
+                        <StyleExampleLink
+                            href={'https://vimeo.com/225163302'}
+                            target={'_blank'} rel={'noopener noreferrer'}
+                        >
+                            View Example
+                        </StyleExampleLink>
                         <a
                             target="_blank"
                             href="https://forms.gle/ziysrwi8PtFhJbi57"
@@ -172,6 +185,12 @@ export default function ProductServices(props) {
                                 </Box3>
                             </Flex>
                         </StyledListContainer>
+                        <StyleExampleLink
+                            href={'https://vimeo.com/307580438'}
+                            target={'_blank'} rel={'noopener noreferrer'}
+                        >
+                            View Example
+                        </StyleExampleLink>
                         <a
                             target="_blank"
                             href="https://forms.gle/ziysrwi8PtFhJbi57"
@@ -197,7 +216,7 @@ const StyledServicesCard = styled(Card)`
     position: relative;
     justify-self: center;
     width: 30rem;
-    height: 22rem;
+    height: 25rem;
 
     display: flex;
     flex-direction: column;
@@ -207,7 +226,6 @@ const StyledServicesCard = styled(Card)`
 
     ${respondTo.xs`
         width: 40rem;
-        height: 25rem;
     `}
     
     ${respondTo.sm`
@@ -245,4 +263,18 @@ const StyledListContainer = styled.ul`
     ${respondTo.sm`
         display: block;
     `}
+`
+
+const StyleExampleLink = styled.a`
+    position: absolute;
+    bottom: 9rem;
+    text-decoration: none;
+    transition: all .3s ease;
+    border-bottom: 2px solid #fff;
+    color: ${colors.teal};
+    font-weight: bold;
+
+    &:hover {
+        border-bottom: 2px solid ${colors.teal};
+    }
 `
