@@ -43,7 +43,7 @@ export default class Contact extends Component {
 
     onSubmit = (e) => {
         e.preventDefault();
-        console.log('submit')
+        console.log('submit');
         
         this.setState({ loading: true })
         fetch('https://studiome-backend.herokuapp.com/mail',{
@@ -54,10 +54,7 @@ export default class Contact extends Component {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
-        }).then(
-            (response) => (response.json())
-        ).then((response)=>{
-            console.log(response)
+        }).then((response)=>{
             if (response.status === 200){
                 this.resetForm();
                 this.setState({ submitted: true, success: true, loading: false, })
