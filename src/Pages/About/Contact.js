@@ -57,10 +57,11 @@ export default class Contact extends Component {
         }).then(
             (response) => (response.json())
         ).then((response)=>{
-            if (response.status === 'success'){
+            console.log(response)
+            if (response.status === 200){
                 this.resetForm();
                 this.setState({ submitted: true, success: true, loading: false, })
-            } else if(response.status === 'fail'){
+            } else {
                 this.setState({ submitted: true, success: false, loading: false })
             }
         })
