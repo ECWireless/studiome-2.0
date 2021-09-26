@@ -21,7 +21,7 @@ export default function Footer(props) {
                         target="_blank" rel="noopener noreferrer"
                         href="https://studiome.me/product/self-guided-studio-e-2-hour-package/"
                         className="footer__product-link">
-                        <p>Self-Guided Studio</p>
+                        <p>The Media Space</p>
                     </a>
                     <a
                         target="_blank" rel="noopener noreferrer"
