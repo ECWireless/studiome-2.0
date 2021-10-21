@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 
 // Assets
 import {  ReactComponent as CameraSvg } from '../../../assets/icons/camera.svg';
@@ -16,7 +16,7 @@ export default function ProductItem(props) {
 	let icons = null;
 
 	switch (props.name) {
-		case 'Self-Guided Studio':
+		case 'The Media Space':
 			icons = <VideoCameraSvg />;
 			break;
 		case 'Multi-Purpose Studio':
@@ -65,7 +65,7 @@ export default function ProductItem(props) {
 			</StyledProductItemPhoto>
 			<StyledProductItemTextContainer>
 				<Flex style={{height: '100%'}} align={'center'} justify={'space-between'}>
-					<P2>{props.name}</P2>
+					<P2 css={`margin-right: 4px`}>{props.name}</P2>
 					<ButtonPrimary size={'md'} onClick={props.onModalToggle}>View</ButtonPrimary>
 				</Flex>
 			</StyledProductItemTextContainer>
