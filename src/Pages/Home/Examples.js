@@ -33,7 +33,7 @@ const Examples = () => {
                         <Box3 marginBottom={25}>
                             <CardContainer>
                                 <ExampleVideo
-                                    src={'https://player.vimeo.com/video/220716527'}
+                                    src={'https://player.vimeo.com/video/558767409'}
                                     frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
                                 />
                             </CardContainer>
@@ -53,7 +53,7 @@ const Examples = () => {
                         <Box3 marginBottom={25}>
                             <CardContainer>
                                 <ExampleVideo
-                                    src={'https://player.vimeo.com/video/504781681'}
+                                    src={'https://player.vimeo.com/video/626869448'}
                                     frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
                                 />
                             </CardContainer>
