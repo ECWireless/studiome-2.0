@@ -1,21 +1,23 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
-// Assets
 import {  ReactComponent as CameraSvg } from '../../../assets/icons/camera.svg';
 import { ReactComponent as MicSvg } from '../../../assets/icons/mic.svg';
 import { ReactComponent as VideoCameraSvg } from '../../../assets/icons/video-camera.svg';
 
-// Components
 import { shadows } from '../../../components/theme'
 import { ButtonPrimary } from '../../../components/Button'
 import { Flex } from '../../../components/Containers'
 import { P2 } from '../../../components/Typography'
 
-export default function ProductItem(props) {
+export default function ProductItem({
+	name,
+	onModalToggle,
+	image,
+}) {
 	let icons = null;
 
-	switch (props.name) {
+	switch (name) {
 		case 'The Media Space':
 			icons = <VideoCameraSvg />;
 			break;
@@ -53,9 +55,9 @@ export default function ProductItem(props) {
 	}
 
 	return (
-		<StyledProductItemCard onClick={props.impression}>
-			<StyledProductItemPhoto onClick={props.onModalToggle}
-				style={{backgroundImage: `url(${props.image})`, backgroundPosition: 'center', backgroundSize: 'cover'}}
+		<StyledProductItemCard>
+			<StyledProductItemPhoto onClick={onModalToggle}
+				style={{backgroundImage: `url(${image})`, backgroundPosition: 'center', backgroundSize: 'cover'}}
 			>
 				<Flex>
 					<StyledIconsContainer>
@@ -65,8 +67,8 @@ export default function ProductItem(props) {
 			</StyledProductItemPhoto>
 			<StyledProductItemTextContainer>
 				<Flex style={{height: '100%'}} align={'center'} justify={'space-between'}>
-					<P2 css={`margin-right: 4px`}>{props.name}</P2>
-					<ButtonPrimary size={'md'} onClick={props.onModalToggle}>View</ButtonPrimary>
+					<P2 css={`margin-right: 4px`}>{name}</P2>
+					<ButtonPrimary size={'md'} onClick={onModalToggle}>View</ButtonPrimary>
 				</Flex>
 			</StyledProductItemTextContainer>
 		</StyledProductItemCard>
@@ -92,7 +94,6 @@ const StyledProductItemCard = styled.div`
 	box-shadow: ${shadows.card};
 	border-radius: 5px;
 	overflow: hidden;
-	animation: onRentalFadeIn .7s ease-out;
 `
 
 const StyledProductItemTextContainer = styled.div`

@@ -1,94 +1,122 @@
-import React, { Component } from 'react';
+import React from 'react';
+import styled from 'styled-components/macro';
 
-// Apollo
-import { graphql } from 'react-apollo';
-import { flowRight as compose } from 'lodash';
-
-// Queries
-import {
-    addImpression,
-} from '../../../analytics/queries';
-
-// Product Items
+import { shadows } from '../../../components/theme'
 import ProductRentalItem from './ProductRentalItem';
-
-// Components
 import { Box3 } from '../../../components/Boxes'
 import { Flex } from '../../../components/Containers'
+import { H3, P3 } from '../../../components/Typography'
 
-class ProductRentals extends Component {
+const ProductRentals = ({
+  productsStudioETitle,
+  productsStudioEImage,
+  productsMPStudioTitle,
+  onModalToggle,
+  productsMPStudioImage,
+  productsPodcastLoungeTitle,
+  productsPodcastLoungeImage,
+  productsAudioStudioTitle,
+  productsAudioStudioImage,
+  productsEquipmentTitle,
+  productsEquipmentImage,
+  productsWorkstationTitle,
+  productsWorkstationImage,
+}) => {
+  return (
+    <Flex wrap={true}>
+      <MainProductCard image={productsPodcastLoungeImage} title={'Studios'} />
+      <MainProductCard image={productsEquipmentImage} title={'Equipment'} />
+      <MainProductCard image={productsWorkstationImage} title={'Workstations'} />
+      {/* <Box3 marginTop={50}>
+        <ProductRentalItem
+          style={{ animation: 'none'}}
+          name={productsStudioETitle}
+          image={productsStudioEImage}
+          onModalToggle={() => onModalToggle(1)}
+        />
+      </Box3>
 
-    addImpression = (id) => {
-		this.props.addImpression({
-			variables: {
-				date: new Date().toISOString().slice(0, 10),
-				productId: id
-			}
-        })
-    }
-    
-    render() {
-        return (
-            <Flex wrap={true}>
-                <Box3 marginTop={50}>
-                    <ProductRentalItem
-                        style={{ animation: 'none'}}
-                        name={this.props.productsStudioETitle}
-                        image={this.props.productsStudioEImage}
-                        onModalToggle={this.props.onModalToggle.bind(this, 1)}
-                        impression={this.addImpression.bind(this, '5e28a7e6a8e24c0004493f02')}
-                    />
-                </Box3>
-    
-                <Box3 marginTop={50}>
-                    <ProductRentalItem
-                        name={this.props.productsMPStudioTitle}
-                        image={this.props.productsMPStudioImage}
-                        onModalToggle={this.props.onModalToggle.bind(this, 2)}
-                        impression={this.addImpression.bind(this, '5e28a7f9a8e24c0004493f03')}
-                    />
-                </Box3>
-    
-                <Box3 marginTop={50}>
-                    <ProductRentalItem
-                        name={this.props.productsPodcastLoungeTitle}
-                        image={this.props.productsPodcastLoungeImage}
-                        onModalToggle={this.props.onModalToggle.bind(this, 3)}
-                        impression={this.addImpression.bind(this, '5e28a808a8e24c0004493f04')}
-                    />
-                </Box3>
-    
-                <Box3 marginTop={50}>
-                    <ProductRentalItem
-                        name={this.props.productsAudioStudioTitle}
-                        image={this.props.productsAudioStudioImage}
-                        onModalToggle={this.props.onModalToggle.bind(this, 4)}
-                        impression={this.addImpression.bind(this, '5e28bdfea8e24c0004493f3b')}
-                    />
-                </Box3>
-    
-                <Box3 marginTop={50}>
-                    <ProductRentalItem
-                        name={this.props.productsEquipmentTitle}
-                        image={this.props.productsEquipmentImage}
-                        onModalToggle={this.props.onModalToggle.bind(this, 5)}
-                        impression={this.addImpression.bind(this, '5e28a85da8e24c0004493f05')}
-                    />
-                </Box3>
-    
-                <Box3 marginTop={50}>
-                    <ProductRentalItem
-                        name={this.props.productsWorkstationTitle}
-                        image={this.props.productsWorkstationImage}
-                        onModalToggle={this.props.onModalToggle.bind(this, 6)}
-                        impression={this.addImpression.bind(this, '5e28a866a8e24c0004493f06')}
-                    />
-                </Box3>
-            </Flex>
-        )
-    }
+      <Box3 marginTop={50}>
+        <ProductRentalItem
+          name={productsMPStudioTitle}
+          image={productsMPStudioImage}
+          onModalToggle={() => onModalToggle(2)}
+        />
+      </Box3>
+
+      <Box3 marginTop={50}>
+        <ProductRentalItem
+          name={productsPodcastLoungeTitle}
+          image={productsPodcastLoungeImage}
+          onModalToggle={() => onModalToggle(3)}
+        />
+      </Box3>
+
+      <Box3 marginTop={50}>
+        <ProductRentalItem
+          name={productsAudioStudioTitle}
+          image={productsAudioStudioImage}
+          onModalToggle={() => onModalToggle(4)}
+        />
+      </Box3>
+
+      <Box3 marginTop={50}>
+        <ProductRentalItem
+          name={productsEquipmentTitle}
+          image={productsEquipmentImage}
+          onModalToggle={() => onModalToggle(5)}
+        />
+      </Box3>
+
+      <Box3 marginTop={50}>
+        <ProductRentalItem
+          name={productsWorkstationTitle}
+          image={productsWorkstationImage}
+          onModalToggle={() => onModalToggle(6)}
+        />
+      </Box3> */}
+    </Flex>
+  )
 }
 
-export default compose(
-	graphql(addImpression, { name: "addImpression" })
-)(ProductRentals);
+export default ProductRentals;
+
+const MainProductCard = ({ image, title }) => {
+  return (
+    <Box3 marginTop={50} css={`width: 100%;`}>
+      <StyledProductCategoryCard css={`background-image: url(${image});`}>
+        <StyledBanner>
+          <H3 css={`text-align: center; text-transform: uppercase;`}>
+            {title}
+          </H3>
+          <P3 css={`text-align: center;`}>Click to view</P3>
+          </StyledBanner>
+      </StyledProductCategoryCard>
+    </Box3>
+  )
+}
+
+const StyledProductCategoryCard = styled.div`
+  animation: onRentalFadeIn .7s ease-out;
+  background-position: center;
+  background-size: cover;
+	border-radius: 5px;
+	box-shadow: ${shadows.card};
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+	height: 330px;
+  justify-content: flex-end;
+	overflow: hidden;
+  width: 100%;
+`;
+
+const StyledBanner = styled.div`
+  align-items: center;
+  background-color: rgba(255,255,255,.9);
+  display: flex;
+  flex-direction: column;
+  height: 90px;
+  justify-content: center;
+  width: 100%;
+`;
