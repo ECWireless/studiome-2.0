@@ -73,7 +73,7 @@ const ProductRentals = ({
           <Box3 marginTop={50}>
             <ProductRentalItem
               name={'Cameras'}
-              image={'https://cdn.sanity.io/images/lagsmzsb/production/0c346a989c0f581ae7b4f3f32be727b2ffcd87a3-350x350.jpg'}
+              image={'https://cdn.sanity.io/images/lagsmzsb/production/594894ac4c56f9673bcd05a4101abb04474c90ac-350x350.jpg'}
               onModalToggle={() => history.push('/equipment/cameras')}
             />
           </Box3>
