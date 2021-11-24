@@ -24,7 +24,7 @@ const Equipment = (props) => {
     }
 
     switch (id) {
-      case 'equipment':
+      case 'cameras':
         switchEquipment('907');
         break;
       case 'lighting':
