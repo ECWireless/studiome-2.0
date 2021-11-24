@@ -56,82 +56,82 @@ export const Products = (props) => {
     }
 
     const onProductToggle = (product) => {
-        switch(product) {
-            case 1:
-                setHeading(props.productsStudioETitle)
-                setDescription(props.productsStudioEDescription)
-                setPhoto(props.productsStudioEImage)
-                setSubheading('Pick a duration to view:')
-                setOption1('2 Hours')
-                setUrl1('https://studiome.me/product/self-guided-studio-e-2-hour-package/')
-                setOption2('6 Hours')
-                setUrl2('https://studiome.me/product/self-guided-studio-e-6-hour-package/')
-                setOption3('10 Hours')
-                setUrl3('https://studiome.me/product/self-guided-studio-e-10-hour-package/')
-                break;
+      switch(product) {
+        case 1:
+          setHeading(props.productsStudioETitle)
+          setDescription(props.productsStudioEDescription)
+          setPhoto(props.productsStudioEImage)
+          setSubheading('Pick a duration to view:')
+          setOption1('2 Hours')
+          setUrl1('https://studiome.me/product/self-guided-studio-e-2-hour-package/')
+          setOption2('6 Hours')
+          setUrl2('https://studiome.me/product/self-guided-studio-e-6-hour-package/')
+          setOption3('10 Hours')
+          setUrl3('https://studiome.me/product/self-guided-studio-e-10-hour-package/')
+          break;
 
-            case 2:
-                setHeading(props.productsMPStudioTitle)
-                setDescription(props.productsMPStudioDescription)
-                setPhoto(props.productsMPStudioImage)
-                setSubheading('Pick a duration to view:')
-                setOption1('2 Hours')
-                setUrl1('https://studiome.me/product/multi-purpose-studio-2-hour-package/')
-                setOption2('6 Hours')
-                setUrl2('https://studiome.me/product/multi-purpose-studio-6-hour-package/')
-                setOption3('10 Hours')
-                setUrl3('https://studiome.me/product/multi-purpose-studio-10-hour-package/')
-                break;
-            case 3:
-                setHeading(props.productsPodcastLoungeTitle)
-                setDescription(props.productsPodcastLoungeDescription)
-                setPhoto(props.productsPodcastLoungeImage)
-                setSubheading('Pick a duration to view:')
-                setOption1('Hourly')
-                setUrl1('https://studiome.me/product/podcast-lounge-hourly/')
-                setOption2('Daily')
-                setUrl2('https://studiome.me/product/podcast-lounge-full-day/')
-                setOption3('')
-                setUrl3('')
-                break;
-            case 4:
-                setHeading(props.productsAudioStudioTitle)
-                setDescription(props.productsAudioStudioDescription)
-                setPhoto(props.productsAudioStudioImage)
-                setSubheading('Pick a duration to view:')
-                setOption1('Hourly')
-                setUrl1('https://studiome.me/product/soundproof-audio-studio-hourly/')
-                setOption2('Daily')
-                setUrl2('https://studiome.me/product/soundproof-audio-studio-full-day/')
-                setOption3('')
-                setUrl3('')
-                break;
-            case 5:
-                setHeading(props.productsEquipmentTitle)
-                setDescription(props.productsEquipmentDescription)
-                setPhoto(props.productsEquipmentImage)
-                setSubheading('Pick a category to view:')
-                setOption1('Camera')
-                setUrl1('')
-                setOption2('Lighting')
-                setUrl2('')
-                setOption3('Audio')
-                setUrl3('')
-                break;
-            case 6:
-                setHeading(props.productsWorkstationTitle)
-                setDescription(props.productsWorkstationDescription)
-                setPhoto(props.productsWorkstationImage)
-                setSubheading('Pick a category to view:')
-                setOption1('Hourly')
-                setUrl1('https://studiome.me/product/editing-workstation-1-hour/')
-                setOption2('Daily')
-                setUrl2('https://studiome.me/product/editing-workstation-full-day/')
-                setOption3('')
-                setUrl3('')
-                break;
-            default: return;
-        }
+        case 2:
+          setHeading(props.productsMPStudioTitle)
+          setDescription(props.productsMPStudioDescription)
+          setPhoto(props.productsMPStudioImage)
+          setSubheading('Pick a duration to view:')
+          setOption1('2 Hours')
+          setUrl1('https://studiome.me/product/multi-purpose-studio-2-hour-package/')
+          setOption2('6 Hours')
+          setUrl2('https://studiome.me/product/multi-purpose-studio-6-hour-package/')
+          setOption3('10 Hours')
+          setUrl3('https://studiome.me/product/multi-purpose-studio-10-hour-package/')
+          break;
+        case 3:
+          setHeading(props.productsPodcastLoungeTitle)
+          setDescription(props.productsPodcastLoungeDescription)
+          setPhoto(props.productsPodcastLoungeImage)
+          setSubheading('Pick a duration to view:')
+          setOption1('Hourly')
+          setUrl1('https://studiome.me/product/podcast-lounge-hourly/')
+          setOption2('Daily')
+          setUrl2('https://studiome.me/product/podcast-lounge-full-day/')
+          setOption3('')
+          setUrl3('')
+          break;
+        case 4:
+          setHeading(props.productsAudioStudioTitle)
+          setDescription(props.productsAudioStudioDescription)
+          setPhoto(props.productsAudioStudioImage)
+          setSubheading('Pick a duration to view:')
+          setOption1('Hourly')
+          setUrl1('https://studiome.me/product/soundproof-audio-studio-hourly/')
+          setOption2('Daily')
+          setUrl2('https://studiome.me/product/soundproof-audio-studio-full-day/')
+          setOption3('')
+          setUrl3('')
+          break;
+        case 5:
+          setHeading(props.productsEquipmentTitle)
+          setDescription(props.productsEquipmentDescription)
+          setPhoto(props.productsEquipmentImage)
+          setSubheading('Pick a category to view:')
+          setOption1('Camera')
+          setUrl1('')
+          setOption2('Lighting')
+          setUrl2('')
+          setOption3('Audio')
+          setUrl3('')
+          break;
+        case 6:
+          setHeading(props.productsWorkstationTitle)
+          setDescription(props.productsWorkstationDescription)
+          setPhoto(props.productsWorkstationImage)
+          setSubheading('Pick a category to view:')
+          setOption1('Hourly')
+          setUrl1('https://studiome.me/product/editing-workstation-1-hour/')
+          setOption2('Daily')
+          setUrl2('https://studiome.me/product/editing-workstation-full-day/')
+          setOption3('')
+          setUrl3('')
+          break;
+        default: return;
+      }
     }
 
     const onLoadingToggle = () => {

@@ -78,6 +78,13 @@ export default function Router(props) {
                             <Equipment />
                         </React.Suspense>} 
                 />
+
+                <Route path="/equipment/:id"
+                    render={() => 
+                        <React.Suspense fallback={<Spinner />}>
+                            <Equipment />
+                        </React.Suspense>} 
+                />
                 <Route path="/virtual" exact
                     render={() => 
                         <React.Suspense fallback={<Spinner />}>

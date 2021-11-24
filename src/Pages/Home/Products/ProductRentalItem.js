@@ -87,6 +87,7 @@ const StyledIconsContainer = styled.div`
 `;
 
 const StyledProductItemCard = styled.div`
+	animation: onRentalFadeIn .7s ease-out;
 	justify-self: center;
 	align-self: flex-start;
 	width: 25rem;
