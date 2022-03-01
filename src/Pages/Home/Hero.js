@@ -5,7 +5,7 @@ import Lottie from 'react-lottie';
 import Spinner from '../../components/Spinner';
 
 // Video
-import webVideo from '../../assets/home/hero/web-hero-3.mp4';
+import webVideo from '../../assets/home/hero/web-hero-4.mp4';
 
 // SVGs
 import { ReactComponent as ChevronArrow } from '../../assets/home/products/chevron-thin-down.svg';
