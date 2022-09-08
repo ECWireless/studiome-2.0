@@ -56,8 +56,14 @@ export default function ProductItem({
 
 	return (
 		<StyledProductItemCard>
-			<StyledProductItemPhoto onClick={onModalToggle}
-				style={{backgroundImage: `url(${image})`, backgroundPosition: 'center', backgroundSize: 'cover'}}
+			<StyledProductItemPhoto
+				disabled={name === 'New Podcast Space Coming Soon!'}
+				onClick={name === 'New Podcast Space Coming Soon!' ? () => null : onModalToggle}
+				style={{
+					backgroundImage: `url(${image})`,
+					backgroundPosition: 'center',
+					backgroundSize: 'cover',
+				}}
 			>
 				<Flex>
 					<StyledIconsContainer>
@@ -110,7 +116,12 @@ const StyledProductItemPhoto = styled.div`
 	width: 100%;
 
 	&:hover {
-			opacity: .8;
-			cursor: pointer;
+		cursor: pointer;
+		opacity: .8;
+
+		${props => props.disabled && `
+			cursor: not-allowed;
+			opacity: 1;
+		`}
 	}
 `
