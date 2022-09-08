@@ -68,7 +68,7 @@ export default function ProductItem({
 			<StyledProductItemTextContainer>
 				<Flex style={{height: '100%'}} align={'center'} justify={'space-between'}>
 					<P2 css={`margin-right: 4px`}>{name}</P2>
-					<ButtonPrimary size={'md'} onClick={onModalToggle}>View</ButtonPrimary>
+					<ButtonPrimary disabled={name === 'New Podcast Space Coming Soon!'} size={'md'} onClick={onModalToggle}>View</ButtonPrimary>
 				</Flex>
 			</StyledProductItemTextContainer>
 		</StyledProductItemCard>

@@ -30,11 +30,24 @@ export const ButtonPrimary = styled.button`
         cursor: pointer;
         background-color: ${colors.greyLight};
         color: ${colors.green};
+
+        ${props => props.disabled && css`
+            color: ${colors.grey};
+            cursor: not-allowed;
+        `}
     }
 
     &:active {
-        box-shadow: none;
+        ${props => !props.disabled && css`
+            box-shadow: none;
+        `}
     }
+
+    ${props => props.disabled && css`
+        background-color: ${colors.greyLight};
+        color: ${colors.grey};
+        cursor: not-allowed;
+    `}
 
     ${props => props.size === 'sm' && css`
         width: 4rem;
