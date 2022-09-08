@@ -62,12 +62,10 @@ export const Products = (props) => {
           setDescription(props.productsStudioEDescription)
           setPhoto(props.productsStudioEImage)
           setSubheading('Pick a duration to view:')
-          setOption1('2 Hours')
-          setUrl1('https://studiome.me/product/self-guided-studio-e-2-hour-package/')
-          setOption2('6 Hours')
-          setUrl2('https://studiome.me/product/self-guided-studio-e-6-hour-package/')
-          setOption3('10 Hours')
-          setUrl3('https://studiome.me/product/self-guided-studio-e-10-hour-package/')
+          setOption1('Hourly')
+          setUrl1('https://studiome.me/product/the-media-space-hourly-package/')
+          setOption2('Daily')
+          setUrl2('https://studiome.me/product/the-media-space-10-hour-package/')
           break;
 
         case 2:
