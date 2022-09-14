@@ -63,20 +63,20 @@ export default function Services({
                         </Box3>
                         <Box3 marginBottom={25}>
                             <CustomLink
-                                href={'https://studiome.me/product/multi-purpose-studio-2-hour-package/'}
+                                href={'https://studiome.me/product/the-media-space-hourly-package/'}
                                 target={'_blank'} rel={'noopener noreferrer'}
                             >
                                 <ServicesPhoto style={{backgroundImage: `url(${services1Image3})`, borderBottom: `4px solid ${colors.green}`}} />
                             </CustomLink>
                         </Box3>
-                        <Box3 marginBottom={25}>
+                        {/* <Box3 marginBottom={25}>
                             <CustomLink
                                 href={'https://studiome.me/product/self-guided-studio-e-2-hour-package/'}
                                 target={'_blank'} rel={'noopener noreferrer'}
                             >
                                 <ServicesPhoto style={{backgroundImage: `url(${services1Image4})`, borderBottom: `4px solid ${colors.teal}`}} />
                             </CustomLink>
-                        </Box3>
+                        </Box3> */}
                     </Flex>
                 </Box3>
                 <Box3 marginTop={75} marginBottom={25}>

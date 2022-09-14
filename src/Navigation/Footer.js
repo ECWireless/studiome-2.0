@@ -25,12 +25,6 @@ export default function Footer(props) {
                     </a>
                     <a
                         target="_blank" rel="noopener noreferrer"
-                        href="https://studiome.me/product/multi-purpose-studio-2-hour-package/"
-                        className="footer__product-link">
-                        <p>Multi-Purpose Studio</p>
-                    </a>
-                    <a
-                        target="_blank" rel="noopener noreferrer"
                         href="https://studiome.me/product/podcast-lounge-hourly/"
                         className="footer__product-link">
                         <p className="footer__product-link3">Podcast Lounge</p>
