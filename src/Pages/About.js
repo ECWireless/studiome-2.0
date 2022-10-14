@@ -1,5 +1,4 @@
 import React, { Component, createRef } from 'react';
-import { graphql } from 'react-apollo';
 import imageUrlBuilder from '@sanity/image-url'
 import { client } from '../client'
 
@@ -8,9 +7,6 @@ import Intro from './About/Intro';
 import Team from './About/Team';
 import Work from './About/Work';
 import Contact from './About/Contact';
-
-// Queries
-import { addImpression } from '../analytics/queries';
 
 function urlFor (source) {
     return imageUrlBuilder(client).image(source)
@@ -24,14 +20,6 @@ class About extends Component {
     }
 
     componentDidMount() {
-        this.props.addImpression({
-            variables: {
-                date: new Date().toISOString().slice(0, 10),
-                productId: "5e31fec36b3dcd0004ae9369"
-            }
-        })
-
-
         let location = window.location.href;
 		location = location.split('#')
 
@@ -194,4 +182,4 @@ class About extends Component {
     }
 }
 
-export default graphql(addImpression, {name: "addImpression"})(About);
+export default About;

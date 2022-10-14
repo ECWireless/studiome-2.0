@@ -1,9 +1,5 @@
 import React from 'react';
-import { graphql } from 'react-apollo';
 import styled from 'styled-components'
-
-// Queries
-import { addImpression } from '../../../analytics/queries';
 
 // Photos
 import Package50 from '../../../assets/home/products/memberships/50membership-final.png'
@@ -18,34 +14,6 @@ import { H2, H3, P2, P3 } from '../../../components/Typography'
 import { Line } from '../../../components/Lines'
 
 class ProductMemberships extends React.Component {
-
-    componentDidMount() {
-        this.props.addImpression({
-			variables: {
-				date: new Date().toISOString().slice(0, 10),
-				productId: "5e5fc3405393db0004e43a69"
-			}
-		})
-    }
-
-    impressProMembership = () => {
-        this.props.addImpression({
-			variables: {
-				date: new Date().toISOString().slice(0, 10),
-				productId: "5e5fc35c5393db0004e43a6a"
-			}
-		})
-    }
-
-    impressPremiiumMembership = () => {
-        this.props.addImpression({
-			variables: {
-				date: new Date().toISOString().slice(0, 10),
-				productId: "5e5fc3625393db0004e43a6c"
-			}
-		})
-    }
-
     render() {
         return (
             <Box3 marginTop={50}>
@@ -159,4 +127,4 @@ const StyledTextLink = styled.a`
     }
 `
 
-export default graphql(addImpression, { name: "addImpression" })(ProductMemberships);
+export default ProductMemberships;

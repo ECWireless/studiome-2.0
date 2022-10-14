@@ -1,14 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { graphql } from 'react-apollo'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 import Fade from 'react-reveal/Fade'
 import imageUrlBuilder from '@sanity/image-url'
 import { client } from '../../client'
 import respondTo from '../../components/Breakpoints'
-
-// Queries
-import { addImpression } from '../../analytics/queries'
 
 // Components
 import { colors, shadows } from '../../components/theme'
@@ -24,27 +20,17 @@ import { H3, P1, P3, P4 } from '../../components/Typography'
 import EventImage1 from '../../assets/community/events/event-1.jpg'
 import EventImage2 from '../../assets/community/events/event-2.jpg'
 
-export const Events = ({
-    addImpression
-}) => {
+export const Events = () => {
     const [content, setContent] = useState({})
 
     useEffect(() => {
         window.scroll({
             top: 0,
         })
-
-        addImpression({
-			variables: {
-				date: new Date().toISOString().slice(0, 10),
-				productId: "5e5fc31d5393db0004e43a68"
-			}
-        })
-        
         client.fetch('*[_type == "community" && slug.current == "v1"][0]').then(pageProps => {
             setContent(pageProps)
         })
-    }, [addImpression])
+    }, [])
 
     function urlFor(source) {
         return imageUrlBuilder(client).image(source)
@@ -128,7 +114,7 @@ export const Events = ({
     )
 }
 
-export default graphql(addImpression, { name: "addImpression" })(Events);
+export default Events;
 
 const EventCard = styled.div`
     align-self: center;
