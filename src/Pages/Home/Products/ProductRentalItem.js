@@ -11,6 +11,7 @@ import { Flex } from '../../../components/Containers'
 import { P2 } from '../../../components/Typography'
 
 export default function ProductItem({
+	fullWidth,
 	name,
 	onModalToggle,
 	image,
@@ -30,6 +31,7 @@ export default function ProductItem({
 			);
 			break;
 		case 'Podcast Lounge':
+		case 'The Speak Easy Lounge':
 			icons = (
 				<>
 					<VideoCameraSvg />
@@ -55,9 +57,10 @@ export default function ProductItem({
 	}
 
 	return (
-		<StyledProductItemCard>
+		<StyledProductItemCard fullWidth={fullWidth}>
 			<StyledProductItemPhoto
 				disabled={name === 'New Podcast Space Coming Soon!'}
+				fullWidth={fullWidth}
 				onClick={name === 'New Podcast Space Coming Soon!' ? () => null : onModalToggle}
 				style={{
 					backgroundImage: `url(${image})`,
@@ -101,6 +104,11 @@ const StyledProductItemCard = styled.div`
 	box-shadow: ${shadows.card};
 	border-radius: 5px;
 	overflow: hidden;
+
+	${props => props.fullWidth && `
+		height: 40rem;
+		width: 100%;
+	`}
 `
 
 const StyledProductItemTextContainer = styled.div`
@@ -114,6 +122,10 @@ const StyledProductItemPhoto = styled.div`
 	position: relative;
 	transition: .5s opacity ease;
 	width: 100%;
+
+	${props => props.fullWidth && `
+		height: 32rem;
+	`}
 
 	&:hover {
 		cursor: pointer;

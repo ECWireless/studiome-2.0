@@ -33,30 +33,34 @@ const ProductRentals = ({
       </div>
       {category === 1 && (
         <Flex wrap={true}>
-          <Box3 marginTop={50}>
+          <Box3 marginTop={50} style={{ width: '100%' }}>
             <ProductRentalItem
+              fullWidth
               style={{ animation: 'none'}}
               name={productsStudioETitle}
               image={productsStudioEImage}
               onModalToggle={() => onModalToggle(1)}
             />
           </Box3>
-          <Box3 marginTop={50}>
+          <Box3 marginTop={25} style={{ width: '100%' }}>
             <ProductRentalItem
+              fullWidth
               name={productsMPStudioTitle}
               image={productsMPStudioImage}
               onModalToggle={() => onModalToggle(2)}
             />
           </Box3>
-          <Box3 marginTop={50}>
+          <Box3 marginTop={25} style={{ width: '100%' }}>
             <ProductRentalItem
+              fullWidth
               name={productsPodcastLoungeTitle}
               image={productsPodcastLoungeImage}
               onModalToggle={() => onModalToggle(3)}
             />
           </Box3>
-          <Box3 marginTop={50}>
+          <Box3 marginTop={25} style={{ width: '100%' }}>
             <ProductRentalItem
+              fullWidth
               name={productsAudioStudioTitle}
               image={productsAudioStudioImage}
               onModalToggle={() => onModalToggle(4)}
