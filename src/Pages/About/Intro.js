@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import StudioRendering from '../../assets/about/intro/studiome_rendering.png'
+import StudioRendering from '../../assets/about/intro/studiome_rendering_2.png'
 
 // Components
 import Banner from '../../components/Banner'
