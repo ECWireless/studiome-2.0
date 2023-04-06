@@ -11,58 +11,58 @@ import { Line } from '../../components/Lines'
 import { H2 } from '../../components/Typography'
 
 const Examples = () => {
-    return (
-        <ExamplesBackground>
-            <Container>
-                <H2 uppercase center>Some of our work</H2>
-                <Box3 marginTop={10} marginBottom={50}>
-                    <Line width={150} height={3} color={'orange'} />
-                </Box3>
-                <Flex wrap={true}>
-                    <Fade bottom ssrFadeout>
-                        <Box3 marginBottom={25}>
-                            <CardContainer>
-                                <ExampleVideo
-                                    src={'https://player.vimeo.com/video/651689605'}
-                                    frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
-                                />
-                            </CardContainer>
-                        </Box3>
-                    </Fade>
-                    <Fade bottom delay={200} ssrFadeout>
-                        <Box3 marginBottom={25}>
-                            <CardContainer>
-                                <ExampleVideo
-                                    src={'https://player.vimeo.com/video/558767409'}
-                                    frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
-                                />
-                            </CardContainer>
-                        </Box3>
-                    </Fade>
-                    <Fade bottom ssrFadeout>
-                        <Box3 marginBottom={25}>
-                            <CardContainer>
-                                <ExampleVideo
-                                    src={'https://player.vimeo.com/video/678736360?h=eb055f50d0'}
-                                    frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
-                                />
-                            </CardContainer>
-                        </Box3>
-                    </Fade>
-                    <Fade bottom delay={200} ssrFadeout>
-                        <Box3 marginBottom={25}>
-                            <CardContainer>
-                                <ExampleVideo
-                                    src={'https://player.vimeo.com/video/626869448'}
-                                    frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
-                                />
-                            </CardContainer>
-                        </Box3>
-                    </Fade>
-                </Flex>
-            </Container>
-        </ExamplesBackground>
-    )
+	return (
+		<ExamplesBackground>
+			<Container>
+				<H2 uppercase center>Some of our work</H2>
+				<Box3 marginTop={10} marginBottom={50}>
+						<Line width={150} height={3} color={'orange'} />
+				</Box3>
+				<Flex wrap={true}>
+					<Fade bottom ssrFadeout>
+						<Box3 marginBottom={25}>
+							<CardContainer>
+								<ExampleVideo
+									src={'https://player.vimeo.com/video/651689605'}
+									frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
+								/>
+							</CardContainer>
+						</Box3>
+					</Fade>
+					<Fade bottom delay={200} ssrFadeout>
+						<Box3 marginBottom={25}>
+							<CardContainer>
+								<ExampleVideo
+									src={'https://player.vimeo.com/video/786112487?h=63d9f4dcad'}
+									frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
+								/>
+							</CardContainer>
+						</Box3>
+					</Fade>
+					<Fade bottom ssrFadeout>
+						<Box3 marginBottom={25}>
+							<CardContainer>
+								<ExampleVideo
+									src={'https://player.vimeo.com/video/678736360?h=eb055f50d0'}
+									frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
+								/>
+							</CardContainer>
+						</Box3>
+					</Fade>
+					<Fade bottom delay={200} ssrFadeout>
+						<Box3 marginBottom={25}>
+							<CardContainer>
+								<ExampleVideo
+									src={'https://player.vimeo.com/video/799646886?h=5844db8734'}
+									frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
+								/>
+							</CardContainer>
+						</Box3>
+					</Fade>
+				</Flex>
+			</Container>
+		</ExamplesBackground>
+	)
 }
 
 const ExamplesBackground = styled.div`
