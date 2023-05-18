@@ -1,245 +1,244 @@
 #hero {
+  @include respond(big-desktop) {
+    grid-template-rows: 85rem 15rem 14rem;
+  }
+
+  grid-template-rows: 54rem 15rem 14rem;
+
+  @include respond(tab-land) {
+    grid-template-rows: 50rem 15rem 14rem;
+  }
+
+  @include respond(tab-port) {
+    grid-template-rows: 35rem 15rem 14rem;
+  }
+
+  @include respond(phone) {
+    grid-template-rows: 44rem 10rem;
+  }
+
+  @include respond(small-phone) {
+    grid-template-rows: 35rem 8rem;
+  }
+
+  &__video-container {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    justify-content: center;
+
+    overflow: hidden;
+    z-index: 1;
+    display: flex;
+    flex-flow: column;
+  }
+
+  &__video {
+    width: 100%;
+
     @include respond(big-desktop) {
-        grid-template-rows: 85rem 15rem 14rem;
+      transform: scale(1.3) translateY(-5rem);
     }
 
-    grid-template-rows: 54rem 15rem 14rem;
-
-
     @include respond(tab-land) {
-        grid-template-rows: 50rem 15rem 14rem;
+      transform: scale(1.2) translateY(-2rem);
     }
 
     @include respond(tab-port) {
-        grid-template-rows: 35rem 15rem 14rem;
+      transform: scale(1.2) translateY(-2rem);
     }
 
     @include respond(phone) {
-        grid-template-rows: 44rem 10rem;
+      display: none;
+    }
+  }
+
+  &__video-svg {
+    display: none;
+
+    @include respond(phone) {
+      width: 40rem;
+      height: 40rem;
+      display: inline;
+      position: absolute;
+      top: 12rem;
+      left: 1rem;
     }
 
     @include respond(small-phone) {
-        grid-template-rows: 35rem 8rem;
+      width: 28rem;
+      height: 28rem;
+      top: 12rem;
+      left: 3rem;
+    }
+  }
+
+  &__circle {
+    display: none;
+
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    z-index: 2;
+    align-self: flex-start;
+    justify-self: flex-end;
+
+    height: 60%;
+    width: 47rem;
+
+    padding-left: 10rem;
+    background-color: $color-teal;
+    border-radius: 0 0 0 50rem;
+    box-shadow: $shadow-medium-left;
+
+    @include respond(tab-land) {
+      width: 45rem;
     }
 
-    &__video-container {
-        grid-column: 1 / -1;
-        grid-row: 1 / 2;
-        justify-content: center;
-
-        overflow: hidden;
-        z-index: 1;
-        display: flex;
-        flex-flow: column;
+    @include respond(tab-port) {
+      width: 42rem;
     }
 
-    &__video {
-        width: 100%;
-
-        @include respond(big-desktop) {
-            transform: scale(1.3) translateY(-5rem);
-        }
-
-        @include respond(tab-land) {
-            transform: scale(1.2) translateY(-2rem);
-        }
-
-        @include respond(tab-port) {
-            transform: scale(1.2) translateY(-2rem);
-        }
-
-        @include respond(phone) {
-            display: none;
-        }
+    @include respond(phone) {
+      display: inline;
+      width: 38rem;
+      height: 50%;
     }
 
-    &__video-svg {
-        display: none;
+    @include respond(small-phone) {
+      width: 32rem;
+      height: 45%;
+    }
+  }
 
-        @include respond(phone) {
-            width: 40rem;
-            height: 40rem;
-            display: inline;
-            position: absolute;
-            top: 12rem;
-            left: 1rem;
-        }
+  &__headings-container {
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+    align-self: flex-start;
 
-        @include respond(small-phone) {
-            width: 28rem;
-            height: 28rem;
-            top: 12rem;
-            left: 3rem;
-        }
+    text-align: right;
+    margin-top: 9rem;
+    margin-right: 4rem;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+
+    @include respond(tab-land) {
+      margin-top: 0;
+      margin-right: 3rem;
     }
 
-    &__circle {
-        display: none;
+    @include respond(tab-port) {
+      margin-top: 0;
+      margin-right: 2rem;
+    }
+  }
 
-        grid-column: 1 / -1;
-        grid-row: 1 / 2;
-        z-index: 2;
-        align-self: flex-start;
-        justify-self: flex-end;
+  &__heading {
+    display: none;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
 
-        height: 60%;
-        width: 47rem;
-
-        padding-left: 10rem;
-        background-color: $color-teal;
-        border-radius: 0 0 0 50rem;
-        box-shadow: $shadow-medium-left;
-
-        @include respond(tab-land) {
-            width: 45rem;
-        }
-
-        @include respond(tab-port) {
-            width: 42rem;
-        }
-
-        @include respond(phone) {
-            display: inline;
-            width: 38rem;
-            height: 50%;
-        }
-
-        @include respond(small-phone) {
-            width: 32rem;
-            height: 45%;
-        }
+    @include respond(tab-land) {
+      margin-top: 8rem;
     }
 
-    &__headings-container {
-        grid-column: 1 / -1;
-        grid-row: 1 / -1;
-        align-self: flex-start;
-
-        text-align: right;
-        margin-top: 9rem;
-        margin-right: 4rem;
-        z-index: 3;
-        display: flex;
-        flex-direction: column;
-
-        @include respond(tab-land) {
-            margin-top: 0;
-            margin-right: 3rem;
-        }
-
-        @include respond(tab-port) {
-            margin-top: 0;
-            margin-right: 2rem;
-        }
+    @include respond(phone) {
+      display: inline;
+      margin-top: 4rem;
     }
 
-    &__heading {
-        display: none;
-        text-transform: uppercase;
-        margin-bottom: 2rem;
+    @include respond(small-phone) {
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+    }
+  }
 
-        @include respond(tab-land) {
-            margin-top: 8rem;
-        }
+  &__subheading {
+    display: none;
+    width: 30rem;
+    align-self: flex-end;
 
-        @include respond(phone) {
-            display: inline;
-            margin-top: 4rem;
-        }
+    @include respond(phone) {
+      display: inline;
+      width: 20rem;
+    }
+  }
 
-        @include respond(small-phone) {
-            margin-top: 3rem;
-            margin-bottom: 1rem;
-        }
+  &__description-container {
+    grid-column: 1 / -1;
+    grid-row: 2 / 3;
+    text-align: center;
+    height: 15rem;
+    display: flex;
+
+    animation: color 5s infinite;
+
+    @include respond(phone) {
+      display: none;
+    }
+  }
+
+  &__studio-description {
+    margin: 0 auto;
+    align-self: center;
+
+    @include respond(phone) {
+      display: none;
+    }
+  }
+
+  &__arrow-container {
+    grid-column: 1 / -1;
+    grid-row: 3 / 4;
+    width: 35rem;
+    margin: 0 auto;
+    text-align: center;
+    align-self: flex-end;
+
+    @include respond(phone) {
+      grid-row: 2 / -2;
+      margin-top: 2rem;
     }
 
-    &__subheading {
-        display: none;
-        width: 30rem;
-        align-self: flex-end;
-
-        @include respond(phone) {
-            display: inline;
-            width: 20rem;
-        }
+    @include respond(small-phone) {
+      width: 28rem;
     }
 
-    &__description-container {
-        grid-column: 1 / -1;
-        grid-row: 2 / 3;
-        text-align: center;
-        height: 15rem;
-        display: flex;
+    &:hover {
+      cursor: pointer;
+    }
+  }
 
-        animation: color 5s infinite;
+  &__arrow-heading {
+    justify-self: center;
+    align-self: center;
+    text-transform: uppercase;
 
-        @include respond(phone) {
-            display: none;
-        }
+    @include respond(phone) {
+      grid-column: 1 / 3;
+      grid-row: 2 / 3;
+      text-align: center;
+      align-self: flex-start;
     }
 
-    &__studio-description {
-        margin: 0 auto;
-        align-self: center;
-
-        @include respond(phone) {
-            display: none;
-        }
+    @include respond(small-phone) {
+      grid-column: 1 / 3;
+      text-align: center;
+      align-self: flex-start;
     }
+  }
 
-    &__arrow-container {
-        grid-column: 1 / -1;
-        grid-row: 3 / 4;
-        width: 35rem;
-        margin: 0 auto;
-        text-align: center;
-        align-self: flex-end;
+  &__arrow {
+    justify-self: center;
+    align-self: flex-end;
 
-        @include respond(phone) {
-            grid-row: 2 / -2;
-            margin-top: 2rem;
-        }
+    width: 5rem;
+    height: 5rem;
 
-        @include respond(small-phone) {
-            width: 28rem;
-        }
+    fill: $color-teal;
 
-        &:hover {
-            cursor: pointer;
-        }
+    @include respond(phone) {
+      grid-column: 1 / 3;
+      grid-row: 2 / 3;
     }
-
-    &__arrow-heading {
-        justify-self: center;
-        align-self: center;
-        text-transform: uppercase;
-
-        @include respond(phone) {
-            grid-column: 1 / 3;
-            grid-row: 2 / 3;
-            text-align: center;
-            align-self: flex-start;
-        }
-
-        @include respond(small-phone) {
-            grid-column: 1 / 3;
-            text-align: center;
-            align-self: flex-start;
-        }
-    }
-
-    &__arrow {
-        justify-self: center;
-        align-self: flex-end;
-
-        width: 5rem;
-        height: 5rem;
-
-        fill: $color-teal;
-
-        @include respond(phone) {
-            grid-column: 1 / 3;
-            grid-row: 2 / 3;
-        }
-    }
+  }
 }
