@@ -9,7 +9,7 @@ import { Box3 } from '../../components/Boxes'
 import respondTo from '../../components/Breakpoints'
 import Button, { ButtonSecondary } from '../../components/Button'
 import { Container, Flex } from '../../components/Containers'
-import ProductsModal from '../../components/ProductModal';
+import ProductModal from '../../components/ProductModal';
 import ProductRentals from './Products/ProductRentals';
 import ProductServices from './Products/ProductServices';
 import { colors, shadows } from '../../components/theme';
@@ -162,7 +162,7 @@ export const Products = (props) => {
                     </ButtonSecondary>
                 </Flex>
 
-                <ProductsModal
+                <ProductModal
                     toggle={onModalToggle}
                     class={modalClass}
 

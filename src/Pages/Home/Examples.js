@@ -19,7 +19,7 @@ const Examples = () => {
 					<Box3 marginTop={10} marginBottom={50}>
 							<Line width={150} height={3} color={'orange'} />
 					</Box3>
-					<Flex wrap={true}>
+					<Flex wrap={'true'}>
 						<Fade bottom ssrFadeout>
 							<Box3 marginBottom={25}>
 								<CardContainer>
@@ -70,7 +70,7 @@ const Examples = () => {
 					<Box3 marginTop={10} marginBottom={50}>
 							<Line width={150} height={3} color={'orange'} />
 					</Box3>
-					<Flex wrap={true}>
+					<Flex wrap={'true'}>
 						<Fade bottom ssrFadeout>
 							<Box3 marginBottom={25}>
 								<CardContainer>

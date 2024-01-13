@@ -19,7 +19,7 @@ import { Line } from '../../../components/Lines'
 export default function ProductServices(props) {
     return (
         <>
-            <Flex wrap={true}>
+            <Flex wrap={'true'}>
                 <Box3 marginTop={50}>
                     <StyledServicesCard>
                         <a

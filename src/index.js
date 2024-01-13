@@ -5,10 +5,7 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
 import App from './App';
-
 import * as serviceWorker from './serviceWorker';
-
-// States & Reducers
 import onRentalButton from './redux/reducers';
 
 const store = createStore(
@@ -17,9 +14,9 @@ const store = createStore(
 );
 
 const app = (
-    <Provider store={store}>
-        <App />
-    </Provider>
+	<Provider store={store}>
+		<App />
+	</Provider>
 )
 
 ReactDOM.render( app, document.getElementById('root'));

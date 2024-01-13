@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback, useState, useEffect } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
 import { connect } from 'react-redux';
@@ -22,219 +22,183 @@ import Footer from './Navigation/Footer';
 import {
 	onScrollHome
 } from './handlers/RefHandlers';
+import { OfficeClosedModal } from './components/OfficeClosedModal';
 
-class App extends React.Component {
-	state = {
-		largeSidebar: false,
-		largeSidebarClass: 'large-sidebar',
-		sidebarSelection: null,
+const App = ({
+	rentalButton,
+	serviceButton,
+	membershipsButton,
+}) => {
+	const [largeSidebar, setLargeSidebar] = useState(false);
+	const [largeSidebarClass, setLargeSidebarClass] = useState('large-sidebar');
+	const [sidebarSelection, setSidebarSelection] = useState(null);
+	const [backdropClass, setBackdropClass] = useState('');
+	const [, setMembershipNotify] = useState(true);
+	const [location,] = useState(null);
 
-		backdropClass: '',
+	const [showOfficeClosedModal, setShowOfficeClosedModal] = useState(false);
 
-		membershipNotify: true,
-
-		location: null,
-	}
-
-	componentDidMount() {
+	useEffect(() => {
 		let location = window.location.href;
 		location = location.split('#')
 
 		if (location[1] === 'rentals' ) {
-			this.props.rentalButton();
-			this.setState({
-				...this.state,
-				sidebarSelection: 'products',
-			})
+			rentalButton();
+			setSidebarSelection('products');
 		} else if (location[1] === 'services') {
-			this.props.serviceButton();
-			this.setState({
-				...this.state,
-				sidebarSelection: 'products',
-			})
+			serviceButton();
+			setSidebarSelection('products');
 		} else if (location[1] === 'memberships') {
-			this.props.membershipsButton();
-			this.setState({
-				...this.state,
-				sidebarSelection: 'products',
-				membershipNotify: false,
-			})
+			membershipsButton();
+			setMembershipNotify(false);
 		}
-	}
 
-	onLargeSidebarSelection = (selected) => {
+		setTimeout(() => {
+			setShowOfficeClosedModal(true);
+			setBackdropClass('main-backdrop main-backdrop__fadeIn')
+		}, 1000);
+	}, [membershipsButton, rentalButton, serviceButton])
 
+
+	const productsToggle = useCallback(() => {
+		setLargeSidebar(!largeSidebar);
+
+		if (!largeSidebar) {
+			setLargeSidebarClass('large-sidebar large-sidebar__active');
+			setBackdropClass('backdrop backdrop__fadeIn');
+		} else {
+			setLargeSidebarClass('large-sidebar');
+			setBackdropClass('backdrop backdrop__fadeOut');
+		}
+	}, [largeSidebar]);
+
+	const onLargeSidebarSelection = useCallback((selected) => {
 		if (selected === 'rentals' ) {
-			this.props.rentalButton();
-			this.setState({
-				...this.state,
-				sidebarSelection: 'products',
-			})
+			rentalButton();
+			setSidebarSelection('products');
 		} else if (selected === 'services') {
-			this.props.serviceButton();
-			this.setState({
-				...this.state,
-				sidebarSelection: 'products',
-			})
+			serviceButton();
+			setSidebarSelection('products');
 		} else if (selected === 'memberships') {
-			this.props.membershipsButton();
-			this.setState({
-				...this.state,
-				sidebarSelection: 'products',
-				membershipNotify: false,
-			})
+			membershipsButton();
+			setSidebarSelection('products');
+			setMembershipNotify(false);
 		} else if (selected === 'membershipsNotify') {
-			this.props.membershipsButton();
-			this.setState({
-				...this.state,
-				sidebarSelection: 'products',
-				membershipNotify: false,
-			})
+			membershipsButton();
+			setSidebarSelection('products');
+			setMembershipNotify(false);
 		}
 
 		if (window.matchMedia('(max-width: 600px)').matches && selected !== 'membershipsNotify') {
-			this.productsToggle()
+			productsToggle()
 		};
-	}
+	}, [membershipsButton, productsToggle, rentalButton, serviceButton]);
 
-	onQuickButtonFix = (selected) => {
+	const onQuickButtonFix = useCallback((selected) => {
 		if (selected === 'rentals') {
-			this.props.rentalButton();
-			this.setState({
-				...this.state,
-				sidebarSelection: 'products',
-			})
+			rentalButton();
+			setSidebarSelection('products');
 		}
-	}
+	}, [rentalButton]);
 
-	onSmallSidebarSelection = (selected) => {
-		this.setState({
-			...this.state,
-			largeSidebar: false,
-		})
+	const onSmallSidebarSelection = useCallback((selected) => {
+		setLargeSidebar(false);
 
 		if (selected === 'general') {
-			this.setState({
-				...this.state,
-				sidebarSelection: 'general',
-			})
+			setSidebarSelection('general');
 		} else if (selected === 'contact') {
-			this.setState({
-				...this.state,
-				sidebarSelection: 'contact',
-			})
+			setSidebarSelection('contact');
 		}
-	}
+	}, []);
 
-	toggleLargeSidebar = () => {
-		this.setState({
-			largeSidebar: !this.state.largeSidebar,
-			sidebarSelection: null,
-		})
+	const toggleLargeSidebar = useCallback(() => {
+		setLargeSidebar(!largeSidebar);
+		setSidebarSelection(null);
 
-		if (!this.state.largeSidebar) {
-			this.setState({
-				largeSidebarClass: 'large-sidebar large-sidebar__active',
-				backdropClass: 'backdrop backdrop__fadeIn',
-			})
+		if (!largeSidebar) {
+			setLargeSidebarClass('large-sidebar large-sidebar__active');
+			setBackdropClass('backdrop backdrop__fadeIn');
 		} else {
-			this.setState({
-				largeSidebarClass: 'large-sidebar',
-				backdropClass: 'backdrop backdrop__fadeOut',
-			})
+			setLargeSidebarClass('large-sidebar');
+			setBackdropClass('backdrop backdrop__fadeOut');
 		}
-	}
+	}, [largeSidebar]);
 
-	productsToggle = () => {
-		this.setState({
-			largeSidebar: !this.state.largeSidebar,
-		})
+	let footer = <Footer onLargeSidebarSelection={onLargeSidebarSelection} />;
 
-		if (!this.state.largeSidebar) {
-			this.setState({
-				largeSidebarClass: 'large-sidebar large-sidebar__active',
-				backdropClass: 'backdrop backdrop__fadeIn',
-			})
-		} else {
-			this.setState({
-				largeSidebarClass: 'large-sidebar',
-				backdropClass: 'backdrop backdrop__fadeOut',
-			})
-		}
-	}
+	if (window.matchMedia('(max-width: 600px)').matches) {
+		footer = '';
+	};
 
-	closeMembershipNotify = () => {
-		this.setState({
-			...this.state,
-			membershipNotify: false,
-		})
-	}
-
-	render() {
-		let footer = <Footer onLargeSidebarSelection={this.onLargeSidebarSelection} />;
-
-		if (window.matchMedia('(max-width: 600px)').matches) {
-			footer = '';
-		};
-
-		return (
-			<BrowserRouter>
-				<div className={
-					!this.state.largeSidebar 
-					? "small-sidebar-container" 
-					: "large-sidebar-container"
-				}>
-					{/* {this.state.membershipNotify 
-						&& <MembershipNotify
-							onLargeSidebarSelection={this.onLargeSidebarSelection}
-							closeMembershipNotify={this.closeMembershipNotify}
-						/>
-					} */}
-					{/* <TempClosingModal onQuickButtonFix={this.onQuickButtonFix} /> */}
-					<Header
-						toggleLargeSidebar={this.toggleLargeSidebar}
-						onScrollHome={onScrollHome}
+	return (
+		<BrowserRouter>
+			<div className={
+				largeSidebar 
+				? "large-sidebar-container" 
+				: "small-sidebar-container"
+			}>
+				{/* {membershipNotify 
+					&& <MembershipNotify
+						onLargeSidebarSelection={onLargeSidebarSelection}
+						closeMembershipNotify={closeMembershipNotify}
 					/>
+				} */}
+				{/* <TempClosingModal onQuickButtonFix={onQuickButtonFix} /> */}
+				<Header
+					toggleLargeSidebar={toggleLargeSidebar}
+					onScrollHome={onScrollHome}
+				/>
 
-					<SmallSidebar
-						onSmallSidebarSelection={this.onSmallSidebarSelection}
-						onScrollHome={onScrollHome}
-					/> 
-					
-					<LargeSidebar
-						onScrollHome={onScrollHome}
-						onLargeSidebarSelection={this.onLargeSidebarSelection}
-						toggleLargeSidebar={this.toggleLargeSidebar}
-						largeSidebarClass={this.state.largeSidebarClass}
+				<SmallSidebar
+					onSmallSidebarSelection={onSmallSidebarSelection}
+					onScrollHome={onScrollHome}
+				/> 
+				
+				<LargeSidebar
+					onScrollHome={onScrollHome}
+					onLargeSidebarSelection={onLargeSidebarSelection}
+					toggleLargeSidebar={toggleLargeSidebar}
+					largeSidebarClass={largeSidebarClass}
+				/>
+				
+				<OfficeClosedModal open={showOfficeClosedModal} onClose={() => {
+					setShowOfficeClosedModal(false)
+					setBackdropClass('main-backdrop main-backdrop__fadeOut')
+				}} />
+
+				<div className="main">
+					<div className={backdropClass} onClick={() => {
+						if (showOfficeClosedModal) {
+							setShowOfficeClosedModal(false);
+							setBackdropClass('main-backdrop main-backdrop__fadeOut')
+						} else {
+							toggleLargeSidebar()
+						}
+					}} />
+
+					<Router
+						location={location}
+						onQuickButtonFix={onQuickButtonFix}
+						onLargeSidebarSelection={onLargeSidebarSelection}
+						sidebarSelection={sidebarSelection}
 					/>
-
-					<div className="main">
-						<div className={this.state.backdropClass} onClick={this.toggleLargeSidebar} />
-
-						<Router
-							location={this.state.location}
-							onQuickButtonFix={this.onQuickButtonFix}
-							onLargeSidebarSelection={this.onLargeSidebarSelection}
-							sidebarSelection={this.state.sidebarSelection}
-						/>
-					</div>
-
-					{footer}
-					<div className="footer"></div>
 				</div>
-			</BrowserRouter>
-		);
-	}
+
+				{footer}
+				<div className="footer"></div>
+			</div>
+		</BrowserRouter>
+	);
 }
 
 const mapStateToProps = state => {
 	return {
-        rentalsButtonClass: state.rentalsButtonClass,
-        servicesButtonClass: state.servicesButtonClass,
-        membershipsButtonClass: state.membershipsButtonClass,
-        rentalToggle: state.rentalToggle,
-        servicesToggle: state.servicesToggle,
-        membershipsToggle: state.membershipsToggle,
+		rentalsButtonClass: state.rentalsButtonClass,
+		servicesButtonClass: state.servicesButtonClass,
+		membershipsButtonClass: state.membershipsButtonClass,
+		rentalToggle: state.rentalToggle,
+		servicesToggle: state.servicesToggle,
+		membershipsToggle: state.membershipsToggle,
 	};
 };
 

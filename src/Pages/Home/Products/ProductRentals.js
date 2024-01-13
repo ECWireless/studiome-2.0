@@ -32,7 +32,7 @@ const ProductRentals = ({
         <MainProductCard active={category === 1} image={productsPodcastLoungeImage} title={'Studios'} />
       </div>
       {category === 1 && (
-        <Flex wrap={true}>
+        <Flex wrap={'true'}>
           <Box3 marginTop={50} style={{ width: '100%' }}>
             <ProductRentalItem
               fullWidth
@@ -73,7 +73,7 @@ const ProductRentals = ({
         <MainProductCard active={category === 2} image={productsEquipmentImage} title={'Equipment'} />
       </div>
       {category === 2 && (
-        <Flex wrap={true}>
+        <Flex wrap={'true'}>
           <Box3 marginTop={50}>
             <ProductRentalItem
               name={'Cameras'}
@@ -102,7 +102,7 @@ const ProductRentals = ({
         <MainProductCard active={category === 3} image={productsWorkstationImage} title={'Workstations'} />
       </div>
       {category === 3 && (
-        <Flex wrap={true}
+        <Flex wrap={'true'}
           css={`
             justify-content: center;
             ${respondTo.sm`
