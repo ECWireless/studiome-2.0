@@ -3,6 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 import { connect } from 'react-redux';
 import * as actions from './redux/actions';
+import { client } from './client'
 
 import './sass/main.scss';
 import "scroll-behavior-polyfill";
@@ -54,9 +55,13 @@ const App = ({
 		}
 
 		setTimeout(() => {
-			setShowOfficeClosedModal(true);
-			setBackdropClass('main-backdrop main-backdrop__fadeIn')
-		}, 1000);
+			client.fetch('*[_type == "officeClosureNotice" && slug.current == "v1"][0]').then(pageProps => {
+				if (pageProps?.officeClosureNoticeToggle) {
+					setShowOfficeClosedModal(true);
+					setBackdropClass('main-backdrop main-backdrop__fadeIn')
+				}
+			})
+		}, 3000);
 	}, [membershipsButton, rentalButton, serviceButton])
 
 
