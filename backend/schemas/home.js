@@ -110,6 +110,24 @@ export default {
             }
         },
         {
+            name: 'productsTheMeetupTitle',
+            title: 'Products The Meetup Title',
+            type: 'string'
+        },
+        {
+            name: 'productsTheMeetupDescription',
+            title: 'Products The Meetup Description',
+            type: 'string'
+        },
+        {
+            name: 'productsTheMeetupImage',
+            title: 'Products The Meetup Image',
+            type: 'image',
+            options: {
+              hotspot: true
+            }
+        },
+        {
             name: 'productsEquipmentTitle',
             title: 'Products Equipment Title',
             type: 'string'

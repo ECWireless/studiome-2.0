@@ -19,11 +19,14 @@ const ProductRentals = ({
   productsPodcastLoungeImage,
   productsAudioStudioTitle,
   productsAudioStudioImage,
+  productsTheMeetupTitle,
+  productsTheMeetupImage,
   productsEquipmentTitle,
   productsEquipmentImage,
-  productsWorkstationTitle,
-  productsWorkstationImage,
+  // productsWorkstationTitle,
+  // productsWorkstationImage,
 }) => {
+  console.log(productsTheMeetupImage)
   const history = useHistory();
   const [category, setCategory] = React.useState(0)
   return (
@@ -66,6 +69,14 @@ const ProductRentals = ({
               onModalToggle={() => onModalToggle(4)}
             />
           </Box3>
+          <Box3 marginTop={25} style={{ width: '100%' }}>
+            <ProductRentalItem
+              fullWidth
+              name={productsTheMeetupTitle}
+              image={productsTheMeetupImage}
+              onModalToggle={() => onModalToggle(5)}
+            />
+          </Box3>
         </Flex>
       )}
 
@@ -98,9 +109,9 @@ const ProductRentals = ({
         </Flex>
       )}
 
-      <div onClick={() => setCategory(category === 3 ? 0 : 3)}>
+      {/* <div onClick={() => setCategory(category === 3 ? 0 : 3)}>
         <MainProductCard active={category === 3} image={productsWorkstationImage} title={'Workstations'} />
-      </div>
+      </div> */}
       {category === 3 && (
         <Flex wrap={'true'}
           css={`

@@ -71,12 +71,15 @@ export default class Home extends Component {
                     productsAudioStudioTitle={this.state.productsAudioStudioTitle}
                     productsAudioStudioDescription={this.state.productsAudioStudioDescription}
                     productsAudioStudioImage={urlFor(this.state.productsAudioStudioImage)}
+                    productsTheMeetupTitle={this.state.productsTheMeetupTitle}
+                    productsTheMeetupDescription={this.state.productsTheMeetupDescription}
+                    productsTheMeetupImage={urlFor(this.state.productsTheMeetupImage)}
                     productsEquipmentTitle={this.state.productsEquipmentTitle}
                     productsEquipmentDescription={this.state.productsEquipmentDescription}
                     productsEquipmentImage={urlFor(this.state.productsEquipmentImage)}
-                    productsWorkstationTitle={this.state.productsWorkstationTitle}
-                    productsWorkstationDescription={this.state.productsWorkstationDescription}
-                    productsWorkstationImage={urlFor(this.state.productsWorkstationImage)}
+                    // productsWorkstationTitle={this.state.productsWorkstationTitle}
+                    // productsWorkstationDescription={this.state.productsWorkstationDescription}
+                    // productsWorkstationImage={urlFor(this.state.productsWorkstationImage)}
                     productsVirtualSolutionsText={this.state.productsVirtualSolutionsText}
                 />
                 <Examples />

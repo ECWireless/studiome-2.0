@@ -101,8 +101,21 @@ export const Products = (props) => {
           setUrl2('https://studiome.me/product/soundproof-audio-studio-full-day/')
           setOption3('')
           setUrl3('')
-          break;
+              break;
+          
         case 5:
+            setHeading(props.productsTheMeetupTitle)
+            setDescription(props.productsTheMeetupDescription)
+            setPhoto(props.productsTheMeetupImage)
+            setSubheading('Pick a duration to view:')
+            setOption1('Hourly')
+            setUrl1('https://studiome.me/product/the-meetup-hourly-located-at-avenu-in-oakland-pa/')
+            setOption2('Daily')
+            setUrl2('https://studiome.me/product/the-meetup-daily-located-at-avenu-in-oakland-pa/')
+            setOption3('')
+            setUrl3('')
+            break;
+        case 6:
           setHeading(props.productsEquipmentTitle)
           setDescription(props.productsEquipmentDescription)
           setPhoto(props.productsEquipmentImage)
@@ -114,18 +127,18 @@ export const Products = (props) => {
           setOption3('Audio')
           setUrl3('')
           break;
-        case 6:
-          setHeading(props.productsWorkstationTitle)
-          setDescription(props.productsWorkstationDescription)
-          setPhoto(props.productsWorkstationImage)
-          setSubheading('Pick a category to view:')
-          setOption1('Hourly')
-          setUrl1('https://studiome.me/product/editing-workstation-1-hour/')
-          setOption2('Daily')
-          setUrl2('https://studiome.me/product/editing-workstation-full-day/')
-          setOption3('')
-          setUrl3('')
-          break;
+        // case 6:
+        //   setHeading(props.productsWorkstationTitle)
+        //   setDescription(props.productsWorkstationDescription)
+        //   setPhoto(props.productsWorkstationImage)
+        //   setSubheading('Pick a category to view:')
+        //   setOption1('Hourly')
+        //   setUrl1('https://studiome.me/product/editing-workstation-1-hour/')
+        //   setOption2('Daily')
+        //   setUrl2('https://studiome.me/product/editing-workstation-full-day/')
+        //   setOption3('')
+        //   setUrl3('')
+        //   break;
         default: return;
       }
     }
@@ -193,10 +206,12 @@ export const Products = (props) => {
                     productsPodcastLoungeImage={props.productsPodcastLoungeImage}
                     productsAudioStudioTitle={props.productsAudioStudioTitle}
                     productsAudioStudioImage={props.productsAudioStudioImage}
+                    productsTheMeetupTitle={props.productsTheMeetupTitle}
+                    productsTheMeetupImage={props.productsTheMeetupImage}
                     productsEquipmentTitle={props.productsEquipmentTitle}
                     productsEquipmentImage={props.productsEquipmentImage}
-                    productsWorkstationTitle={props.productsWorkstationTitle}
-                    productsWorkstationImage={props.productsWorkstationImage}
+                    // productsWorkstationTitle={props.productsWorkstationTitle}
+                    // productsWorkstationImage={props.productsWorkstationImage}
                 />}
                 {props.servicesToggle && <ProductServices />}
                 {props.membershipsToggle && <ProductMemberships />}
