@@ -38,6 +38,8 @@ const App = ({
 	const [location,] = useState(null);
 
 	const [showOfficeClosedModal, setShowOfficeClosedModal] = useState(false);
+	const [officeClosureNoticeHeading, setOfficeClosureNoticeHeading] = useState('');
+	const [officeClosureNoticeParagraph, setOfficeClosureNoticeParagraph] = useState('');
 
 	useEffect(() => {
 		let location = window.location.href;
@@ -59,6 +61,8 @@ const App = ({
 				if (pageProps?.officeClosureNoticeToggle) {
 					setShowOfficeClosedModal(true);
 					setBackdropClass('main-backdrop main-backdrop__fadeIn')
+					setOfficeClosureNoticeHeading(pageProps.officeClosureNoticeHeading);
+					setOfficeClosureNoticeParagraph(pageProps.officeClosureNoticeParagraph);
 				}
 			})
 		}, 3000);
@@ -166,10 +170,15 @@ const App = ({
 					largeSidebarClass={largeSidebarClass}
 				/>
 				
-				<OfficeClosedModal open={showOfficeClosedModal} onClose={() => {
-					setShowOfficeClosedModal(false)
-					setBackdropClass('main-backdrop main-backdrop__fadeOut')
-				}} />
+				<OfficeClosedModal
+					open={showOfficeClosedModal}
+					onClose={() => {
+						setShowOfficeClosedModal(false)
+						setBackdropClass('main-backdrop main-backdrop__fadeOut')
+					}}
+					officeClosureNoticeHeading={officeClosureNoticeHeading}
+					officeClosureNoticeParagraph={officeClosureNoticeParagraph}
+				/>
 
 				<div className="main">
 					<div className={backdropClass} onClick={() => {

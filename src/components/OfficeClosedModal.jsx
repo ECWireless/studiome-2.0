@@ -11,15 +11,17 @@ import { Line } from './Lines';
 export const OfficeClosedModal = ({
   onClose,
   open,
+  officeClosureNoticeHeading,
+  officeClosureNoticeParagraph,
 }) => {
   return (
     <Modal open={open}>
       <CloseContainer onClick={onClose}>
         <Close />
       </CloseContainer>
-      <H2 center>Holiday Closure Notice</H2>
+      <H2 center>{officeClosureNoticeHeading}</H2>
       <Line color="orange" height={2} width={200} css={`margin: 20px auto;`} />
-      <P2 center>All studios and rentals are closed today for the holiday.</P2>
+      <P2 center>{officeClosureNoticeParagraph}</P2>
     </Modal>
   );
 }
