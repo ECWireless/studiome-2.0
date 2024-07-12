@@ -6,7 +6,7 @@ import respondTo from '../../components/Breakpoints';
 
 import Spinner from '../../components/Spinner';
 
-import webVideo from '../../assets/home/hero/web-hero-4.mp4';
+import webVideo from '../../assets/home/hero/web-hero-5.mp4';
 
 import { ReactComponent as ChevronArrow } from '../../assets/home/products/chevron-thin-down.svg';
 import videoSVG from '../../assets/home/hero/video.json';
