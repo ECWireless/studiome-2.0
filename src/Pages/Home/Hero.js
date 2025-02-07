@@ -6,8 +6,6 @@ import respondTo from '../../components/Breakpoints';
 
 import Spinner from '../../components/Spinner';
 
-import webVideo from '../../assets/home/hero/web-hero-5.mp4';
-
 import { ReactComponent as ChevronArrow } from '../../assets/home/products/chevron-thin-down.svg';
 import videoSVG from '../../assets/home/hero/video.json';
 import FiveStar from '../../assets/home/hero/five-star.png';
@@ -32,7 +30,7 @@ export default class Hero extends Component {
       <section id="hero" className="container">
         <React.Suspense fallback={<Spinner />}>
           <div id="hero__video-container">
-            <video src={webVideo} id="hero__video" autoPlay loop muted playsInline />
+            <video src={`https://cdn.sanity.io/files/lagsmzsb/production/${this.props?.heroVideo?.asset._ref.split('-')[1]}.mp4`} id="hero__video" autoPlay loop muted playsInline />
             <RatingBadgeContainer>
               <img src={FiveStar} alt="Five Star Rating" />
             </RatingBadgeContainer>

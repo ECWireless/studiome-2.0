@@ -23,6 +23,11 @@ export default {
             type: 'string'
         },
         {
+            name: 'heroVideo',
+            title: 'Hero Video',
+            type: 'file'
+        },
+        {
             name: 'heroMobileDescription',
             title: 'Hero Mobile Description',
             type: 'string'
