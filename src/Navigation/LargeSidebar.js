@@ -13,10 +13,10 @@ import { ReactComponent as GeneralIcon } from '../assets/navigation/SVGs/largeSi
 import { ReactComponent as TeamIcon } from '../assets/navigation/SVGs/largeSidebar/users.svg';
 import { ReactComponent as WorkIcon } from '../assets/navigation/SVGs/largeSidebar/film.svg';
 
-import { ReactComponent as LearnIcon } from '../assets/navigation/SVGs/largeSidebar/bookmark.svg';
-import { ReactComponent as ImagesIcon } from '../assets/navigation/SVGs/largeSidebar/images.svg';
-import { ReactComponent as EventsIcon } from '../assets/navigation/SVGs/largeSidebar/calendar.svg';
-import { ReactComponent as SwagIcon } from '../assets/navigation/SVGs/largeSidebar/swag.svg';
+// import { ReactComponent as LearnIcon } from '../assets/navigation/SVGs/largeSidebar/bookmark.svg';
+// import { ReactComponent as ImagesIcon } from '../assets/navigation/SVGs/largeSidebar/images.svg';
+// import { ReactComponent as EventsIcon } from '../assets/navigation/SVGs/largeSidebar/calendar.svg';
+// import { ReactComponent as SwagIcon } from '../assets/navigation/SVGs/largeSidebar/swag.svg';
 
 export default function LargeSidebar(props) {
     return (
@@ -111,7 +111,7 @@ export default function LargeSidebar(props) {
                 </NavLink>
 
                 {/*The Community*/}
-                <NavLink
+                {/* <NavLink
                     onClick={props.onLargeSidebarSelection.bind(this, '')}
                     activeClassName="large-sidebar-active"
                     className="large-sidebar__header"
@@ -154,7 +154,7 @@ export default function LargeSidebar(props) {
                 >
                     <SwagIcon className='large-sidebar__button-icon' />
                     <p>Swag</p>
-                </NavLink>
+                </NavLink> */}
 
                 {/*Contact*/}
                 <NavLink

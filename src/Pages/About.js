@@ -4,8 +4,8 @@ import { client } from '../client'
 
 // Sections
 import Intro from './About/Intro';
-import Team from './About/Team';
-import Work from './About/Work';
+// import Team from './About/Team';
+// import Work from './About/Work';
 import Contact from './About/Contact';
 
 function urlFor (source) {
@@ -106,26 +106,26 @@ class About extends Component {
                     introHoursHeading={this.state.introHoursHeading}
                     introHoursDays={this.state.introHoursDays}
                     introHoursTime={this.state.introHoursTime}
-                    introDifferentHeading={this.state.introDifferentHeading}
-                    introDifference1={this.state.introDifference1}
-                    introDifference2={this.state.introDifference2}
-                    introDifference3={this.state.introDifference3}
-                    introDifference4={this.state.introDifference4}
-                    introDifference5={this.state.introDifference5}
-                    introDifference6={this.state.introDifference6}
-                    introDifference7={this.state.introDifference7}
-                    introPerfectHeading={this.state.introPerfectHeading}
-                    introPerfectFor1={this.state.introPerfectFor1}
-                    introPerfectFor2={this.state.introPerfectFor2}
-                    introPerfectFor3={this.state.introPerfectFor3}
-                    introPerfectFor4={this.state.introPerfectFor4}
-                    introPerfectFor5={this.state.introPerfectFor5}
-                    introPerfectFor6={this.state.introPerfectFor6}
-                    introPerfectFor7={this.state.introPerfectFor7}
-                    introPerfectFor8={this.state.introPerfectFor8}
-                    introPerfectFor9={this.state.introPerfectFor9}
+                    // introDifferentHeading={this.state.introDifferentHeading}
+                    // introDifference1={this.state.introDifference1}
+                    // introDifference2={this.state.introDifference2}
+                    // introDifference3={this.state.introDifference3}
+                    // introDifference4={this.state.introDifference4}
+                    // introDifference5={this.state.introDifference5}
+                    // introDifference6={this.state.introDifference6}
+                    // introDifference7={this.state.introDifference7}
+                    // introPerfectHeading={this.state.introPerfectHeading}
+                    // introPerfectFor1={this.state.introPerfectFor1}
+                    // introPerfectFor2={this.state.introPerfectFor2}
+                    // introPerfectFor3={this.state.introPerfectFor3}
+                    // introPerfectFor4={this.state.introPerfectFor4}
+                    // introPerfectFor5={this.state.introPerfectFor5}
+                    // introPerfectFor6={this.state.introPerfectFor6}
+                    // introPerfectFor7={this.state.introPerfectFor7}
+                    // introPerfectFor8={this.state.introPerfectFor8}
+                    // introPerfectFor9={this.state.introPerfectFor9}
                 />
-                <div style={{position: 'relative', top: '-75px'}} ref={this.state.myRefTeam} />
+                {/* <div style={{position: 'relative', top: '-75px'}} ref={this.state.myRefTeam} />
                 <Team
                     teamBannerTitle={this.state.teamBannerTitle}
                     teamBannerImage={urlFor(this.state.teamBannerImage)}
@@ -159,8 +159,8 @@ class About extends Component {
                     teamMember6Title={this.state.teamMember6Title}
                     teamMember6Paragraph1={this.state.teamMember6Paragraph1}
                     teamMember6Paragraph2={this.state.teamMember6Paragraph2}
-                />
-                <div style={{position: 'relative', top: '-75px'}} ref={this.state.myRefWork} />
+                /> */}
+                {/* <div style={{position: 'relative', top: '-75px'}} ref={this.state.myRefWork} />
                 <Work
                     workBannerTitle={this.state.workBannerTitle}
                     workBannerImage={urlFor(this.state.workBannerImage)}
@@ -171,7 +171,7 @@ class About extends Component {
                     workVideo2Description={this.state.workVideo2Description}
                     workVideo3URL={this.state.workVideo3URL}
                     workVideo3Description={this.state.workVideo3Description}
-                />
+                /> */}
                 <div style={{position: 'relative', top: '-75px'}} ref={this.state.myRefContact} />
                 <Contact
                     contactBannerTitle={this.state.contactBannerTitle}

@@ -2,12 +2,13 @@ import React, { Component, createRef } from 'react';
 import imageUrlBuilder from '@sanity/image-url'
 import { client } from '../client'
 
-// Sections
 import Hero from './Home/Hero';
 import Products from './Home/Products';
-import Examples from './Home/Examples';
-import WhatWeDo from './Home/WhatWeDo';
-import Services from './Home/Services';
+// import Examples from './Home/Examples';
+// import WhatWeDo from './Home/WhatWeDo';
+// import Services from './Home/Services';
+
+import Contact from './About/Contact';
 
 function urlFor (source) {
     return imageUrlBuilder(client).image(source)
@@ -37,6 +38,14 @@ export default class Home extends Component {
                 ...pageProps
             })
         })
+
+        client.fetch('*[_type == "about" && slug.current == "v1"][0]').then(pageProps => {
+            this.setState({
+                ...this.state,
+                contactBannerTitle: pageProps.contactBannerTitle,
+                contactBannerImage: pageProps.contactBannerImage,
+            })
+        })
     }
 
     componentDidUpdate() {
@@ -52,6 +61,7 @@ export default class Home extends Component {
                 <Hero
                     onProductsHandler={this.onProductsHandler}
 
+                    heroVideo={this.state.heroVideo}
                     heroMobileTagline={this.state.heroMobileTagline}
                     heroMobileDescription={this.state.heroMobileDescription}
                     heroDesktopDescription={this.state.heroDesktopDescription}
@@ -82,13 +92,13 @@ export default class Home extends Component {
                     // productsWorkstationImage={urlFor(this.state.productsWorkstationImage)}
                     productsVirtualSolutionsText={this.state.productsVirtualSolutionsText}
                 />
-                <Examples />
-                <WhatWeDo
+                {/* <Examples /> */}
+                {/* <WhatWeDo
                     whatWeDoBannerTitle={this.state.whatWeDoBannerTitle}
                     whatWeDoBannerImage={urlFor(this.state.whatWeDoBannerImage)}
                     whatWeDoDescription={this.state.whatWeDoDescription}
-                />
-                <Services
+                /> */}
+                {/* <Services
                     onQuickButtonFix={this.props.onQuickButtonFix}
 
                     servicesBannerTitle={this.state.servicesBannerTitle}
@@ -113,6 +123,10 @@ export default class Home extends Component {
                     services3Image2={urlFor(this.state.services3Image2)}
                     services3Image3={urlFor(this.state.services3Image3)}
                     services3Image4={urlFor(this.state.services3Image4)}
+                /> */}
+                <Contact
+                    contactBannerTitle={this.state.contactBannerTitle}
+                    contactBannerImage={urlFor(this.state.contactBannerImage)}
                 />
             </div>
         )

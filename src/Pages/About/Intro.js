@@ -23,24 +23,24 @@ export default function Intro({
     introHoursHeading,
     introHoursDays,
     introHoursTime,
-    introDifferentHeading,
-    introDifference1,
-    introDifference2,
-    introDifference3,
-    introDifference4,
-    introDifference5,
-    introDifference6,
-    introDifference7,
-    introPerfectHeading,
-    introPerfectFor1,
-    introPerfectFor2,
-    introPerfectFor3,
-    introPerfectFor4,
-    introPerfectFor5,
-    introPerfectFor6,
-    introPerfectFor7,
-    introPerfectFor8,
-    introPerfectFor9,
+    // introDifferentHeading,
+    // introDifference1,
+    // introDifference2,
+    // introDifference3,
+    // introDifference4,
+    // introDifference5,
+    // introDifference6,
+    // introDifference7,
+    // introPerfectHeading,
+    // introPerfectFor1,
+    // introPerfectFor2,
+    // introPerfectFor3,
+    // introPerfectFor4,
+    // introPerfectFor5,
+    // introPerfectFor6,
+    // introPerfectFor7,
+    // introPerfectFor8,
+    // introPerfectFor9,
 }) {
     return (
         <>
@@ -115,19 +115,19 @@ export default function Intro({
                 <div className="flex">
                     <img src={StudioRendering} alt="Studio Rendering" id="about__1-rendering" />
                 </div>
-                <div className="flex">
-                <a
-                    style={{margin: '0 auto'}}
-                    target="_blank"
-                    href="https://studiome.me/virtual-tour/"
-                    rel="noopener noreferrer"
-                >
-                    <Button size="l" text="Virtual Tour" />
-                </a>
-                </div>
+                {/* <div className="flex">
+                    <a
+                        style={{margin: '0 auto'}}
+                        target="_blank"
+                        href="https://studiome.me/virtual-tour/"
+                        rel="noopener noreferrer"
+                    >
+                        <Button size="l" text="Virtual Tour" />
+                    </a>
+                </div> */}
             </div>
 
-            <div id="about__1-perks-container" className="container-new">
+            {/* <div id="about__1-perks-container" className="container-new">
                 <h2 id="about__1-perks-heading" className="uppercase center h2 teal">
                     {introDifferentHeading}
                 </h2>
@@ -154,7 +154,7 @@ export default function Intro({
                     <li><span style={{color: '#B6CE61'}}>•</span>  {introPerfectFor8}</li>
                     <li><span style={{color: '#B6CE61'}}>•</span>  {introPerfectFor9}</li>
                 </ul> 
-            </div>
+            </div> */}
         </>
     )
 }
