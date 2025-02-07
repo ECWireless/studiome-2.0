@@ -10,8 +10,8 @@ import { ReactComponent as MembershipsIcon } from '../assets/navigation/SVGs/lar
 import { ReactComponent as CheckoutIcon } from '../assets/navigation/SVGs/largeSidebar/cart.svg';
 
 import { ReactComponent as GeneralIcon } from '../assets/navigation/SVGs/largeSidebar/info.svg';
-import { ReactComponent as TeamIcon } from '../assets/navigation/SVGs/largeSidebar/users.svg';
-import { ReactComponent as WorkIcon } from '../assets/navigation/SVGs/largeSidebar/film.svg';
+// import { ReactComponent as TeamIcon } from '../assets/navigation/SVGs/largeSidebar/users.svg';
+// import { ReactComponent as WorkIcon } from '../assets/navigation/SVGs/largeSidebar/film.svg';
 
 // import { ReactComponent as LearnIcon } from '../assets/navigation/SVGs/largeSidebar/bookmark.svg';
 // import { ReactComponent as ImagesIcon } from '../assets/navigation/SVGs/largeSidebar/images.svg';
@@ -91,7 +91,7 @@ export default function LargeSidebar(props) {
                     <GeneralIcon className='large-sidebar__button-icon' />
                     <p>General</p>
                 </NavLink>
-                <NavLink
+                {/* <NavLink
                     onClick={props.onLargeSidebarSelection.bind(this, 'team')}
                     activeClassName="large-sidebar-section-active"
                     className="large-sidebar__section"
@@ -108,7 +108,7 @@ export default function LargeSidebar(props) {
                 >
                     <WorkIcon className='large-sidebar__button-icon' />
                     <p>Our Work</p>
-                </NavLink>
+                </NavLink> */}
 
                 {/*The Community*/}
                 {/* <NavLink

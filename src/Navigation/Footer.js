@@ -35,12 +35,12 @@ export default function Footer(props) {
                         className="footer__product-link">
                         <p className="footer__product-link4">Audio Studio</p>
                     </a>
-                    <a
+                    {/* <a
                         target="_blank" rel="noopener noreferrer"
                         href="https://studiome.me/product/editing-workstation-2-hour/"
                         className="footer__product-link">
                         <p className="footer__product-link5">Edit Stations</p>
-                    </a>
+                    </a> */}
                     <a
                         target="_blank" rel="noopener noreferrer"
                         href="https://studiome.me/book-me/camera-rental/"
