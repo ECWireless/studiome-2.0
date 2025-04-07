@@ -41,7 +41,7 @@ export default function Footer(props) {
                         className="footer__product-link">
                         <p className="footer__product-link5">Edit Stations</p>
                     </a> */}
-                    <a
+                    {/* <a
                         target="_blank" rel="noopener noreferrer"
                         href="https://studiome.me/book-me/camera-rental/"
                         className="footer__product-link">
@@ -58,7 +58,7 @@ export default function Footer(props) {
                         href="https://studiome.me/book-me/audio-rental/"
                         className="footer__product-link">
                         <p className="footer__product-link8">Audio Equipment</p>
-                    </a>
+                    </a> */}
                     <a
                         target="_blank" rel="noopener noreferrer"
                         href="https://docs.google.com/forms/d/e/1FAIpQLScgxBrBmFA8wMtJqLP33HSelBzJq3OMkNyDSo3uDU8y_2N9dw/viewform"

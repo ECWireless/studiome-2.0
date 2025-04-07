@@ -1,13 +1,13 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
-import styled from 'styled-components/macro';
+// import { useHistory } from 'react-router-dom';
+// import styled from 'styled-components/macro';
 
-import { shadows } from '../../../components/theme'
-import respondTo from '../../../components/Breakpoints'
+// import { shadows } from '../../../components/theme'
+// import respondTo from '../../../components/Breakpoints'
 import ProductRentalItem from './ProductRentalItem';
 import { Box3 } from '../../../components/Boxes'
 import { Flex } from '../../../components/Containers'
-import { H3, P3 } from '../../../components/Typography'
+// import { H3, P3 } from '../../../components/Typography'
 
 const ProductRentals = ({
   productsStudioETitle,
@@ -26,15 +26,13 @@ const ProductRentals = ({
   // productsWorkstationTitle,
   // productsWorkstationImage,
 }) => {
-  console.log(productsTheMeetupImage)
-  const history = useHistory();
-  const [category, setCategory] = React.useState(0)
+  // const history = useHistory();
+  // const [category, setCategory] = React.useState(0)
   return (
     <div>
-      <div onClick={() => setCategory(category === 1 ? 0 : 1)}>
+      {/* <div onClick={() => setCategory(category === 1 ? 0 : 1)}>
         <MainProductCard active={category === 1} image={productsPodcastLoungeImage} title={'Studios'} />
-      </div>
-      {category === 1 && (
+      </div> */}
         <Flex wrap={'true'}>
           <Box3 marginTop={50} style={{ width: '100%' }}>
             <ProductRentalItem
@@ -78,9 +76,8 @@ const ProductRentals = ({
             />
           </Box3>
         </Flex>
-      )}
 
-      <div onClick={() => setCategory(category === 2 ? 0 : 2)}>
+      {/* <div onClick={() => setCategory(category === 2 ? 0 : 2)}>
         <MainProductCard active={category === 2} image={productsEquipmentImage} title={'Equipment'} />
       </div>
       {category === 2 && (
@@ -107,12 +104,12 @@ const ProductRentals = ({
             />
           </Box3>
         </Flex>
-      )}
+      )} */}
 
       {/* <div onClick={() => setCategory(category === 3 ? 0 : 3)}>
         <MainProductCard active={category === 3} image={productsWorkstationImage} title={'Workstations'} />
       </div> */}
-      {category === 3 && (
+      {/* {category === 3 && (
         <Flex wrap={'true'}
           css={`
             justify-content: center;
@@ -147,49 +144,49 @@ const ProductRentals = ({
               </a>
           </Box3> 
         </Flex>
-      )}
+      )} */}
     </div>
   )
 }
 
 export default ProductRentals;
 
-const MainProductCard = ({ active, image, title }) => {
-  return (
-    <Box3 marginTop={50} css={`width: 100%;`}>
-      <StyledProductCategoryCard css={`background-image: url(${image});`}>
-        <StyledBanner>
-          <H3 css={`text-align: center; text-transform: uppercase;`}>
-            {title}
-          </H3>
-          <P3 css={`text-align: center;`}>Click to {active ? 'collapse' : 'view'}</P3>
-          </StyledBanner>
-      </StyledProductCategoryCard>
-    </Box3>
-  )
-}
+// const MainProductCard = ({ active, image, title }) => {
+//   return (
+//     <Box3 marginTop={50} css={`width: 100%;`}>
+//       <StyledProductCategoryCard css={`background-image: url(${image});`}>
+//         <StyledBanner>
+//           <H3 css={`text-align: center; text-transform: uppercase;`}>
+//             {title}
+//           </H3>
+//           <P3 css={`text-align: center;`}>Click to {active ? 'collapse' : 'view'}</P3>
+//           </StyledBanner>
+//       </StyledProductCategoryCard>
+//     </Box3>
+//   )
+// }
 
-const StyledProductCategoryCard = styled.div`
-  animation: onRentalFadeIn .7s ease-out;
-  background-position: center;
-  background-size: cover;
-	border-radius: 5px;
-	box-shadow: ${shadows.card};
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-	height: 330px;
-  justify-content: flex-end;
-	overflow: hidden;
-  width: 100%;
-`;
+// const StyledProductCategoryCard = styled.div`
+//   animation: onRentalFadeIn .7s ease-out;
+//   background-position: center;
+//   background-size: cover;
+// 	border-radius: 5px;
+// 	box-shadow: ${shadows.card};
+//   cursor: pointer;
+//   display: flex;
+//   flex-direction: column;
+// 	height: 330px;
+//   justify-content: flex-end;
+// 	overflow: hidden;
+//   width: 100%;
+// `;
 
-const StyledBanner = styled.div`
-  align-items: center;
-  background-color: rgba(255,255,255,.9);
-  display: flex;
-  flex-direction: column;
-  height: 90px;
-  justify-content: center;
-  width: 100%;
-`;
+// const StyledBanner = styled.div`
+//   align-items: center;
+//   background-color: rgba(255,255,255,.9);
+//   display: flex;
+//   flex-direction: column;
+//   height: 90px;
+//   justify-content: center;
+//   width: 100%;
+// `;

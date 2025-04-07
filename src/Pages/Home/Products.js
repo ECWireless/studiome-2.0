@@ -1,19 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components'
 import { connect } from 'react-redux';
-import { NavLink } from 'react-router-dom';
 import * as actions from '../../redux/actions';
 
-// Components
 import { Box3 } from '../../components/Boxes'
 import respondTo from '../../components/Breakpoints'
-import Button, { ButtonSecondary } from '../../components/Button'
+import { ButtonSecondary } from '../../components/Button'
 import { Container, Flex } from '../../components/Containers'
 import ProductModal from '../../components/ProductModal';
 import ProductRentals from './Products/ProductRentals';
 import ProductServices from './Products/ProductServices';
-import { colors, shadows } from '../../components/theme';
-import { H3 } from '../../components/Typography';
 import ProductMemberships from './Products/ProductMemberships';
 
 export const Products = (props) => {
@@ -216,7 +212,9 @@ export const Products = (props) => {
                 {props.servicesToggle && <ProductServices />}
                 {props.membershipsToggle && <ProductMemberships />}
 
-                <Box3 marginTop={50} marginBottom={50}>
+                <Box3 marginBottom={100} />
+
+                {/* <Box3 marginTop={50} marginBottom={50}>
                     <StyledVirtualContainer>
                         <Flex direction={'column'} align={'center'}>
                             <Box3 marginTop={25}>
@@ -231,7 +229,7 @@ export const Products = (props) => {
                             </Box3>
                         </Flex>
                     </StyledVirtualContainer>
-                </Box3>
+                </Box3> */}
             </StyledProductsContainer>
         </Container>
     )
@@ -258,14 +256,14 @@ const StyledProductsContainer = styled.div`
     `}
 `
 
-const StyledVirtualContainer = styled.div`
-    width: 100%;
-    margin: 0 auto;
-    background: #fff;
-    border: 2px solid ${colors.orange};
-    border-radius: 15px;
-    box-shadow: ${shadows.button};
-`
+// const StyledVirtualContainer = styled.div`
+//     width: 100%;
+//     margin: 0 auto;
+//     background: #fff;
+//     border: 2px solid ${colors.orange};
+//     border-radius: 15px;
+//     box-shadow: ${shadows.button};
+// `
 
 const mapStateToProps = state => {
 	return {
